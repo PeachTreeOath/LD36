@@ -52,9 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfbd780ecdf76a4a89cbd23d4e7e081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 114000012146902850, guid: 2df9808d4e2505b49ad9cd5b9495eb5a, type: 2}
+  stats: {fileID: 114000012534702630, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
   followingFriendly: {fileID: 0}
   dirChangeDelay: 0.4
+  moveScale: 0.25
+  normalBehaviorPrefab: {fileID: 0}
 --- !u!212 &212000012880448114
 SpriteRenderer:
   m_ObjectHideFlags: 1

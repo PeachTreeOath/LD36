@@ -14,6 +14,9 @@ public class AgentStats : MonoBehaviour{
     [SerializeField]
     public float maxMoveSpeedPerSec;
 
+    public int maxHp;
+    public int currentHp;
+
     //AI related
     [SerializeField]
     public float wanderRadiusAvg;
