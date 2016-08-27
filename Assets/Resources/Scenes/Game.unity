@@ -163,6 +163,20 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000014208996622, guid: 5b09b39fac1e3844b994b827fae5162f, type: 2}
+      propertyPath: m_Name
+      value: Building1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011872463114, guid: 5b09b39fac1e3844b994b827fae5162f, type: 2}
+      propertyPath: m_Name
+      value: Gas Station
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000011853108942, guid: 5b09b39fac1e3844b994b827fae5162f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7de229be532dc9749a7ce3ccda0aedd7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b09b39fac1e3844b994b827fae5162f, type: 2}
   m_IsPrefabParent: 0
