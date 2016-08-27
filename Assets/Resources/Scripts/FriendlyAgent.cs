@@ -3,6 +3,10 @@
 public class FriendlyAgent : MonoBehaviour {
 
     [SerializeField]
+    public string groupName = "defaultFriendly"; //can group into horde by name
+    
+
+    [SerializeField]
     public AgentStats stats; //Unity Fail inheritance
 
     [SerializeField]
@@ -59,7 +63,7 @@ public class FriendlyAgent : MonoBehaviour {
 	}
 
     private Vector2 getNearestGroupPos() {
-        return transform.position; //TODO get group avg position from horde controller
+        return DinoHordeController.instance.getGroupAvgPos(groupName);
     }
 
     //Get the next move, finding a new target to head towards or walking towards the last target, depending on time since last action
