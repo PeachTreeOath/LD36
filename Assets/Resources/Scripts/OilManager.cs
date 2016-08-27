@@ -16,14 +16,24 @@ public class OilManager : MonoBehaviour
     private List<Transform> panels;
 
     private GameObject compyPrefab;
+    private GameObject sabreToothTigerPrefab;
+    private GameObject triceratopsPrefab;
     private Player playerDino;
-
+    private Dictionary<int,GameObject> dinoIndexToObjectMap;
     // Use this for initialization
     void Start()
     {
 
         compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
+        sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
+        triceratopsPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
         playerDino = GameObject.Find("PlayerDino").GetComponent<Player>();
+
+        dinoIndexToObjectMap = new Dictionary<int, GameObject>();
+        dinoIndexToObjectMap.Add(0, compyPrefab);
+        dinoIndexToObjectMap.Add(1, sabreToothTigerPrefab);
+        dinoIndexToObjectMap.Add(2, triceratopsPrefab);
+
 
 
         panels = new List<Transform>();
@@ -60,8 +70,8 @@ public class OilManager : MonoBehaviour
         {
             Debug.Log("DINO " + type + " SPAWNED");
             ChangeOilAmount(-dinoCosts[type]);
-            SpawnMinion(0);
-}
+            SpawnMinion(dinoIndexToObjectMap[type]);
+        }
     }
     
     public void ChangeOilAmount(int amountChange)
@@ -70,13 +80,13 @@ public class OilManager : MonoBehaviour
         UpdateDisplays();
     }
 
-    private void SpawnMinion(int dinoType)
+    private void SpawnMinion(GameObject dinoPrefab)
     {
         //TODO wtf is wrong with mouse position
         //Vector3 spawnPos = Input.mousePosition;
         Vector3 spawnPos = playerDino.transform.position;
 
-        FriendlyAgent newDino = ((GameObject)Instantiate(compyPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
+        FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
         newDino.followingFriendly = playerDino.gameObject;
     }
 
