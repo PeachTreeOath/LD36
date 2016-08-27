@@ -40,7 +40,8 @@ public class FriendlyAgent : MonoBehaviour {
         float param = now - lastTimeDirChanged;
         if (param > dirChangeDelay) { //move to next target
             Vector2 randDir = Random.insideUnitCircle + (Vector2) followingFriendly.transform.position;
-            float dist = Util.nextGausRandom() * stats.wanderRadiusStdDev + stats.wanderRadiusAvgPx;
+            randDir.Normalize();
+            float dist = Util.nextGaussRandom(stats.wanderRadiusAvgPx, stats.wanderRadiusStdDev);
             Debug.Log("Dist to new target " + dist);
             Vector2 newDir = randDir * dist;
             param = (dirChangeDelay - param) / dirChangeDelay;
