@@ -15,9 +15,14 @@ public class OilManager : MonoBehaviour
     private Transform panel3;
     private List<Transform> panels;
 
+    private GameObject compyPrefab;
+
     // Use this for initialization
     void Start()
     {
+
+        compyPrefab = Resources.Load<GameObject>("Prefabs/FriendlyAgentInst");
+
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
         oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
@@ -50,16 +55,26 @@ public class OilManager : MonoBehaviour
     {
         if (dinoCosts[type] <= oilAmount)
         {
-            // TODO: spawn dino
             Debug.Log("DINO " + type + " SPAWNED");
             ChangeOilAmount(-dinoCosts[type]);
-        }
+            SpawnMinion(0);
+}
     }
-
+    
     public void ChangeOilAmount(int amountChange)
     {
         oilAmount += amountChange;
         UpdateDisplays();
+    }
+
+    private void SpawnMinion(int dinoType)
+    {
+        //TODO wtf is wrong with mouse position
+        //Vector3 spawnPos = Input.mousePosition;
+        Vector3 spawnPos = new Vector3(0f, 0f, 0f);
+
+        ((GameObject)Instantiate(compyPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
+
     }
 
     public void UpdateDisplays()

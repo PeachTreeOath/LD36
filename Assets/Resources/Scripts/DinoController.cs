@@ -7,11 +7,13 @@ public class DinoController : MonoBehaviour
     public float playerSpeed = 0.1f;
     private bool isFacingRight = true;
     private SpriteRenderer sprite;
+   
 
     // Use this for initialization
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+ 
     }
 
     // Update is called once per frame
@@ -32,10 +34,15 @@ public class DinoController : MonoBehaviour
                 sprite.flipX = true;
             }
         }
+
     }
+
+
 
     void LateUpdate()
     {
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
     }
+
+
 }
