@@ -15,10 +15,6 @@ public class OilBarrel : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Player player = col.gameObject.GetComponent<Player>();
-        if (player != null)
-        {
-            player.AddOil();
-        }
+        Debug.Log("TEST");
     }
 }
