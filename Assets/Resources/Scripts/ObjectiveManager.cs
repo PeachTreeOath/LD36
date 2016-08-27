@@ -9,7 +9,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public List<Building> objectives;
 
-    private int currentObjective;
+    private int currentObjective = -1;
     private GameObject arrow;
 
     void Awake()
@@ -37,16 +37,33 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (objectives.Count > 0)
         {
+            if(currentObjective == -1)
+            {
+                GoToNextObjective();
+            }
+
             GameObject currObj = objectives[currentObjective].gameObject;
             // Place arrow if on screen
             if (CheckIfOnScreen(currObj))
             {
                 float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
-                arrow.transform.position = currObj.transform.position + new Vector3(0, 2f + bounceVal, 0);
+                arrow.transform.position = currObj.transform.position;
                 arrow.transform.up = currObj.transform.position - arrow.transform.position;
-
+                arrow.transform.localPosition = new Vector2(0, bounceVal + 2f);
+            }
+            else
+            {
+                float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
+                Vector3 newVec = Vector3.Normalize(currObj.transform.position - Player.instance.transform.position);
+                arrow.transform.position = Player.instance.transform.position + (newVec * 5);
             }
         }
+    }
+
+    private void GoToNextObjective()
+    {
+        currentObjective++;
+        arrow.transform.SetParent(objectives[currentObjective].transform);
     }
 
     private bool CheckIfOnScreen(GameObject obj)

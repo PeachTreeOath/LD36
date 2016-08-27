@@ -12,4 +12,14 @@ public class AttackBuilding : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Something should be colliding with this building.");
+        FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
+        if (minion != null)
+        {
+            minion.TakeDamage(1);
+        }
+    }
 }
