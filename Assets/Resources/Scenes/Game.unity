@@ -251,6 +251,22 @@ Prefab:
       propertyPath: followingFriendly
       value: 
       objectReference: {fileID: 580975881}
+    - target: {fileID: 114000013757761584, guid: fa74993d636ddfb4895df3b5288b9910,
+        type: 2}
+      propertyPath: normalBehaviorPrefab
+      value: 
+      objectReference: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
+        type: 2}
+    - target: {fileID: 114000013757761584, guid: fa74993d636ddfb4895df3b5288b9910,
+        type: 2}
+      propertyPath: dirChangeDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013757761584, guid: fa74993d636ddfb4895df3b5288b9910,
+        type: 2}
+      propertyPath: moveScale
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa74993d636ddfb4895df3b5288b9910, type: 2}
   m_IsPrefabParent: 0

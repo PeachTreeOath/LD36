@@ -43,6 +43,8 @@ public class Behavior {
         float rot = Vector2.Angle(nextPoint, curHeading);
         nextPoint = Quaternion.AngleAxis(rot, Vector3.forward) * nextPoint;
 
+        nextPoint = curPos + (Vector2)nextPoint; //local to world 
+
         //speed is only influenced by global scale 
         nextPoint.z = nextStepBehavior.moveSpeedFactor * nextStepBehavior.factorsWeight;
 
