@@ -23,7 +23,7 @@ public class DinoController : MonoBehaviour
         {
             Vector3 direction = Vector3.Normalize(mousePos - (Vector2)transform.position);
             transform.Translate(direction * playerSpeed);
-            if(direction.x > 0)
+            if (direction.x > 0)
             {
                 sprite.flipX = false;
             }
@@ -32,6 +32,10 @@ public class DinoController : MonoBehaviour
                 sprite.flipX = true;
             }
         }
-        
+    }
+
+    void LateUpdate()
+    {
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
     }
 }
