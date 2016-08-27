@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   curHealth: 0
-  oilValue: 100
+  oilValue: 50

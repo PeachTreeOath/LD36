@@ -32,7 +32,8 @@ public class OilBarrel : MonoBehaviour
     public void SetValue(int val)
     {
         value = val;
-        float sizeMult = 1 + value / 10;
+        //float sizeMult = 1 + value / 10;
+        float sizeMult = 1;
         transform.localScale = new Vector2(sizeMult, sizeMult);
     }
 
