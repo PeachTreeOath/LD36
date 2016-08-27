@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        oilManager = GameObject.Find("OilManager").GetComponent<OilManager>();
+        oilManager = GameObject.Find("SceneCEO").GetComponentInChildren<OilManager>();
     }
 
     // Update is called once per frame

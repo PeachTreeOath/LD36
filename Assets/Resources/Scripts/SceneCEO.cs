@@ -13,8 +13,11 @@ public class SceneCEO : MonoBehaviour
     {
         foreach (GameObject manager in managerList)
         {
-            GameObject mgr = Instantiate(manager);
-            mgr.transform.SetParent(transform);
+            if (manager != null)
+            {
+                GameObject mgr = Instantiate(manager);
+                mgr.transform.SetParent(transform);
+            }
         }
     }
 
