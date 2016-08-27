@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OilBarrel : MonoBehaviour {
 
+    public int value;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +20,9 @@ public class OilBarrel : MonoBehaviour {
         Player player = col.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.AddOil();
+            player.AddOil(value);
         }
+
+        Destroy(gameObject);
     }
 }
