@@ -22,7 +22,7 @@ public class DinoController : MonoBehaviour
         if (dist > minMouseDist)
         {
             Vector3 direction = Vector3.Normalize(mousePos - (Vector2)transform.position);
-            transform.Translate(direction * playerSpeed);
+            transform.Translate(direction * playerSpeed * Time.deltaTime);
             if (direction.x > 0)
             {
                 sprite.flipX = false;

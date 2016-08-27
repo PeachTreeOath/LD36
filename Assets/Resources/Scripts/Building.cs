@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OilBarrel : MonoBehaviour {
+public class Building : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,9 +12,4 @@ public class OilBarrel : MonoBehaviour {
 	void Update () {
 	
 	}
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("TEST");
-    }
 }
