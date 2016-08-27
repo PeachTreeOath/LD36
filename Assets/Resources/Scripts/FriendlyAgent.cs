@@ -20,14 +20,31 @@ public class FriendlyAgent : MonoBehaviour {
     private float lastTimeDirChanged; //Time.time when last target was set
 
 
+
 	// Use this for initialization
 	void Start () {
+        retardCheck();
+        float maxXSpeed = stats.maxMoveSpeedPerSec * Mathf.Cos(Mathf.Deg2Rad * 45);
+        float maxYSpeed = stats.maxMoveSpeedPerSec * Mathf.Sin(Mathf.Deg2Rad * 45);
         followingFriendlyLastPos = followingFriendly.transform.position;
         lastTimeDirChanged = Time.time - dirChangeDelay - 0.1f; //force update
         lastTargetPos = transform.position;
         Debug.Log(gameObject.name + " start pos " + lastTargetPos);
+        Debug.Log(gameObject.name + " max move mag " + stats.maxMoveSpeedPerSec);
         curTargetPos = getNextPos();
 	}
+
+    private void retardCheck() {
+        if (stats == null) {
+            Debug.LogError("Friendly agent has no stats assigned. name=" + gameObject.name);
+        } else {
+        if(stats.wanderRadiusAvg == 0) Debug.LogError("Friendly agent field stat.wanderRadiusAvg not set. name=" + gameObject.name);
+        if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
+        if(stats.maxMoveSpeedPerSec == 0) Debug.LogError("Friendly agent field stat.maxMoveSpeedPerSec not set. name=" + gameObject.name);
+        }
+        if(followingFriendly == null) Debug.LogError("Friendly agent has nothing to follow. name=" + gameObject.name);
+        if(dirChangeDelay == 0) Debug.LogError("Friendly agent field dirChangeDelay not set. name=" + gameObject.name);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -41,16 +58,19 @@ public class FriendlyAgent : MonoBehaviour {
         float now = Time.time;
         float param = now - lastTimeDirChanged;
         if (param > dirChangeDelay) { //move to next target
-            Vector2 randDir = Random.insideUnitCircle + (Vector2) followingFriendly.transform.position;
-            float dist = Util.nextApproxGaussRandom(stats.wanderRadiusAvgPx, stats.wanderRadiusStdDev);
+            //Debug.Log("Friendly pos: " + followingFriendly.transform.position);
+            Vector2 randDir = Random.insideUnitCircle;
+            
+            float dist = Util.nextApproxGaussRandom(stats.wanderRadiusAvg, stats.wanderRadiusStdDev);
             //Debug.Log("Dist to new target " + dist);
 
-            Vector2 newPt = randDir * dist;
+            Vector2 newPt = randDir + (dist * (Vector2) followingFriendly.transform.position);
+            //Debug.Log("Next rand pt " + newPt);
             param = (dirChangeDelay - param) / dirChangeDelay;
             lastTargetPos = curTargetPos;
             curTargetPos = newPt;
             result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
-           // Debug.Log("New target " + result);
+            //Debug.Log("New target " + result);
             lastTimeDirChanged = now;
             followingFriendlyLastPos = followingFriendly.transform.position;
         } else {
@@ -58,6 +78,7 @@ public class FriendlyAgent : MonoBehaviour {
             param /= dirChangeDelay;
             result = Vector2.Lerp(lastTargetPos, curTargetPos, param); //this will probably undershoot by a lot, fix later
         }
+        result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
         return result;
     }
 }

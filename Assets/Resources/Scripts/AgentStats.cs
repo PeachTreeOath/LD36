@@ -12,11 +12,11 @@ public class AgentStats : MonoBehaviour{
     [SerializeField]
     public float hitRate;
     [SerializeField]
-    public float moveSpeedPxPerSec;
+    public float maxMoveSpeedPerSec;
 
     //AI related
     [SerializeField]
-    public float wanderRadiusAvgPx;
+    public float wanderRadiusAvg;
     [SerializeField]
     public float wanderRadiusStdDev;
 
