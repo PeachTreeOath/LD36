@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BuildingStats : MonoBehaviour {
 
-    protected float maxHealth { get; set; }
-    protected float curHealth { get; set; }
+    public float maxHealth { get; set; }
+    public float curHealth { get; set; }
 
 
 }
