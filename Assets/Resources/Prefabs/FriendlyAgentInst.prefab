@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012709291816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76, y: 0.4, z: 0}
+  m_LocalPosition: {x: -3.32, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -52,11 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfbd780ecdf76a4a89cbd23d4e7e081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  groupName: defaultFriendly
+  stats: {fileID: 114000012146902850, guid: 2df9808d4e2505b49ad9cd5b9495eb5a, type: 2}
   followingFriendly: {fileID: 0}
-  dirChangeDelay: 0.75
-  moveScale: 0.25
-  normalBehaviorPrefab: {fileID: 0}
+  dirChangeDelay: 0.5
+  moveScale: 0.5
+  normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
+    type: 2}
 --- !u!212 &212000010971988346
 SpriteRenderer:
   m_ObjectHideFlags: 1

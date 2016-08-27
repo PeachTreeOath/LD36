@@ -18,9 +18,9 @@ public class AgentStats : MonoBehaviour{
     public int currentHp;
 
     //AI related
-    [SerializeField]
-    public float wanderRadiusAvg;
-    [SerializeField]
-    public float wanderRadiusStdDev;
+    //[SerializeField]
+    //public float wanderRadiusAvg;
+    //[SerializeField]
+    //public float wanderRadiusStdDev;
 
 }

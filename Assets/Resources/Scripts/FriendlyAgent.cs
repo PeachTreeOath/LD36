@@ -3,6 +3,10 @@
 public class FriendlyAgent : MonoBehaviour {
 
     [SerializeField]
+    public string groupName = "defaultFriendly"; //can group into horde by name
+    
+
+    [SerializeField]
     public AgentStats stats; //Unity Fail inheritance
 
     [SerializeField]
@@ -44,8 +48,8 @@ public class FriendlyAgent : MonoBehaviour {
         if (stats == null) {
             Debug.LogError("Friendly agent has no stats assigned. name=" + gameObject.name);
         } else {
-        if(stats.wanderRadiusAvg == 0) Debug.LogError("Friendly agent field stat.wanderRadiusAvg not set. name=" + gameObject.name);
-        if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
+        //if(stats.wanderRadiusAvg == 0) Debug.LogError("Friendly agent field stat.wanderRadiusAvg not set. name=" + gameObject.name);
+        //if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
         if(stats.maxMoveSpeedPerSec == 0) Debug.LogError("Friendly agent field stat.maxMoveSpeedPerSec not set. name=" + gameObject.name);
         }
         if(followingFriendly == null) Debug.LogError("Friendly agent has nothing to follow. name=" + gameObject.name);
@@ -59,7 +63,7 @@ public class FriendlyAgent : MonoBehaviour {
 	}
 
     private Vector2 getNearestGroupPos() {
-        return transform.position; //TODO get group avg position from horde controller
+        return DinoHordeController.instance.getGroupAvgPos(groupName);
     }
 
     //Get the next move, finding a new target to head towards or walking towards the last target, depending on time since last action
@@ -98,7 +102,7 @@ public class FriendlyAgent : MonoBehaviour {
         Vector2 randPt = Util.nextApproxGaussUnitRandom();
         Behavior nextmove = curBehavior.getBehavior(randPt);
         Vector3 next =  Behavior.calcNext(nextmove, transform.position, curHeading, getNearestGroupPos(), moveScale);
-        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
+//        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
         return next;
     }
 

@@ -29,9 +29,15 @@ public class Behavior {
         //This is achieved by taking a vector from cur pos toward groupPos and projecting that on the direction we would be moving (input A)
         //Then we interp between point A and nextPoint with the groupFactor as the parameter
         Vector2 towardsGroup = nearestGroupPos - curPos;
+        //Debug.Log("towardsGroup vec " + towardsGroup);
         Vector2 nextDir = ((Vector2)nextPoint).normalized;
-        float projectionForward = Mathf.Max(0, Vector2.Dot(towardsGroup, nextDir));
+        //Debug.Log("NextDir pt " + nextPoint + ", vec " + nextDir);
+        //float projectionForward = Mathf.Max(0, Vector2.Dot(towardsGroup, nextDir));
+        float projectionForward = Vector2.Dot(towardsGroup, nextDir);
+        //Debug.Log("grpFactor " + nextStepBehavior.groupingFactor);
+        //Debug.Log("Proj amt " + projectionForward + ", projNext dir " + projectionForward * nextDir);
         nextPoint = Vector2.Lerp(nextPoint, projectionForward * nextDir, nextStepBehavior.groupingFactor);
+        //Debug.Log("NextPoint " + nextPoint);
 
         factor *= nextStepBehavior.factorsWeight; //global decision scaling
         

@@ -41,8 +41,10 @@ public class ObjectiveManager : MonoBehaviour
             // Place arrow if on screen
             if (CheckIfOnScreen(currObj))
             {
-                arrow.transform.position = currObj.transform.position + new Vector3(0, 2f,0);
-                arrow.transform.LookAt(currObj.transform);
+                float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
+                arrow.transform.position = currObj.transform.position + new Vector3(0, 2f + bounceVal, 0);
+                arrow.transform.up = currObj.transform.position - arrow.transform.position;
+
             }
         }
     }
@@ -61,5 +63,13 @@ public class ObjectiveManager : MonoBehaviour
     public void RegisterObjective(Objective objective)
     {
         objectives.Insert(objective.objectiveNum, objective.GetComponent<Building>());
+    }
+
+    private float GetJumpHeight(float time)
+    {
+        float a = 1f;
+        float diff = time - 0.5f;
+        float height = (-a * diff * diff) + 0.25f;
+        return Mathf.Clamp(height, 0, 100);
     }
 }
