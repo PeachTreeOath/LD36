@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FriendlyAgent : MonoBehaviour {
 
+    public AgentStats stats;
+
 	// Use this for initialization
 	void Start () {
 	
