@@ -5,11 +5,13 @@ public class DinoController : MonoBehaviour
 {
     public float minMouseDist;
     public float playerSpeed = 0.1f;
+    private bool isFacingRight = true;
+    private SpriteRenderer sprite;
 
     // Use this for initialization
     void Start()
     {
-
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,15 @@ public class DinoController : MonoBehaviour
         {
             Vector3 direction = Vector3.Normalize(mousePos - (Vector2)transform.position);
             transform.Translate(direction * playerSpeed);
+            if(direction.x > 0)
+            {
+                sprite.flipX = false;
+            }
+            else
+            {
+                sprite.flipX = true;
+            }
         }
+        
     }
 }
