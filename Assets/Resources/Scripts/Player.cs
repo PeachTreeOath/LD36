@@ -1,19 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     private OilManager oilManager;
-        
-	// Use this for initialization
-	void Start () {
-        oilManager = GameObject.Find("OilManager").GetComponent<OilManager>();    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public static Player instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        oilManager = GameObject.Find("OilManager").GetComponent<OilManager>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void AddOil(int count)
     {
