@@ -33,17 +33,26 @@ public class Building : MonoBehaviour
 
     private void DoSpawn()
     {
-        Vector2 loc = UnityEngine.Random.insideUnitCircle * stats.spawnRadius;
-
+        Vector2 loc = (UnityEngine.Random.insideUnitCircle * stats.spawnRadius) + (Vector2)transform.position;
+        GameObject soldier = SpawnManager.instance.SpawnSoldier();
+        soldier.transform.position = loc;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Only spawn units when player is close enough
-        if(Vector2.Distance(Player.instance.transform.position, transform.position) < stats.BEGIN_SPAWN_RADIUS)
+        if (stats.timeToSpawn > 0)
         {
-
+            if (Vector2.Distance(Player.instance.transform.position, transform.position) < stats.BEGIN_SPAWN_RADIUS)
+            {
+                lastSpawnElapsedTime += Time.deltaTime;
+                if (lastSpawnElapsedTime > stats.timeToSpawn)
+                {
+                    DoSpawn();
+                    lastSpawnElapsedTime = 0;
+                }
+            }
         }
     }
 

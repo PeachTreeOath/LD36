@@ -9,9 +9,10 @@ public class BuildingStats : MonoBehaviour
     public int oilValue;
     public float startingSpawnNum;
     public float spawnRadius;
-    public float spawnRate;
+    public float timeToSpawn;
 
-    public float BEGIN_SPAWN_RADIUS = 5f;
+    // 15 is good, don't touch
+    public float BEGIN_SPAWN_RADIUS = 15f;
 
     void Start()
     {

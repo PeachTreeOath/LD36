@@ -55,5 +55,6 @@ MonoBehaviour:
   curHealth: 0
   oilValue: 75
   startingSpawnNum: 3
-  spawnRadius: 1
-  spawnRate: 1
+  spawnRadius: 2
+  timeToSpawn: 0.3
+  BEGIN_SPAWN_RADIUS: 15
