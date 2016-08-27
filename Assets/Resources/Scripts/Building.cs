@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
     private GameObject barrelObj;
     private GameObject fireObj;
 
-    public enum BuildingType { PLAIN, ATTACK, SPAWN };
+    public enum BuildingType { PLAIN, ATTACK, SPAWN, GAS };
     public BuildingType type;
     private Sprite rubbleSpr;
     private bool isAlive = true;
@@ -68,7 +68,10 @@ public class Building : MonoBehaviour
         stats.curHealth -= dmg;
         if (stats.curHealth <= 0)
         {
-            SpawnBarrel();
+            if (type == BuildingType.GAS)
+            {
+                SpawnBarrel();
+            }
             isAlive = false;
         }
     }
