@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    public int oilCount;
-
+    private OilManager oilManager;
+        
 	// Use this for initialization
 	void Start () {
-	
+        oilManager = GameObject.Find("OilManager").GetComponent<OilManager>();    
 	}
 	
 	// Update is called once per frame
@@ -15,8 +15,8 @@ public class Player : MonoBehaviour {
 	
 	}
 
-    public void AddOil(int newCount)
+    public void AddOil(int count)
     {
-        oilCount += newCount;
+        oilManager.ChangeOilAmount(count);
     }
 }
