@@ -19,12 +19,19 @@ public class Util {
         return a * Mathf.Sqrt((-2 * Mathf.Log(c)) / c);
     }
 
+    public static float nextApproxGaussRandom(float mean, float stdDev) {
+        return nextGausRandom() * stdDev + mean;
+    }
+
     public static float nextGaussRandom(float mean, float stdDev)
     {
         float u1, u2;
         u1 = Random.value;
         u2 = Random.value;
 
+        if (u1 == 0) {
+            u1 = 0.001f;
+        }
         float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(TWO_PI * u2);
         return mean + stdDev * randStdNormal;
     }

@@ -23,7 +23,9 @@ public class FriendlyAgent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         followingFriendlyLastPos = followingFriendly.transform.position;
-        lastTimeDirChanged = Time.time - dirChangeDelay - 0.5f; //force update
+        lastTimeDirChanged = Time.time - dirChangeDelay - 0.1f; //force update
+        lastTargetPos = transform.position;
+        Debug.Log(gameObject.name + " start pos " + lastTargetPos);
         curTargetPos = getNextPos();
 	}
 	
@@ -40,14 +42,13 @@ public class FriendlyAgent : MonoBehaviour {
         float param = now - lastTimeDirChanged;
         if (param > dirChangeDelay) { //move to next target
             Vector2 randDir = Random.insideUnitCircle + (Vector2) followingFriendly.transform.position;
-            randDir.Normalize();
-            float dist = Util.nextGaussRandom(stats.wanderRadiusAvgPx, stats.wanderRadiusStdDev);
+            float dist = Util.nextApproxGaussRandom(stats.wanderRadiusAvgPx, stats.wanderRadiusStdDev);
             //Debug.Log("Dist to new target " + dist);
 
-            Vector2 newDir = randDir * dist;
+            Vector2 newPt = randDir * dist;
             param = (dirChangeDelay - param) / dirChangeDelay;
             lastTargetPos = curTargetPos;
-            curTargetPos = newDir;
+            curTargetPos = newPt;
             result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
            // Debug.Log("New target " + result);
             lastTimeDirChanged = now;
