@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OilBarrel : MonoBehaviour {
+public class OilBarrel : MonoBehaviour
+{
 
-    public int value;
+    private int value;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -21,8 +24,16 @@ public class OilBarrel : MonoBehaviour {
         if (player != null)
         {
             player.AddOil(value);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
     }
+
+    public void SetValue(int val)
+    {
+        value = val;
+        float sizeMult = 1 + value / 10;
+        transform.localScale = new Vector2(sizeMult, sizeMult);
+    }
+
 }

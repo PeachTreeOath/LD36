@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BuildingStats : MonoBehaviour {
+public class BuildingStats : MonoBehaviour
+{
 
-    public float maxHealth { get; set; }
-    public float curHealth { get; set; }
+    public float maxHealth;
+    public float curHealth;
+    public int oilValue;
 
-
+    void Start()
+    {
+        curHealth = maxHealth;
+    }
 }
