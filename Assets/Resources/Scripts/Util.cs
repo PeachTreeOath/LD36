@@ -5,6 +5,7 @@ public class Util {
     private const float TWO_PI = 2.0f * Mathf.PI;
     private const float MIN_FLOAT = float.MinValue;
     private const float MAX_FLOAT = float.MaxValue;
+    private const float unitStd = 0.33f; //just a guess
 
     public static float nextGausRandom() {
         float a = 2 * Random.value - 1;
@@ -21,6 +22,13 @@ public class Util {
 
     public static float nextApproxGaussRandom(float mean, float stdDev) {
         return nextGausRandom() * stdDev + mean;
+    }
+
+    //Within bounds of unit circle
+    public static Vector2 nextApproxGaussUnitRandom() {
+        float x = nextApproxGaussRandom(0, unitStd);
+        float y = nextApproxGaussRandom(0, unitStd);
+        return Vector2.ClampMagnitude(new Vector2(x, y), 1);
     }
 
     public static float nextGaussRandom(float mean, float stdDev)

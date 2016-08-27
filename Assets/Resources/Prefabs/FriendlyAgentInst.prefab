@@ -54,7 +54,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   followingFriendly: {fileID: 0}
-  dirChangeDelay: 0.4
+  dirChangeDelay: 0.75
+  moveScale: 0.25
+  normalBehaviorPrefab: {fileID: 0}
 --- !u!212 &212000010971988346
 SpriteRenderer:
   m_ObjectHideFlags: 1
