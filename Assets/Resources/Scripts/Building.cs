@@ -9,6 +9,9 @@ public class Building : MonoBehaviour
 
     private GameObject barrelObj;
     private GameObject fireObj;
+
+    public enum BuildingType { PLAIN, ATTACK, SPAWN };
+    public BuildingType type;
     private Sprite rubbleSpr;
     private bool isAlive = true;
     private float lastSpawnElapsedTime;
