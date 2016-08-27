@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000011903884582}
   - 61: {fileID: 61000010398985600}
   - 114: {fileID: 114000014001256006}
+  - 114: {fileID: 114000010731803734}
   m_Layer: 0
   m_Name: PlayerDino
   m_TagString: Untagged
@@ -56,6 +57,17 @@ BoxCollider2D:
   m_Offset: {x: 0.021206766, y: -0.19086075}
   serializedVersion: 2
   m_Size: {x: 1.5334527, y: 0.6427727}
+--- !u!114 &114000010731803734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010465962246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95abba80d57ae21448f3215ac019e3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000014001256006
 MonoBehaviour:
   m_ObjectHideFlags: 1
