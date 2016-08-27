@@ -37,7 +37,7 @@ public class Behavior {
         //Debug.Log("grpFactor " + nextStepBehavior.groupingFactor);
         //Debug.Log("Proj amt " + projectionForward + ", projNext dir " + projectionForward * nextDir);
         nextPoint = Vector2.Lerp(nextPoint, projectionForward * nextDir, nextStepBehavior.groupingFactor);
-        //Debug.Log("NextPoint " + nextPoint);
+        Vector2 dbgNextPointLocal = nextPoint; //TODO remove
 
         factor *= nextStepBehavior.factorsWeight; //global decision scaling
         
@@ -51,6 +51,7 @@ public class Behavior {
 
         nextPoint = curPos + (Vector2)nextPoint; //local to world 
 
+        Debug.Log("NextPoint local " + dbgNextPointLocal + ", NextPoint world " + nextPoint);
         //speed is only influenced by global scale 
         nextPoint.z = nextStepBehavior.moveSpeedFactor * nextStepBehavior.factorsWeight;
 
