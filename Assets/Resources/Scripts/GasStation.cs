@@ -17,4 +17,8 @@ public class GasStation : MonoBehaviour {
 	
 	}
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        GetComponent<Building>().TakeDamage(1);
+    }
 }
