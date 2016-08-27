@@ -42,13 +42,14 @@ public class FriendlyAgent : MonoBehaviour {
             Vector2 randDir = Random.insideUnitCircle + (Vector2) followingFriendly.transform.position;
             randDir.Normalize();
             float dist = Util.nextGaussRandom(stats.wanderRadiusAvgPx, stats.wanderRadiusStdDev);
-            Debug.Log("Dist to new target " + dist);
+            //Debug.Log("Dist to new target " + dist);
+
             Vector2 newDir = randDir * dist;
             param = (dirChangeDelay - param) / dirChangeDelay;
             lastTargetPos = curTargetPos;
             curTargetPos = newDir;
             result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
-            Debug.Log("New target " + result);
+           // Debug.Log("New target " + result);
             lastTimeDirChanged = now;
             followingFriendlyLastPos = followingFriendly.transform.position;
         } else {

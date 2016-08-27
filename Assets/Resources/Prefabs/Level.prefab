@@ -67,6 +67,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010167614080}
   - 212: {fileID: 212000013287902032}
+  - 61: {fileID: 61000012478774848}
+  - 114: {fileID: 114000014017775208}
+  - 114: {fileID: 114000012040001534}
   m_Layer: 0
   m_Name: Gas_Station
   m_TagString: Untagged
@@ -83,6 +86,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013988625928}
   - 212: {fileID: 212000013157850282}
+  - 61: {fileID: 61000011357627980}
+  - 114: {fileID: 114000010987548708}
+  - 114: {fileID: 114000013292184374}
   m_Layer: 0
   m_Name: Gas_Station (1)
   m_TagString: Untagged
@@ -249,6 +255,80 @@ Transform:
   - {fileID: 4000012616791964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &61000011357627980
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011496779552}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+--- !u!61 &61000012478774848
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011345689458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+--- !u!114 &114000010987548708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011496779552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 114000012809442622, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
+--- !u!114 &114000012040001534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011345689458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49508e7e9a005394a8d7bca897e207dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013292184374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011496779552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49508e7e9a005394a8d7bca897e207dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000014017775208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011345689458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 114000012809442622, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
 --- !u!212 &212000011267823620
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    public int oilCount;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,8 +15,8 @@ public class Player : MonoBehaviour {
 	
 	}
 
-    public void AddOil()
+    public void AddOil(int newCount)
     {
-
+        oilCount += newCount;
     }
 }
