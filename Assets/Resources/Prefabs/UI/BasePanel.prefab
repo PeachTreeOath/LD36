@@ -73,7 +73,7 @@ GameObject:
   - 222: {fileID: 222000012632978510}
   - 114: {fileID: 114000014014430008}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
