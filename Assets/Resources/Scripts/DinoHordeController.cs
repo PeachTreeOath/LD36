@@ -58,6 +58,8 @@ public class DinoHordeController : MonoBehaviour {
     private void recalcAvgs() { //this may be performance heavy, adjust as needed
         foreach (string key in agents.Keys) {
             Vector2 pos = calcGroupAvgPos(key);
+            Debug.Log("DinoHordeController.Key = " + key);
+            Debug.Log("agentsLastPos = " + agentsLastPos);
             agentsLastPos[key] = pos;
         }
     }
