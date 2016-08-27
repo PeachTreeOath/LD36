@@ -41,8 +41,8 @@ public class ObjectiveManager : MonoBehaviour
             // Place arrow if on screen
             if (CheckIfOnScreen(currObj))
             {
-                arrow.transform.position = currObj.transform.position + new Vector3(0, 2f,0);
-                arrow.transform.LookAt(currObj.transform);
+                arrow.transform.position = currObj.transform.position + new Vector3(0, 2f, 0);
+                arrow.transform.up = currObj.transform.position - arrow.transform.position;
             }
         }
     }
