@@ -18,8 +18,7 @@ public class OilManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        dinoCosts = new int[3];
-
+        panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
         oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
         panels.Add(canvas.transform.Find("Panel1"));
@@ -49,7 +48,12 @@ public class OilManager : MonoBehaviour
 
     private void BuyDino(int type)
     {
-        
+        if (dinoCosts[type] <= oilAmount)
+        {
+            // TODO: spawn dino
+            Debug.Log("DINO " + type + " SPAWNED");
+            ChangeOilAmount(-dinoCosts[type]);
+        }
     }
 
     public void ChangeOilAmount(int amountChange)
@@ -61,6 +65,18 @@ public class OilManager : MonoBehaviour
     public void UpdateDisplays()
     {
         oilAmountText.text = oilAmount + "";
+
+        int i = 0;
+        foreach (Transform panel in panels)
+        {
+            bool displayOutline = false;
+            if (dinoCosts[i] <= oilAmount)
+            {
+                displayOutline = true;
+            }
+            panel.GetComponent<Outline>().enabled = displayOutline;
+            i++;
+        }
     }
 
     private void UpdateCostPanels()
