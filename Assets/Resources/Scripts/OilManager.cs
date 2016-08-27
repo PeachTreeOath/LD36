@@ -16,12 +16,15 @@ public class OilManager : MonoBehaviour
     private List<Transform> panels;
 
     private GameObject compyPrefab;
+    private Player playerDino;
 
     // Use this for initialization
     void Start()
     {
 
-        compyPrefab = Resources.Load<GameObject>("Prefabs/FriendlyAgentInst");
+        compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
+        playerDino = GameObject.Find("PlayerDino").GetComponent<Player>();
+
 
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
@@ -71,10 +74,10 @@ public class OilManager : MonoBehaviour
     {
         //TODO wtf is wrong with mouse position
         //Vector3 spawnPos = Input.mousePosition;
-        Vector3 spawnPos = new Vector3(0f, 0f, 0f);
+        Vector3 spawnPos = playerDino.transform.position;
 
-        ((GameObject)Instantiate(compyPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
-
+        FriendlyAgent newDino = ((GameObject)Instantiate(compyPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
+        newDino.followingFriendly = playerDino.gameObject;
     }
 
     public void UpdateDisplays()
