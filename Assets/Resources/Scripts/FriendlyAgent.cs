@@ -48,8 +48,8 @@ public class FriendlyAgent : MonoBehaviour {
         if (stats == null) {
             Debug.LogError("Friendly agent has no stats assigned. name=" + gameObject.name);
         } else {
-        if(stats.wanderRadiusAvg == 0) Debug.LogError("Friendly agent field stat.wanderRadiusAvg not set. name=" + gameObject.name);
-        if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
+        //if(stats.wanderRadiusAvg == 0) Debug.LogError("Friendly agent field stat.wanderRadiusAvg not set. name=" + gameObject.name);
+        //if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
         if(stats.maxMoveSpeedPerSec == 0) Debug.LogError("Friendly agent field stat.maxMoveSpeedPerSec not set. name=" + gameObject.name);
         }
         if(followingFriendly == null) Debug.LogError("Friendly agent has nothing to follow. name=" + gameObject.name);
@@ -102,7 +102,7 @@ public class FriendlyAgent : MonoBehaviour {
         Vector2 randPt = Util.nextApproxGaussUnitRandom();
         Behavior nextmove = curBehavior.getBehavior(randPt);
         Vector3 next =  Behavior.calcNext(nextmove, transform.position, curHeading, getNearestGroupPos(), moveScale);
-        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
+//        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
         return next;
     }
 }

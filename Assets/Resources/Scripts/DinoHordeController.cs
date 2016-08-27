@@ -35,8 +35,10 @@ public class DinoHordeController : MonoBehaviour {
         FriendlyAgent[] objs = GameObject.FindObjectsOfType<FriendlyAgent>();
         for (int i = 0; i < objs.Length; i++) {
             string gn = objs[i].groupName;
-            List<FriendlyAgent> ags = agents[gn];
-            if (ags == null) {
+            List<FriendlyAgent> ags;
+            if (agents.ContainsKey(gn)) {
+                ags = agents[gn];
+            }else {
                 ags = new List<FriendlyAgent>();
             }
             ags.Add(objs[i]);
@@ -62,7 +64,9 @@ public class DinoHordeController : MonoBehaviour {
 
     //Gets last calculated position of the named group
     public Vector2 getGroupAvgPos(string groupName) {
-        return agentsLastPos[groupName];
+        Vector2 p = agentsLastPos[groupName];
+        //Debug.Log("Group " + groupName + " average pos: " + p);
+        return p;
     }
 
     //All groups have the player included and weighted
