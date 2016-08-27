@@ -20,6 +20,21 @@ public class OilManager : MonoBehaviour
     private GameObject triceratopsPrefab;
     private Player playerDino;
     private Dictionary<int,GameObject> dinoIndexToObjectMap;
+
+    public static OilManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Use this for initialization
     void Start()
     {

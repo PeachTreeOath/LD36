@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        oilManager = GameObject.Find("OilManager").GetComponent<OilManager>();
+        
     }
 
     // Update is called once per frame
@@ -33,6 +33,6 @@ public class Player : MonoBehaviour
 
     public void AddOil(int count)
     {
-        oilManager.ChangeOilAmount(count);
+        OilManager.instance.ChangeOilAmount(count);
     }
 }
