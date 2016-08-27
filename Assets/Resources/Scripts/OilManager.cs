@@ -15,9 +15,42 @@ public class OilManager : MonoBehaviour
     private Transform panel3;
     private List<Transform> panels;
 
+    private GameObject compyPrefab;
+    private GameObject sabreToothTigerPrefab;
+    private GameObject triceratopsPrefab;
+    private Player playerDino;
+    private Dictionary<int,GameObject> dinoIndexToObjectMap;
+
+    public static OilManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
+
+        compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
+        sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
+        triceratopsPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
+        playerDino = GameObject.Find("PlayerDino").GetComponent<Player>();
+
+        dinoIndexToObjectMap = new Dictionary<int, GameObject>();
+        dinoIndexToObjectMap.Add(0, compyPrefab);
+        dinoIndexToObjectMap.Add(1, sabreToothTigerPrefab);
+        dinoIndexToObjectMap.Add(2, triceratopsPrefab);
+
+
+
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
         oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
@@ -50,16 +83,26 @@ public class OilManager : MonoBehaviour
     {
         if (dinoCosts[type] <= oilAmount)
         {
-            // TODO: spawn dino
             Debug.Log("DINO " + type + " SPAWNED");
             ChangeOilAmount(-dinoCosts[type]);
+            SpawnMinion(dinoIndexToObjectMap[type]);
         }
     }
-
+    
     public void ChangeOilAmount(int amountChange)
     {
         oilAmount += amountChange;
         UpdateDisplays();
+    }
+
+    private void SpawnMinion(GameObject dinoPrefab)
+    {
+        //TODO wtf is wrong with mouse position
+        //Vector3 spawnPos = Input.mousePosition;
+        Vector3 spawnPos = playerDino.transform.position;
+
+        FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
+        newDino.followingFriendly = playerDino.gameObject;
     }
 
     public void UpdateDisplays()

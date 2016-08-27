@@ -6,7 +6,7 @@ public class FriendlyAgent : MonoBehaviour {
     public AgentStats stats; //Unity Fail inheritance
 
     [SerializeField]
-    private GameObject followingFriendly; //object we are roughly tracking 
+    public GameObject followingFriendly; //object we are roughly tracking 
 
     [SerializeField]
     private float dirChangeDelay; //how long agent spends moving toward a point before changing direction

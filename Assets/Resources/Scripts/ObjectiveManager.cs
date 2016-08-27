@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Player : MonoBehaviour
+public class ObjectiveManager : MonoBehaviour
 {
+    public static ObjectiveManager instance;
 
-    private OilManager oilManager;
-    public static Player instance;
+    public List<Building> objectives;
 
     void Awake()
     {
@@ -17,22 +18,19 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        objectives = new List<Building>();
     }
 
     // Use this for initialization
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    }
-
-    public void AddOil(int count)
-    {
-        OilManager.instance.ChangeOilAmount(count);
     }
 }

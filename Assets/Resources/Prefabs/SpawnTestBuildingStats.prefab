@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012490014916}
+  m_RootGameObject: {fileID: 1000012920729486}
   m_IsPrefabParent: 1
---- !u!1 &1000012490014916
+--- !u!1 &1000012920729486
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000010289765534}
-  - 114: {fileID: 114000012809442622}
+  - 4: {fileID: 4000010792309936}
+  - 114: {fileID: 114000011901923526}
   m_Layer: 0
-  m_Name: GasStationStats
+  m_Name: SpawnTestBuildingStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010289765534
+--- !u!4 &4000010792309936
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012490014916}
+  m_GameObject: {fileID: 1000012920729486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,20 +40,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012809442622
+--- !u!114 &114000011901923526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012490014916}
+  m_GameObject: {fileID: 1000012920729486}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 322b5e0f1c9245c4a9bb51b871b2da16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   curHealth: 0
-  oilValue: 50
-  startingSpawnNum: 0
-  spawnRadius: 0
-  spawnRate: 0
+  oilValue: 75
+  startingSpawnNum: 3
+  spawnRadius: 2
+  timeToSpawn: 0.3
+  BEGIN_SPAWN_RADIUS: 15
