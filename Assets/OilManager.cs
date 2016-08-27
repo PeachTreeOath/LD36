@@ -1,28 +1,56 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
-public class OilManager : MonoBehaviour {
+public class OilManager : MonoBehaviour
+{
+    public int[] dinoCosts;
 
     private int oilAmount;
-    private Transform oilPanel;
+    private Text oilAmountText;
     private Transform panel1;
     private Transform panel2;
     private Transform panel3;
+    private List<Transform> panels;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        dinoCosts = new int[3];
+
         GameObject canvas = GameObject.Find("Canvas");
-        oilPanel = canvas.transform.Find("OilPanel");
-        panel1 = canvas.transform.Find("Panel1");
-        panel2 = canvas.transform.Find("Panel2");
-        panel3 = canvas.transform.Find("Panel3");
+        oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
+        panels.Add(canvas.transform.Find("Panel1"));
+        panels.Add(canvas.transform.Find("Panel2"));
+        panels.Add(canvas.transform.Find("Panel3"));
+
+        UpdateCostPanels();
+        UpdateDisplays();
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            BuyDino(0);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            BuyDino(1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            BuyDino(2);
+        }
+    }
+
+    private void BuyDino(int type)
+    {
+        
+    }
 
     public void ChangeOilAmount(int amountChange)
     {
@@ -32,6 +60,16 @@ public class OilManager : MonoBehaviour {
 
     public void UpdateDisplays()
     {
+        oilAmountText.text = oilAmount + "";
+    }
 
+    private void UpdateCostPanels()
+    {
+        int i = 0;
+        foreach (Transform panel in panels)
+        {
+            panel.Find("Cost").GetComponent<Text>().text = dinoCosts[i] + "";
+            i++;
+        }
     }
 }
