@@ -101,4 +101,13 @@ public class FriendlyAgent : MonoBehaviour {
         Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
         return next;
     }
+
+    public void TakeDamage(int dmg)
+    {
+        stats.currentHp -= dmg;
+        if (stats.currentHp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
