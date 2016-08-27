@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class DinoController : MonoBehaviour {
+    public float minMouseDist;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
