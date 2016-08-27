@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DinoController : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +11,8 @@ public class DinoController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float dist = Vector2.Distance(transform.position, mousePos);
+        
 	}
 }
