@@ -113,9 +113,12 @@ public class FriendlyAgent : MonoBehaviour {
         updateRollingAvg(new Vector3(nextLocal2.x, nextLocal2.y, speed));
         Vector2 nextWorld = getNextWorldFromAvg();
 
-        //Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2
-            //+ ", nearestGroup" + nearestGroup + ", [behavior=" + behaviorParams.ToString() + "]"
-            //);// +"\n" + Behavior.lastDbgInfo.ToString());
+        Debug.Log("nextMove: randUnitPt=" + randPt 
+            + ", nextTargetRaw=" + nextLocal2
+            + ", nextTargetWCavg=" + nextWorld
+            + ", nearestGroup" + nearestGroup 
+            + ", [behavior=" + behaviorParams.ToString() + "]"
+            );// +"\n" + Behavior.lastDbgInfo.ToString());
         return nextWorld;
     }
 

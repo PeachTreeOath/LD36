@@ -28,7 +28,12 @@ public class BehaviorMap : MonoBehaviour {
         Vector2 sp = scalePoint(unitPoint);
         Vector2 mp = mapPoint(sp);
         //Debug.Log("UnitPoint " + point + " = Image point " + mp);
-        return fillBehavior(sp, getSampledColor(mp));
+        Color sampCol = getSampledColor(mp);
+        Debug.Log("UnitPoint=" + unitPoint
+            + ", Scalepoint=" + sp 
+            + ", ImageMapPoint=" + mp 
+            + ", color=" + sampCol);
+        return fillBehavior(sp, sampCol);
     }
 
     private Vector2 scalePoint(Vector2 unitPoint) {
@@ -39,7 +44,7 @@ public class BehaviorMap : MonoBehaviour {
     private Vector2 mapPoint(Vector2 scaledUnitPoint) {
         //Texture coords is (0,0) for bottom left of image, col is +x, row is +y
         //Scale first to match texture coord scale, then translate to match our designated center of the image origin
-        return new Vector2(Mathf.Clamp(scaledUnitPoint.x, 0, width - 1), Mathf.Clamp(scaledUnitPoint.y, 0, height - 1));
+        return new Vector2(Mathf.Clamp(scaledUnitPoint.x + hWidth, 0, width - 1), Mathf.Clamp(scaledUnitPoint.y + hHeight, 0, height - 1));
     }
 
     private Behavior fillBehavior(Vector2 pt, Color c) {
