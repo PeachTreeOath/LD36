@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 114000011901923526, guid: fb97a9ff8c53a404ba206b06734b05d1, type: 2}
+  ySortingOffset: 0
   type: 0
 --- !u!212 &212000010711216512
 SpriteRenderer:
