@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OutlinePulser : MonoBehaviour {
 
-	public float pulseSpeed = 1;
+	public float pulseSpeed = .7f;
 	public Color [] cols;
 
 	SpriteRenderer rend;
@@ -21,20 +21,18 @@ public class OutlinePulser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		hsvs = new hsv[2];
+		hsvs = new hsv[cols.Length];
 
 		float h;
 		float s;
 		float v;
-		Util.ColorToHSV(cols[0], out h, out s, out v);
-		hsvs[0].h = h;
-		hsvs[0].s = s;
-		hsvs[0].v = v;
-
-		Util.ColorToHSV(cols[1], out h, out s, out v);
-		hsvs[1].h = h;
-		hsvs[1].s = s;
-		hsvs[1].v = v;
+		for(int i = 0; i < cols.Length; i++)
+		{
+			Util.ColorToHSV(cols[i], out h, out s, out v);
+			hsvs[i].h = h;
+			hsvs[i].s = s;
+			hsvs[i].v = v;
+		}
 
 		idx = 0;
 		rend = gameObject.GetComponent<SpriteRenderer>();
@@ -50,12 +48,12 @@ public class OutlinePulser : MonoBehaviour {
 		{
 			timer = Time.time;
 			idx = idx + 1;
-			idx = idx % 2;
+			idx = idx % cols.Length;
 			Debug.Log(Time.time + " id " + idx);
 		}
 
 		int idx2 = idx + 1;
-		idx2 = idx2 % 2;
+		idx2 = idx2 % cols.Length;
 
 		float h = Mathf.Lerp(hsvs[idx].h, hsvs[idx2].h, Mathf.InverseLerp(timer, timer + pulseSpeed, Time.time));
 		float s = Mathf.Lerp(hsvs[idx].s, hsvs[idx2].s, Mathf.InverseLerp(timer, timer + pulseSpeed, Time.time));
