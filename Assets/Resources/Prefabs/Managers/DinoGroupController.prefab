@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec1d65cffd380e4d92cb5608d1699c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   allHordeGroupNames:
   - defaultFriendly
-  playerGroupWeight: 3
+  playerGroupWeight: 12

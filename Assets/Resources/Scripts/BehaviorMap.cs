@@ -25,18 +25,22 @@ public class BehaviorMap : MonoBehaviour {
     }
 
     //Point should be within unit circle. 0,0 will map to the center of the image, -1, -1 is bottom left; 1,1 is top right
-    public Behavior getBehavior(Vector2 point) {
-        Vector2 mp = mapPoint(point);
+    public Behavior getBehavior(Vector2 unitPoint) {
+        Vector2 sp = scalePoint(unitPoint);
+        Vector2 mp = mapPoint(sp);
         //Debug.Log("UnitPoint " + point + " = Image point " + mp);
-        return fillBehavior(mp, getRawColor(mp));
+        return fillBehavior(sp, getRawColor(mp));
     }
 
-    private Vector2 mapPoint(Vector2 unitPoint) {
-        //Texture coords is (0,0) for bottom left of image, col is +x, row is +y
-        //Scale first to match texture coord scale, then translate to match our designated center of the image origin
+    private Vector2 scalePoint(Vector2 unitPoint) {
         float x = unitPoint.x * hWidth + hWidth;
         float y = unitPoint.y * hHeight + hHeight;
-        return new Vector2(Mathf.Clamp(x, 0, width-1), Mathf.Clamp(y, 0, height-1));
+        return new Vector2(x, y);
+    }
+    private Vector2 mapPoint(Vector2 scaledUnitPoint) {
+        //Texture coords is (0,0) for bottom left of image, col is +x, row is +y
+        //Scale first to match texture coord scale, then translate to match our designated center of the image origin
+        return new Vector2(Mathf.Clamp(scaledUnitPoint.x, 0, width-1), Mathf.Clamp(scaledUnitPoint.y, 0, height-1));
     }
 
     private Behavior fillBehavior(Vector2 pt, Color c) {

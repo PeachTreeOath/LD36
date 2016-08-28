@@ -19,6 +19,7 @@ public class FriendlyAgent : MonoBehaviour {
 
     private Vector2 lastTargetPos; //where agent last started
     private Vector2 curTargetPos; //where agent was last headed
+    private float speed;
     private float lastTimeDirChanged; //Time.time when last target was set
     private bool firstUpdate = true;
 
@@ -55,6 +56,7 @@ public class FriendlyAgent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (firstUpdate) {
+            DinoHordeController.instance.registerHordeMember(this);
             curTargetPos = getNextPos();
             firstUpdate = false;
         } else {
@@ -82,8 +84,7 @@ public class FriendlyAgent : MonoBehaviour {
 
             //z value of nextBehavior is movement speed.  A value of 1 should be max speed for this agent. Take the current magnitude and scale it according to z.
             result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
-            float newMag = result.magnitude * nextBehavior.z;
-            result *= newMag;
+            speed =  result.magnitude * nextBehavior.z;
             
             //Debug.Log("New target " + result);
             lastTimeDirChanged = now;
@@ -93,15 +94,18 @@ public class FriendlyAgent : MonoBehaviour {
             result = Vector2.Lerp(lastTargetPos, curTargetPos, param); //this will probably undershoot by a lot, fix later
         }
         result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
+        result *= speed;
         return result;
     }
 
     private Vector3 nextMoveStrategyCalc() {
         Vector2 curHeading = curTargetPos - (Vector2)transform.position;
+        curHeading = curHeading.normalized;
         Vector2 randPt = Util.nextApproxGaussUnitRandom();
         Behavior nextmove = curBehavior.getBehavior(randPt);
         Vector3 next =  Behavior.calcNext(nextmove, transform.position, curHeading, getNearestGroupPos(), moveScale);
-//        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
+        //Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
+        //Debug.Log(Behavior.lastDbgInfo.ToString());
         return next;
     }
 
