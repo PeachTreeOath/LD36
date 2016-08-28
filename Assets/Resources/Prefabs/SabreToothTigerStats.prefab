@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013126089796}
+  m_RootGameObject: {fileID: 1000013647283672}
   m_IsPrefabParent: 1
---- !u!1 &1000013126089796
+--- !u!1 &1000013647283672
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011303160506}
-  - 114: {fileID: 114000012538397044}
+  - 4: {fileID: 4000010144402644}
+  - 114: {fileID: 114000013708784980}
   m_Layer: 0
-  m_Name: AttackBuildingStats
+  m_Name: SabreToothTigerStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011303160506
+--- !u!4 &4000010144402644
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013126089796}
+  m_GameObject: {fileID: 1000013647283672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,23 +40,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012538397044
+--- !u!114 &114000013708784980
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013126089796}
+  m_GameObject: {fileID: 1000013647283672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322b5e0f1c9245c4a9bb51b871b2da16, type: 3}
+  m_Script: {fileID: 11500000, guid: 47647752e2b95264ea13ac4f97df1a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  curHealth: -2
-  oilValue: 50
-  startingSpawnNum: 0
-  spawnRadius: 0
-  timeToSpawn: 0
-  attackDamage: 1
-  secondsPerAttack: 0.5
-  BEGIN_SPAWN_RADIUS: 5
+  type: 0
+  dmgPerHit: 0
+  hitRate: 0
+  maxMoveSpeedPerSec: 3
+  maxHp: 15
+  currentHp: 15

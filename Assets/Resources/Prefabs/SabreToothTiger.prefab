@@ -21,6 +21,8 @@ GameObject:
   - 4: {fileID: 4000013941065184}
   - 212: {fileID: 212000014167144368}
   - 114: {fileID: 114000014018991436}
+  - 61: {fileID: 61000013329927264}
+  - 50: {fileID: 50000013896943210}
   m_Layer: 0
   m_Name: SabreToothTiger
   m_TagString: Untagged
@@ -41,6 +43,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &50000013896943210
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012948377954}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61000013329927264
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012948377954}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!114 &114000014018991436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,9 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfbd780ecdf76a4a89cbd23d4e7e081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 114000012146902850, guid: 2df9808d4e2505b49ad9cd5b9495eb5a, type: 2}
-  followingFriendly: {fileID: 1000010465962246, guid: 2c09ab7e26c037d4aaa97af9465ef716,
-    type: 2}
+  groupName: defaultFriendly
+  stats: {fileID: 114000013708784980, guid: 52d8c43ac26740a4b82fd663c692194e, type: 2}
   dirChangeDelay: 0.4
   moveScale: 0.25
   normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
