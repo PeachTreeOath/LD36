@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
 
     public BuildingStats stats;
+    public float ySortingOffset; //How far from zero should the center of this object should the line be adjusted.
 
     private GameObject barrelObj;
 	private GameObject barrelObjBG;
@@ -26,6 +27,9 @@ public class Building : MonoBehaviour
         rubbleSpr = Resources.Load<Sprite>("Images/Gas_Station_Destroy");
 
         DoInitialSpawn();
+
+        
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)((transform.position.y + ySortingOffset) * 100);
     }
 
     private void DoInitialSpawn()
@@ -75,6 +79,11 @@ public class Building : MonoBehaviour
                 SpawnBarrel();
             }
             isAlive = false;
+            Objective objective = GetComponent<Objective>();
+            if(objective != null)
+            {
+                objective.NotifyOfDeath();
+            }
         }
     }
 
@@ -97,6 +106,22 @@ public class Building : MonoBehaviour
 		outline.cols[1] = Color.yellow;
 		outline.cols[2] = Color.red;
 
+        barrel.transform.localScale *= 1 + stats.oilValue / 20;
+
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
+
+    //void OnColliderEnter2D(Collider2D col)
+    //{
+    //    //Debug.Log("Something should be colliding with this building.");
+    //    FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
+    //    //Debug.Log("Minion = " + minion);
+    //    if (minion != null && Time.time - timeOfLastAttack >= stats.secondsPerAttack)
+    //    {
+
+    //        //Debug.Log("Minion taking damage from building.");
+    //        minion.TakeDamage(stats.attackDamage);
+    //        timeOfLastAttack = Time.time;
+    //    }
+    //}
 }

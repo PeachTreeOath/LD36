@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class FriendlyAgent : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class FriendlyAgent : MonoBehaviour {
     private GameObject aggroFocus; //if the agent is aggro'd this is its target.
 
     [SerializeField]
-    private float moveScale = 0.25f;
+    private float moveScale = 1;
 
     private Vector2 lastTargetPos; //where agent last started
     private Vector2 curTargetPos; //where agent was last headed
@@ -27,6 +28,13 @@ public class FriendlyAgent : MonoBehaviour {
     private BehaviorMap normalBehaviorPrefab; //This can probably be one copy per type instead of per instance
 
     private BehaviorMap curBehavior;
+
+    //These keep track of last N steps and weight them so we get a smooth transition between behaviors
+    //For a tick every 0.1 seconds, this will average the behavior choices for the last 1 second
+    private Queue<Vector3> prevBehaviorStepsLC = new Queue<Vector3>(); //local coords with speed
+    //private float[] prevBehaviorWeights = { 0.16f, 0.13f, 0.12f, 0.10f, 0.10f, 0.09f, 0.09f, 0.08f, 0.07f, 0.06f };
+    //Reverse this son of a bitch
+    private float[] prevBehaviorWeights = { 0.06f, 0.07f, 0.08f, 0.09f, 0.09f, 0.10f, 0.10f, 0.12f, 0.13f, 0.16f };
 
 
     // Use this for initialization
@@ -69,7 +77,7 @@ public class FriendlyAgent : MonoBehaviour {
         return DinoHordeController.instance.getGroupAvgPos(groupName);
     }
 
-    //Get the next move, finding a new target to head towards or walking towards the last target, depending on time since last action
+    //Get the next move based on a lot of shit that has to go right. Use this as the entry point for figuring out where to put the game object.
     private Vector2 getNextPos() {
         Vector2 result;
         float now = Time.time;
@@ -77,38 +85,100 @@ public class FriendlyAgent : MonoBehaviour {
         if (param > dirChangeDelay) { //move to next target
             //Debug.Log("Friendly pos: " + followingFriendly.transform.position);
             //Debug.Log("New direction calc");
-            Vector3 nextBehavior = nextMoveStrategyCalc();
-            param = (dirChangeDelay - param) / dirChangeDelay; //smooth transition by using interp w.r.t. to delta time
+            Vector3 nextWorldPos = nextMoveStrategyCalc();
             lastTargetPos = curTargetPos;
-            curTargetPos = nextBehavior;
-            result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
+            curTargetPos = (Vector2)nextWorldPos;
+            lastTimeDirChanged = now;
 
+            //TODO speed
             //z value of nextBehavior is movement speed.  A value of 1 should be max speed for this agent. Take the current magnitude and scale it according to z.
-            result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
-            speed = result.magnitude * nextBehavior.z;
+            //speed = result.magnitude * nextBehavior.z;
 
             //Debug.Log("New target " + result);
-            lastTimeDirChanged = now;
-        } else {
-            //duration of travel not reached, continue towards target
-            param /= dirChangeDelay;
-            //Debug.Log("Coastin' param=" + param);
-            result = Vector2.Lerp(lastTargetPos, curTargetPos, param); //this will probably undershoot by a lot, fix later
-        }
-        result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
-        result *= speed;
+        } 
+        //result *= speed;
+        //result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
+        param = (dirChangeDelay - param) / dirChangeDelay; //smooth transition by using interp w.r.t. to delta time
+        result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
         return result;
     }
 
     private Vector3 nextMoveStrategyCalc() {
-        Vector2 curHeading = curTargetPos - (Vector2)transform.position;
-        curHeading = curHeading.normalized;
+        Vector2 nearestGroup = getNearestGroupPos();
         Vector2 randPt = Util.nextApproxGaussUnitRandom();
-        Behavior nextmove = curBehavior.getBehavior(randPt);
-        Vector3 next = Behavior.calcNext(nextmove, transform.position, curHeading, getNearestGroupPos(), moveScale);
-        //Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + next + ", [behavior=" + nextmove.ToString() + "]");
-        //Debug.Log(Behavior.lastDbgInfo.ToString());
-        return next;
+        Behavior behaviorParams = curBehavior.getBehavior(randPt);
+        Vector3 nextLocal = Behavior.calcNext(behaviorParams, transform.position, nearestGroup);
+        float speed = nextLocal.z;
+        Vector2 nextLocal2 = (Vector2)nextLocal;
+        updateRollingAvg(new Vector3(nextLocal2.x, nextLocal2.y, speed));
+        Vector2 nextWorld = getNextWorldFromAvg();
+
+        //Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2
+            //+ ", nearestGroup" + nearestGroup + ", [behavior=" + behaviorParams.ToString() + "]"
+            //);// +"\n" + Behavior.lastDbgInfo.ToString());
+        return nextWorld;
+    }
+
+    private void updateRollingAvg(Vector3 newStepLC) {
+        while (prevBehaviorStepsLC.Count >= prevBehaviorWeights.Length) {
+            prevBehaviorStepsLC.Dequeue();
+        }
+        prevBehaviorStepsLC.Enqueue(newStepLC);
+    }
+
+    private Vector2 getNextWorldFromAvg() {
+        IEnumerator<Vector3> iter = prevBehaviorStepsLC.GetEnumerator();
+        Vector3 cum = Vector2.zero;
+        int i = prevBehaviorWeights.Length - 1;
+        float totalWeight = 0;
+        string wcc = "world coord factors: ";
+        string www = "world coord weighted factors: ";
+        //this iterates from the back to the front?!
+        while (iter.MoveNext()) {
+            Vector3 v = iter.Current;
+            wcc += v.ToString() + ", ";
+            float weight = prevBehaviorWeights[i];
+            cum += v * weight;
+            www += cum.ToString() + ", ";
+            totalWeight += weight;
+            i--;
+        }
+        Vector3 weightedLocal = cum;
+        if (i >= 0) {
+            weightedLocal /= totalWeight; //total weight should equal 1 unless there are not enough prev points
+        }
+        //adjust speed by scaling local magnitude. z of 1 = use agent max speed
+        float speedRatio = stats.maxMoveSpeedPerSec * weightedLocal.z;
+        ////Debug.Log("maxMoveSpeed=" + stats.maxMoveSpeedPerSec + " calc'd speed avg=" + weightedLocal.z);
+        Mathf.Clamp(speedRatio, 0, 1);
+        weightedLocal.z = 0;
+        weightedLocal = weightedLocal.normalized * speedRatio;
+        //weightedLocal = weightedLocal.normalized;
+        ////Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + wcc);
+        ////Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + www);
+
+        Vector3 world = localToWorld(weightedLocal);
+        //world.z = weightedLocal.z;
+        world.z = 0;
+        return world;
+    }
+
+
+    //This simulates a continous 'local' coord space for the agent, allowing it to face forward as it moves
+    //Do not confuse this with the Unity representation of local space.
+    private Vector2 localToWorld(Vector2 localPt) {
+        Vector2 curPos = (Vector2)transform.position;
+        Vector2 curHeading = curTargetPos - curPos;
+        curHeading = curHeading.normalized;
+        localPt *= moveScale;
+
+        if (curHeading.magnitude == 0) {
+            curHeading = Vector2.up;
+        }
+        localPt = Quaternion.LookRotation(curHeading) * localPt;
+        localPt = curPos + (Vector2)localPt;
+
+        return localPt;
     }
 
     public void TakeDamage(int dmg) {

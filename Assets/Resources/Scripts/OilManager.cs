@@ -9,13 +9,16 @@ public class OilManager : MonoBehaviour
 	public GameObject oilJuiceFab;
     public int[] dinoCosts;
 
-    private int oilAmount;
+    private int oilAmount = 1000;
     private Text oilAmountText;
     private List<Transform> panels;
 
     private GameObject compyPrefab;
+    private GameObject dilophoPrefab;    
     private GameObject sabreToothTigerPrefab;
     private GameObject triceratopsPrefab;
+    private GameObject trexPrefab;
+    private GameObject spinoPrefab;
     private Player playerDino;
     private Dictionary<int, GameObject> dinoIndexToObjectMap;
 
@@ -37,14 +40,20 @@ public class OilManager : MonoBehaviour
     void Start()
     {
         compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
+        dilophoPrefab = Resources.Load<GameObject>("Prefabs/Dilophosaurus");
         sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
         triceratopsPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
+        trexPrefab = Resources.Load<GameObject>("Prefabs/T-Rex");
+        spinoPrefab = Resources.Load<GameObject>("Prefabs/Spinosaurus");
         playerDino = GameObject.Find("PlayerDino").GetComponent<Player>();
 
         dinoIndexToObjectMap = new Dictionary<int, GameObject>();
         dinoIndexToObjectMap.Add(0, compyPrefab);
-        dinoIndexToObjectMap.Add(1, sabreToothTigerPrefab);
-        dinoIndexToObjectMap.Add(2, triceratopsPrefab);
+        dinoIndexToObjectMap.Add(1, dilophoPrefab);
+        dinoIndexToObjectMap.Add(2, sabreToothTigerPrefab);
+        dinoIndexToObjectMap.Add(3, triceratopsPrefab);
+        dinoIndexToObjectMap.Add(4, trexPrefab);
+        dinoIndexToObjectMap.Add(5, spinoPrefab);
 
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
@@ -75,6 +84,18 @@ public class OilManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             BuyDino(2);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            BuyDino(3);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            BuyDino(4);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            BuyDino(5);
         }
     }
 

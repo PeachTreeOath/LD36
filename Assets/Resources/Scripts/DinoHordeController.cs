@@ -60,7 +60,7 @@ public class DinoHordeController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Time.frameCount % 3 == 0) {
+        if (Time.frameCount % 5 == 0) {
             recalcAvgs();
         }
     }
@@ -103,7 +103,7 @@ public class DinoHordeController : MonoBehaviour {
         float pWeight = (int)((ags.Count + 1) * (playerGroupWeight * .05f));
         x += player.transform.position.x * pWeight;
         y += player.transform.position.y * pWeight;
-        return new Vector2(x / (ags.Count + pWeight), y / (ags.Count + pWeight));
+        return new Vector2(x / (ags.Count + 1 + pWeight), y / (ags.Count + 1 + pWeight));
     }
 
 
