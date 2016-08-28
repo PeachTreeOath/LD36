@@ -2035,6 +2035,12 @@ Prefab:
       propertyPath: m_Name
       value: OfficeBuilding (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
   m_IsPrefabParent: 0
@@ -5606,6 +5612,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
   m_IsPrefabParent: 0
@@ -7774,6 +7786,12 @@ Prefab:
       propertyPath: m_Name
       value: OfficeBuilding (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
   m_IsPrefabParent: 0
@@ -9105,6 +9123,12 @@ Prefab:
       propertyPath: m_Name
       value: OfficeBuilding (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
   m_IsPrefabParent: 0
@@ -9477,6 +9501,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
   m_IsPrefabParent: 0
@@ -11902,6 +11932,12 @@ Prefab:
       propertyPath: m_Name
       value: Police station (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
   m_IsPrefabParent: 0
