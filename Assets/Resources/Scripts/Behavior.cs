@@ -69,9 +69,9 @@ public class Behavior {
         Vector2 nextDir = ((Vector2)nextPoint).normalized;
         db.nextDir = nextDir;
 
-        Debug.Log("towards group: " + towardsGroup + ", nextDir: " + nextDir);
+        ////Debug.Log("towards group: " + towardsGroup + ", nextDir: " + nextDir);
         float projectionForward = Vector2.Dot(towardsGroup, nextDir);
-        Debug.Log("Proj result = " + projectionForward);
+        ////Debug.Log("Proj result = " + projectionForward);
         db.groupWeight = projectionForward;
 
         //Debug.Log("grpFactor " + nextStepBehavior.groupingFactor);
