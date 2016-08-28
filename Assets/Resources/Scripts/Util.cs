@@ -5,7 +5,8 @@ public class Util {
     private const float TWO_PI = 2.0f * Mathf.PI;
     private const float MIN_FLOAT = float.MinValue;
     private const float MAX_FLOAT = float.MaxValue;
-    private const float unitStd = 0.33f; //just a guess
+    //private const float unitStd = 0.33f; //just a guess
+    private const float unitStd = 0.53f; //just a guess
 
     public static float nextGausRandom() {
         float a = 2 * Random.value - 1;

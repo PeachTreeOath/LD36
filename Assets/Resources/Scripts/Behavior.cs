@@ -20,7 +20,6 @@ public class Behavior {
         public Vector2 nextDir;
         public Vector2 nextStepPreScale;
         public Vector2 nextStepAfterScaleLocal;
-        public Vector2 nextStepAfterScaleWorld;
         public float moveSpeed;
         public float moveDist;
         public float groupWeight;
@@ -34,7 +33,6 @@ public class Behavior {
         "nextDir=" + nextDir +
         "nextStepPreScale=" + nextStepPreScale +
         "nextStepAfterScaleLocal=" + nextStepAfterScaleLocal +
-        "nextStepAfterScaleWorld=" + nextStepAfterScaleWorld +
         "moveSpeed=" + moveSpeed +
         "moveDist=" + moveDist +
         "groupWeight=" + groupWeight +
@@ -50,14 +48,13 @@ public class Behavior {
     //Given a current position and a behavior for the next step, apply the behavior and determine where the target of the next step will be
     //curHeading is normalized direction of (last) travel
     //Move scale is general multiplier for position points, which default to image map size (when scale = 1)
-    //Returns (x,y) as target pos and z as speed to get there
-    public static Vector3 calcNext(Behavior nextStepBehavior, Vector2 curPos, Vector2 curHeading, Vector2 nearestGroupPos, float moveScale) {
+    //Returns (x,y) as target pos in local coords and z as speed to get there (speed is scaled to local already)
+    public static Vector3 calcNext(Behavior nextStepBehavior, Vector2 curPos, Vector2 nearestGroupPos) {
         dbgInfo db = new dbgInfo();
-        db.lastHeading = curHeading;
         db.curPos = curPos;
-         
+
         Vector3 nextPoint = new Vector3(nextStepBehavior.x, nextStepBehavior.y);
-        db.newTarget = nextPoint; 
+        db.newTarget = nextPoint;
 
         //behaviors are rolled up into a factor applied to the movement
         float factor = nextStepBehavior.travelDistFactor;
@@ -83,29 +80,16 @@ public class Behavior {
 
         factor *= nextStepBehavior.factorsWeight; //global decision scaling
         db.globalWeight = factor;
-        
+
         nextPoint *= factor;  //magnitude determines how willing the agent is to move to this point
-
-        nextPoint *= moveScale;
-
-        //point next step relative to the forward direction the agent is travelling (e.g. local coords)
-        //float rot = Vector2.Angle(nextPoint, curHeading);
-        //float rot = Vector2.Angle(nextPoint, curHeading);
-        //nextPoint = Quaternion.AngleAxis(rot, Vector3.forward) * nextPoint;
-        if (curHeading.magnitude == 0) {
-            curHeading = Vector2.up;
-        }
-        nextPoint = Quaternion.LookRotation(curHeading) * nextPoint;
         db.nextStepAfterScaleLocal = nextPoint;
-
-        nextPoint = curPos + (Vector2)nextPoint; //local to world 
-        db.nextStepAfterScaleWorld = nextPoint;
 
         //speed is only influenced by global scale 
         nextPoint.z = nextStepBehavior.moveSpeedFactor * nextStepBehavior.factorsWeight;
         db.moveSpeed = nextPoint.z;
-
         lastDbgInfo = db;
+
         return nextPoint;
     }
+
 }
