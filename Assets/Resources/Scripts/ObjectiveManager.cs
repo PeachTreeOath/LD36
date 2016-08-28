@@ -7,7 +7,8 @@ public class ObjectiveManager : MonoBehaviour
 {
     public static ObjectiveManager instance;
 
-    public List<Objective> objectives;
+    //public List<Objective> objectives;
+    public Objective[] objectives;
 
     private int currentObjective = -1;
     private GameObject arrow;
@@ -24,7 +25,8 @@ public class ObjectiveManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        objectives = new List<Objective>();
+        //objectives = new List<Objective>(5);
+        objectives = new Objective[5];
     }
 
     public void NotifyOfDeath(int objectiveNum)
@@ -45,7 +47,8 @@ public class ObjectiveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (objectives.Count > 0)
+        //if (objectives.Count > 0)
+        if (objectives.Length > 0)
         {
             if (currentObjective == -1)
             {
@@ -109,7 +112,8 @@ public class ObjectiveManager : MonoBehaviour
 
     public void RegisterObjective(Objective objective)
     {
-        objectives.Insert(objective.objectiveNum, objective.GetComponent<Objective>());
+        //objectives.Insert(objective.objectiveNum, objective.GetComponent<Objective>());
+        objectives[objective.objectiveNum] = objective.GetComponent<Objective>();
     }
 
     private float GetJumpHeight(float time)
