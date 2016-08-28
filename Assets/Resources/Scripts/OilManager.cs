@@ -111,6 +111,7 @@ public class OilManager : MonoBehaviour
     {
         oilAmountText.text = oilAmount + "";
 
+        /*
         int i = 0;
         foreach (Transform panel in panels)
         {
@@ -122,6 +123,7 @@ public class OilManager : MonoBehaviour
             panel.GetComponent<Outline>().enabled = displayOutline;
             i++;
         }
+        */
     }
 
     // Use this if cost
