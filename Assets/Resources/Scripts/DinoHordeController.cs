@@ -89,10 +89,15 @@ public class DinoHordeController : MonoBehaviour {
             return Vector2.zero;
         }
         float x = 0, y = 0;
+        List<int> deletedAgents = new List<int>();
         for (int i = 0; i < ags.Count; i++) {
             FriendlyAgent a = ags[i];
-            x += a.gameObject.transform.position.x;
-            y += a.gameObject.transform.position.y;
+            if (a == null) {
+                deletedAgents.Add(i);
+            } else {
+                x += a.gameObject.transform.position.x;
+                y += a.gameObject.transform.position.y;
+            }
         }
         //add in player weight
         float pWeight = ags.Count * (playerGroupWeight * .05f);
