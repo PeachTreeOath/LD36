@@ -102,7 +102,8 @@ public class OilManager : MonoBehaviour
         Vector3 spawnPos = playerDino.transform.position;
 
         FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
-        newDino.followingFriendly = playerDino.gameObject;
+        DinoHordeController.instance.registerHordeMember(newDino);
+        //newDino.followingFriendly = playerDino.gameObject;
     }
 
     public void UpdateDisplays()
