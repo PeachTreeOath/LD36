@@ -14,7 +14,7 @@ public class Fangs : MonoBehaviour {
 	void Update () {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > 0.1f)
+        if (elapsedTime > 0.15f)
         {
             Destroy(gameObject);
         }

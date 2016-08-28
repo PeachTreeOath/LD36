@@ -42,6 +42,7 @@ public class FriendlyAgent : MonoBehaviour {
     private float[] prevBehaviorWeights = { 0.06f, 0.07f, 0.08f, 0.09f, 0.09f, 0.10f, 0.10f, 0.12f, 0.13f, 0.16f };
 	SwarmMovementManager swarmManager;
     private GameObject bitePrefab;
+    private float lastAttackTime;
 
     // Use this for initialization
     void Start() {
@@ -215,7 +216,6 @@ public class FriendlyAgent : MonoBehaviour {
         }
     }
     
-    private float lastAttackTime;
     void OnCollisionStay2D(Collision2D col)
     {
         Building bldg = col.gameObject.GetComponent<Building>();
@@ -232,7 +232,7 @@ public class FriendlyAgent : MonoBehaviour {
     private void Bite()
     {
         Fangs bite = ((GameObject)Instantiate(bitePrefab,transform.position, Quaternion.identity)).GetComponent<Fangs>();
-        bite.ChangeSize(5);
+        bite.ChangeSize(1 + stats.type/2);
         //TODO deal dmg
     }
 }
