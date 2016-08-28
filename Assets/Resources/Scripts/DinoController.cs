@@ -5,9 +5,11 @@ public class DinoController : MonoBehaviour
 {
     public float minMouseDist;
     public float playerSpeed = 0.1f;
+    public float ySortingOffset;
     private bool isFacingRight = true;
     private SpriteRenderer sprite;
     private Rigidbody2D rigidBody;
+
    
 
     // Use this for initialization
@@ -42,6 +44,11 @@ public class DinoController : MonoBehaviour
             }
         }
 
+    }
+
+    void LateUpdate()
+    {
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)((transform.position.y + ySortingOffset) * 100);
     }
 
     void OnColliderEnter2D(Collider2D col)

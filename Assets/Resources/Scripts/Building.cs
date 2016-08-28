@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
 
     public BuildingStats stats;
+    public float ySortingOffset; //How far from zero should the center of this object should the line be adjusted.
 
     private GameObject barrelObj;
 	private GameObject barrelObjBG;
@@ -26,6 +27,9 @@ public class Building : MonoBehaviour
         rubbleSpr = Resources.Load<Sprite>("Images/Gas_Station_Destroy");
 
         DoInitialSpawn();
+
+        
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)((transform.position.y + ySortingOffset) * 100);
     }
 
     private void DoInitialSpawn()
@@ -75,6 +79,11 @@ public class Building : MonoBehaviour
                 SpawnBarrel();
             }
             isAlive = false;
+            Objective objective = GetComponent<Objective>();
+            if(objective != null)
+            {
+                objective.NotifyOfDeath();
+            }
         }
     }
 
@@ -94,6 +103,8 @@ public class Building : MonoBehaviour
 		OutlinePulser outline = barrelOutline.AddComponent<OutlinePulser>();
 		outline.color1 = Color.yellow;
 		outline.color2 = Color.red;
+
+        barrel.transform.localScale *= 1 + stats.oilValue / 20;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }

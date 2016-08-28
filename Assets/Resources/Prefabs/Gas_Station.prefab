@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010292745620}
   - 212: {fileID: 212000010046543842}
-  - 61: {fileID: 61000012594505450}
   - 114: {fileID: 114000012075068066}
   - 114: {fileID: 114000013613574542}
+  - 114: {fileID: 114000011243803938}
+  - 68: {fileID: 68000011907779590}
   m_Layer: 0
   m_Name: Gas_Station
   m_TagString: Untagged
@@ -37,14 +38,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012948615594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.29, y: 3.21, z: 10}
+  m_LocalPosition: {x: 6.29, y: 3.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &61000012594505450
-BoxCollider2D:
+--- !u!68 &68000011907779590
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -55,8 +56,24 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_Points:
+  - {x: -0.6666667, y: 0}
+  - {x: 0.1, y: 0.2}
+  - {x: 0.6, y: -0.2}
+  - {x: -0.2, y: -0.4}
+  - {x: -0.6666667, y: 0}
+--- !u!114 &114000011243803938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012948615594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e120097adfc81b419b63bd3a9fb7394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveNum: 0
 --- !u!114 &114000012075068066
 MonoBehaviour:
   m_ObjectHideFlags: 1
