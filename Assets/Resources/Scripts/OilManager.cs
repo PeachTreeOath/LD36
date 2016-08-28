@@ -48,7 +48,7 @@ public class OilManager : MonoBehaviour
 
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
-        oilAmountText = canvas.transform.Find("OilPanelOld").Find("Count").GetComponent<Text>();
+        oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
         panels.Add(canvas.transform.Find("Panel1"));
         panels.Add(canvas.transform.Find("Panel2"));
         panels.Add(canvas.transform.Find("Panel3"));
