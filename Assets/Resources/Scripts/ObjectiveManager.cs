@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -54,6 +55,10 @@ public class ObjectiveManager : MonoBehaviour
             {
                 GoToNextObjective();
             }
+            if (currentObjective == 5)
+            {
+                return;
+            }
 
             GameObject currObj = objectives[currentObjective].gameObject;
             // Place arrow if on screen
@@ -87,12 +92,18 @@ public class ObjectiveManager : MonoBehaviour
     private void GoToNextObjective()
     {
         currentObjective++;
+        if (currentObjective == 5)
+        {
+            GoToWinScreen();
+            return;
+        }
         while (objectives[currentObjective].complete)
         {
             currentObjective++;
             if (currentObjective == 5)
             {
                 GoToWinScreen();
+                return;
             }
         }
         arrow.transform.SetParent(objectives[currentObjective].transform);
@@ -126,6 +137,6 @@ public class ObjectiveManager : MonoBehaviour
 
     private void GoToWinScreen()
     {
-        Debug.Log("YOU'VE WON");
+        SceneManager.LoadScene("Victory");
     }
 }
