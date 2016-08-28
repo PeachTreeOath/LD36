@@ -24,8 +24,8 @@ public class BackgroundManager : MonoBehaviour
         GameObject parent = GameObject.Find("Background");
         Vector2 size = bgPrefab.GetComponent<SpriteRenderer>().bounds.size;
 
-        float startX = size.x * -.5f;
-        float startY = size.y * .5f;
+        float startX = (size.x * colNum * -.5f) + size.x/2;
+        float startY = (size.y * rowNum *.5f) - size.y/2;
         float currX = startX;
         float currY = startY;
 
@@ -35,10 +35,11 @@ public class BackgroundManager : MonoBehaviour
             {
                 GameObject bg = ((GameObject)Instantiate(bgPrefab, Vector2.zero, Quaternion.identity));
                 bg.transform.position = new Vector2(currX, currY);
-                currY += size.y;
+                bg.transform.SetParent(parent.transform);
+                currX += size.x;
             }
-            currX += size.x;
-            currY = startY;
+            currY -= size.y;
+            currX = startX;
         }
     }
 }
