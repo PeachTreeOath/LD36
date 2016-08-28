@@ -57,4 +57,6 @@ MonoBehaviour:
   startingSpawnNum: 0
   spawnRadius: 0
   timeToSpawn: 0
+  attackDamage: 1
+  secondsPerAttack: 0
   BEGIN_SPAWN_RADIUS: 5
