@@ -30,6 +30,8 @@ public class FriendlyAgent : MonoBehaviour {
 
     private BehaviorMap curBehavior;
 
+	Vector3 tarPos = Vector3.zero;
+
     //These keep track of last N steps and weight them so we get a smooth transition between behaviors
     //For a tick every 0.1 seconds, this will average the behavior choices for the last 1 second
     private Queue<Vector3> prevBehaviorStepsLC = new Queue<Vector3>(); //local coords with speed
@@ -70,8 +72,12 @@ public class FriendlyAgent : MonoBehaviour {
             //curTargetPos = DinoHordeController.instance.getGroupAvgPos(groupName);
             firstUpdate = false;
         } else {
-            transform.position = getNextPos();
+			tarPos = getNextPos();
         }
+
+		Vector3 moveDir = tarPos - transform.position;
+		moveDir.Normalize();
+		transform.position += moveDir * Time.deltaTime * speed;
     }
 
     private Vector2 getNearestGroupPos() {
