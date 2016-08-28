@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
 
     public BuildingStats stats;
+    public float ySortingOffset; //How far from zero should the center of this object should the line be adjusted.
 
     private GameObject barrelObj;
 	private GameObject barrelObjBG;
@@ -26,6 +27,9 @@ public class Building : MonoBehaviour
         rubbleSpr = Resources.Load<Sprite>("Images/Gas_Station_Destroy");
 
         DoInitialSpawn();
+
+        
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)((transform.position.y + ySortingOffset) * 100);
     }
 
     private void DoInitialSpawn()
