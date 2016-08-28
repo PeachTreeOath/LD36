@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012389507520}
+  m_RootGameObject: {fileID: 1000013679159492}
   m_IsPrefabParent: 1
---- !u!1 &1000012389507520
+--- !u!1 &1000013679159492
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000011957854412}
-  - 114: {fileID: 114000012371760438}
+  - 4: {fileID: 4000010440748786}
+  - 114: {fileID: 114000013825390580}
   m_Layer: 0
-  m_Name: OilManager
+  m_Name: BackgroundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000011957854412
+--- !u!4 &4000010440748786
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012389507520}
+  m_GameObject: {fileID: 1000013679159492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,19 +40,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012371760438
+--- !u!114 &114000013825390580
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012389507520}
+  m_GameObject: {fileID: 1000013679159492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc59a82c514dce74cb168b805529d78f, type: 3}
+  m_Script: {fileID: 11500000, guid: 69fafb924842d6e41844d9e0911d625f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oilJuiceFab: {fileID: 1000011990670980, guid: 11bcea5650b9fd046b98efc3d446520e,
-    type: 2}
-  dinoCosts: 020000000800000014000000320000007d000000f4010000
-
-
