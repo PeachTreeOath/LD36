@@ -223,15 +223,15 @@ public class FriendlyAgent : MonoBehaviour {
         {
             if(Time.time > lastAttackTime + stats.hitRate)
             {
-                Bite();
+                Bite(col.contacts[0]);
                 lastAttackTime = Time.time;
             }
         }
     }
 
-    private void Bite()
+    private void Bite(ContactPoint2D contact)
     {
-        Fangs bite = ((GameObject)Instantiate(bitePrefab,transform.position, Quaternion.identity)).GetComponent<Fangs>();
+        Fangs bite = ((GameObject)Instantiate(bitePrefab, contact.point, Quaternion.identity)).GetComponent<Fangs>();
         bite.ChangeSize(1 + stats.type/2);
         //TODO deal dmg
     }
