@@ -382,6 +382,10 @@ Prefab:
       propertyPath: minMouseDist
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010465962246, guid: 2c09ab7e26c037d4aaa97af9465ef716, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c09ab7e26c037d4aaa97af9465ef716, type: 2}
   m_IsPrefabParent: 0
@@ -1258,6 +1262,7 @@ GameObject:
   - 124: {fileID: 2096877705}
   - 92: {fileID: 2096877704}
   - 81: {fileID: 2096877703}
+  - 114: {fileID: 2096877708}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1333,3 +1338,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &2096877708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096877702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe6be19b666a03498c61c2f6ced3c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeIntensity: 0.35
