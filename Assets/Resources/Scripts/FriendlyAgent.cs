@@ -11,7 +11,7 @@ public class FriendlyAgent : MonoBehaviour {
     public AgentStats stats; //Unity Fail inheritance, prefab
 
     [SerializeField]
-    private float dirChangeDelay; //how long agent spends moving toward a point before changing direction
+    private float dirChangeDelay; //how long agent spends moving toward a point before changing direction (should be sub 1 sec, e.g. 0.2f)
 
     private GameObject aggroFocus; //if the agent is aggro'd this is its target.
 
@@ -21,6 +21,7 @@ public class FriendlyAgent : MonoBehaviour {
     private Vector2 lastTargetPos; //where agent last started
     private Vector2 curTargetPos; //where agent was last headed
     private float speed = 1;
+    private float stride = 1.25f; //max units that can be moved per decision step
     private float lastTimeDirChanged; //Time.time when last target was set
     private bool firstUpdate = true;
 
@@ -43,8 +44,8 @@ public class FriendlyAgent : MonoBehaviour {
         curBehavior = Instantiate(normalBehaviorPrefab);
         lastTimeDirChanged = Time.time - dirChangeDelay + 0.1f; //force update
         curTargetPos = lastTargetPos = transform.position;
-        Debug.Log(gameObject.name + " start pos " + transform.position + ", curTargetPos=" + curTargetPos + ", lastTargetPos=" + lastTargetPos);
-        Debug.Log(gameObject.name + " max move mag " + stats.maxMoveSpeedPerSec);
+        Debug.Log(gameObject.name + " start pos " + transform.position + ", curTargetPos=" + curTargetPos + ", lastTargetPos=" + lastTargetPos + ", bMap=" + curBehavior.name);
+        Debug.Log(gameObject.name + " maxMovePerSec=" + stats.maxMoveSpeedPerSec + ", strideDist=" + stride + ", timeBetweenSteps=" + dirChangeDelay);
         firstUpdate = true;
         retardCheck();
     }
@@ -86,7 +87,8 @@ public class FriendlyAgent : MonoBehaviour {
             //Debug.Log("Friendly pos: " + followingFriendly.transform.position);
             //Debug.Log("New direction calc");
             Vector3 nextWorldPos = nextMoveStrategyCalc();
-            lastTargetPos = curTargetPos;
+            //lastTargetPos = curTargetPos;
+            lastTargetPos = transform.position;
             curTargetPos = (Vector2)nextWorldPos;
             lastTimeDirChanged = now;
 
@@ -99,7 +101,7 @@ public class FriendlyAgent : MonoBehaviour {
         //result *= speed;
         //result = Vector2.ClampMagnitude(result, stats.maxMoveSpeedPerSec);
         param = (dirChangeDelay - param) / dirChangeDelay; //smooth transition by using interp w.r.t. to delta time
-        result = Vector2.Lerp(lastTargetPos, curTargetPos, param);
+        result = Vector2.Lerp(lastTargetPos, curTargetPos, (1-param));
         return result;
     }
 
@@ -107,18 +109,19 @@ public class FriendlyAgent : MonoBehaviour {
         Vector2 nearestGroup = getNearestGroupPos();
         Vector2 randPt = Util.nextApproxGaussUnitRandom();
         Behavior behaviorParams = curBehavior.getBehavior(randPt);
-        Vector3 nextLocal = Behavior.calcNext(behaviorParams, transform.position, nearestGroup);
+        float maxStridePerFrame = stride * dirChangeDelay; //This must be scaled by how long each step takes to play out in order to be step-independent
+        Vector3 nextLocal = Behavior.calcNext(behaviorParams, transform.position, nearestGroup, maxStridePerFrame);
         float speed = nextLocal.z;
         Vector2 nextLocal2 = (Vector2)nextLocal;
         updateRollingAvg(new Vector3(nextLocal2.x, nextLocal2.y, speed));
         Vector2 nextWorld = getNextWorldFromAvg();
 
-        Debug.Log("nextMove: randUnitPt=" + randPt 
-            + ", nextTargetRaw=" + nextLocal2
-            + ", nextTargetWCavg=" + nextWorld
-            + ", nearestGroup" + nearestGroup 
-            + ", [behavior=" + behaviorParams.ToString() + "]"
-            );// +"\n" + Behavior.lastDbgInfo.ToString());
+        //Debug.Log("nextMove: randUnitPt=" + randPt 
+        //    + ", nextTargetRaw=" + nextLocal2
+        //    + ", nextTargetWCavg=" + nextWorld
+        //    + ", nearestGroup" + nearestGroup 
+        //    + ", [behavior=" + behaviorParams.ToString() + "]"
+        //    );// +"\n" + Behavior.lastDbgInfo.ToString());
         return nextWorld;
     }
 
@@ -134,15 +137,15 @@ public class FriendlyAgent : MonoBehaviour {
         Vector3 cum = Vector2.zero;
         int i = prevBehaviorWeights.Length - 1;
         float totalWeight = 0;
-        string wcc = "world coord factors: ";
-        string www = "world coord weighted factors: ";
+        //string wcc = "world coord factors: ";
+        //string www = "world coord weighted factors: ";
         //this iterates from the back to the front?!
         while (iter.MoveNext()) {
             Vector3 v = iter.Current;
-            wcc += v.ToString() + ", ";
+            //wcc += v.ToString() + ", ";
             float weight = prevBehaviorWeights[i];
             cum += v * weight;
-            www += cum.ToString() + ", ";
+            //www += cum.ToString() + ", ";
             totalWeight += weight;
             i--;
         }
@@ -173,7 +176,7 @@ public class FriendlyAgent : MonoBehaviour {
         Vector2 curPos = (Vector2)transform.position;
         Vector2 curHeading = curTargetPos - curPos;
         curHeading = curHeading.normalized;
-        localPt *= moveScale;
+        //localPt *= moveScale; //This may not be needed, or maybe it will be. IDK
 
         if (curHeading.magnitude == 0) {
             curHeading = Vector2.up;
