@@ -14,8 +14,11 @@ public class OilManager : MonoBehaviour
     private List<Transform> panels;
 
     private GameObject compyPrefab;
+    private GameObject dilophoPrefab;    
     private GameObject sabreToothTigerPrefab;
     private GameObject triceratopsPrefab;
+    private GameObject trexPrefab;
+    private GameObject spinoPrefab;
     private Player playerDino;
     private Dictionary<int, GameObject> dinoIndexToObjectMap;
 
@@ -37,8 +40,11 @@ public class OilManager : MonoBehaviour
     void Start()
     {
         compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
+        dilophoPrefab = Resources.Load<GameObject>("Prefabs/Dilophosaurus");
         sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
         triceratopsPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
+        trexPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
+        spinoPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
         playerDino = GameObject.Find("PlayerDino").GetComponent<Player>();
 
         dinoIndexToObjectMap = new Dictionary<int, GameObject>();
