@@ -7,10 +7,7 @@ public class FriendlyAgent : MonoBehaviour {
     
 
     [SerializeField]
-    public AgentStats stats; //Unity Fail inheritance
-
-    [SerializeField]
-    public GameObject followingFriendly; //object we are roughly tracking 
+    public AgentStats stats; //Unity Fail inheritance, prefab
 
     [SerializeField]
     private float dirChangeDelay; //how long agent spends moving toward a point before changing direction
@@ -22,8 +19,8 @@ public class FriendlyAgent : MonoBehaviour {
 
     private Vector2 lastTargetPos; //where agent last started
     private Vector2 curTargetPos; //where agent was last headed
-    private Vector2 followingFriendlyLastPos; //position of friendly when last target was set
     private float lastTimeDirChanged; //Time.time when last target was set
+    private bool firstUpdate = true;
 
     [SerializeField]
     private BehaviorMap normalBehaviorPrefab;
@@ -33,14 +30,13 @@ public class FriendlyAgent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        stats = Instantiate(stats);
         curBehavior = Instantiate(normalBehaviorPrefab);
-        followingFriendlyLastPos = followingFriendly.transform.position;
         lastTimeDirChanged = Time.time - dirChangeDelay - 0.1f; //force update
         lastTargetPos = transform.position;
         Debug.Log(gameObject.name + " start pos " + lastTargetPos);
         Debug.Log(gameObject.name + " max move mag " + stats.maxMoveSpeedPerSec);
-        curTargetPos = getNextPos();
-
+        firstUpdate = true;
         retardCheck();
 	}
 
@@ -52,14 +48,18 @@ public class FriendlyAgent : MonoBehaviour {
         //if(stats.wanderRadiusStdDev == 0) Debug.LogError("Friendly agent field stat.wanderRadiusStdDev not set. name=" + gameObject.name);
         if(stats.maxMoveSpeedPerSec == 0) Debug.LogError("Friendly agent field stat.maxMoveSpeedPerSec not set. name=" + gameObject.name);
         }
-        if(followingFriendly == null) Debug.LogError("Friendly agent has nothing to follow. name=" + gameObject.name);
         if(dirChangeDelay == 0) Debug.LogError("Friendly agent field dirChangeDelay not set. name=" + gameObject.name);
         if (curBehavior == null) Debug.LogError("No behavior on friendly agent. name=" + gameObject.name);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = getNextPos();
+        if (firstUpdate) {
+            curTargetPos = getNextPos();
+            firstUpdate = false;
+        } else {
+            transform.position = getNextPos();
+        }
 	}
 
     private Vector2 getNearestGroupPos() {
@@ -87,7 +87,6 @@ public class FriendlyAgent : MonoBehaviour {
             
             //Debug.Log("New target " + result);
             lastTimeDirChanged = now;
-            followingFriendlyLastPos = followingFriendly.transform.position;
         } else {
             //duration of travel not reached, continue towards target
             param /= dirChangeDelay;

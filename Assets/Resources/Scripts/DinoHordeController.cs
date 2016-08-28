@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class DinoHordeController : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject player;
+    //[SerializeField]
+    private GameObject player; //singleton
 
     [SerializeField]
     private List<string> allHordeGroupNames;
@@ -23,29 +23,37 @@ public class DinoHordeController : MonoBehaviour {
         if (instance == null) {
             instance = this;
         } else if (instance != this) {
-            Destroy(instance);
-            instance = this;
+            Destroy(this.gameObject);
         }
     }
 
     // Use this for initialization
     void Start() {
+        player = Player.instance.gameObject;
         agents = new Dictionary<string, List<FriendlyAgent>>();
         agentsLastPos = new Dictionary<string, Vector2>();
         FriendlyAgent[] objs = GameObject.FindObjectsOfType<FriendlyAgent>();
         for (int i = 0; i < objs.Length; i++) {
             string gn = objs[i].groupName;
-            List<FriendlyAgent> ags;
-            if (agents.ContainsKey(gn)) {
-                ags = agents[gn];
-            }else {
-                ags = new List<FriendlyAgent>();
-            }
-            ags.Add(objs[i]);
-            agents.Add(gn, ags);
+            registerHordeMember(gn, objs[i]);
         }
 
         recalcAvgs();
+    }
+
+    public void registerHordeMember(FriendlyAgent agent) {
+        registerHordeMember(agent.groupName, agent);
+    }
+
+    public void registerHordeMember(string hordeGroupName, FriendlyAgent agent) {
+        List<FriendlyAgent> ags;
+        if (agents.ContainsKey(hordeGroupName)) {
+            ags = agents[hordeGroupName];
+        } else {
+            ags = new List<FriendlyAgent>();
+        }
+        ags.Add(agent);
+        agents.Add(hordeGroupName, ags);
     }
 
     // Update is called once per frame
@@ -58,8 +66,6 @@ public class DinoHordeController : MonoBehaviour {
     private void recalcAvgs() { //this may be performance heavy, adjust as needed
         foreach (string key in agents.Keys) {
             Vector2 pos = calcGroupAvgPos(key);
-            Debug.Log("DinoHordeController.Key = " + key);
-            Debug.Log("agentsLastPos = " + agentsLastPos);
             agentsLastPos[key] = pos;
         }
     }
@@ -86,7 +92,7 @@ public class DinoHordeController : MonoBehaviour {
         //add in player weight
         x += player.transform.position.x * playerGroupWeight;
         y += player.transform.position.y * playerGroupWeight;
-        return new Vector2(x / ags.Count+1, y / ags.Count+1);
+        return new Vector2(x / ags.Count + 1, y / ags.Count + 1);
     }
 
 
