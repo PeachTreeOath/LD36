@@ -19,7 +19,8 @@ public class AttackBuilding : MonoBehaviour {
         FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
         if (minion != null)
         {
-            minion.TakeDamage(1);
+            Debug.Log("Minion taking damage from building.");
+            minion.TakeDamage(5);
         }
     }
 }
