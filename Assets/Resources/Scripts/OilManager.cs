@@ -23,6 +23,7 @@ public class OilManager : MonoBehaviour
     private Dictionary<int, GameObject> dinoIndexToObjectMap;
 
     public static OilManager instance;
+	SwarmMovementManager friendlySwarmManager;
 
     void Awake()
     {
@@ -39,6 +40,15 @@ public class OilManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
+		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
+		{
+			if(sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>() != null)
+			{
+				friendlySwarmManager = sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>();
+			}
+		}
+
         compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
         dilophoPrefab = Resources.Load<GameObject>("Prefabs/Dilophosaurus");
         sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
@@ -128,7 +138,8 @@ public class OilManager : MonoBehaviour
         Vector3 spawnPos = playerDino.transform.position;
         Debug.Log("Play pos at spawn time=" + playerDino.transform.position);
 
-        FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
+		friendlySwarmManager.AddUnit(Instantiate(dinoPrefab, spawnPos, Quaternion.identity) as GameObject);
+        //FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
         //newDino.followingFriendly = playerDino.gameObject;
     }
 
