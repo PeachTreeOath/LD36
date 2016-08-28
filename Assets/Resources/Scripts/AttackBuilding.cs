@@ -5,11 +5,15 @@ public class AttackBuilding : MonoBehaviour {
 
     private float timeOfLastAttack;
     private GameObject statsPrefab;
+    private GameObject muzzleFlashPrefab;
+    private SpriteRenderer spriteRenderer;
     
     public BuildingStats stats; 
 
     void Start () {
         statsPrefab = Resources.Load<GameObject>("Prefabs/Level/AttackBuildingStats");
+        muzzleFlashPrefab = Resources.Load<GameObject>("Prefabs/MuzzleFlash");
+        spriteRenderer = GetComponent<SpriteRenderer>();
         stats = ((GameObject)Instantiate(statsPrefab)).GetComponent<BuildingStats>();
         
     }
@@ -28,8 +32,18 @@ public class AttackBuilding : MonoBehaviour {
         {
 
             //Debug.Log("Minion taking damage from building.");
+            Shoot();
             minion.TakeDamage(stats.attackDamage);
             timeOfLastAttack = Time.time;
         }
+    }
+
+    private void Shoot()
+    {
+        MuzzleFlash flash = ((GameObject)Instantiate(muzzleFlashPrefab, transform.position, Quaternion.identity)).GetComponent<MuzzleFlash>();
+        SpriteRenderer sprite = flash.GetComponent<SpriteRenderer>();
+        sprite.sortingOrder = spriteRenderer.sortingOrder + 1;
+        //bite.ChangeSize(1 + stats.type / 2);
+        //TODO deal dmg
     }
 }
