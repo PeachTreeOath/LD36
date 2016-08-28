@@ -95,6 +95,8 @@ public class Building : MonoBehaviour
 		outline.color1 = Color.yellow;
 		outline.color2 = Color.red;
 
+        barrel.transform.localScale *= 1 + stats.oilValue / 20;
+
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
 
