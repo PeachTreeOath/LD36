@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupName: defaultFriendly
-  stats: {fileID: 114000012146902850, guid: 2df9808d4e2505b49ad9cd5b9495eb5a, type: 2}
+  stats: {fileID: 114000011742782152, guid: d9748fef5d6a2564dab34ddaac177937, type: 2}
   dirChangeDelay: 0.4
   moveScale: 0.25
   normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
