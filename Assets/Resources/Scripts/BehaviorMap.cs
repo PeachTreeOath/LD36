@@ -33,8 +33,8 @@ public class BehaviorMap : MonoBehaviour {
     }
 
     private Vector2 scalePoint(Vector2 unitPoint) {
-        float x = unitPoint.x * hWidth + hWidth;
-        float y = unitPoint.y * hHeight + hHeight;
+        float x = unitPoint.x * hWidth; // + hWidth;
+        float y = unitPoint.y * hHeight; // + hHeight;
         return new Vector2(x, y);
     }
     private Vector2 mapPoint(Vector2 scaledUnitPoint) {
@@ -45,8 +45,8 @@ public class BehaviorMap : MonoBehaviour {
 
     private Behavior fillBehavior(Vector2 pt, Color c) {
         Behavior b = new Behavior();
-        b.x = (int)pt.x; //TODO interp for floats or something
-        b.y = (int)pt.y;
+        b.x = pt.x; //TODO interp for floats or something
+        b.y = pt.y;
         b.moveSpeedFactor = c.r;
         b.travelDistFactor = c.g;
         b.groupingFactor = c.b;

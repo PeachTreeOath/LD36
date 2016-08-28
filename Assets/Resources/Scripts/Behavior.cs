@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 //Corresponds to data at one pixel
 public class Behavior {
-    public int x;
-    public int y;
+    public float x; //point on the map in agent-local coords. Center is 0,0; scale is 1-to-1 with image. SO 32x32 px image goes -16 to 16 in x and y
+    public float y;
     public float moveSpeedFactor; //Red
     public float travelDistFactor; //Green
     public float groupingFactor; //Blue, 0 = independent, 1 = group
@@ -57,7 +57,7 @@ public class Behavior {
         db.newTarget = nextPoint;
 
         //behaviors are rolled up into a factor applied to the movement
-        float factor = nextStepBehavior.travelDistFactor;
+        float factor = nextStepBehavior.travelDistFactor * 1.5f;
         db.moveDist = factor;
 
         //For groupfactor 1, the next position will only move if it is headed toward the group avg pos.  groupFactor 0 is no restrictions on movement.
