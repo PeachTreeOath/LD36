@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class OilManager : MonoBehaviour
 {
+	public GameObject oilJuiceFab;
     public int[] dinoCosts;
 
     private int oilAmount;
@@ -91,6 +92,12 @@ public class OilManager : MonoBehaviour
     
     public void ChangeOilAmount(int amountChange)
     {
+		if(Mathf.Sign(amountChange) > 0)
+		{
+			GameObject oilJuice = Instantiate(oilJuiceFab);
+			oilJuice.GetComponent<OilJuice>().oilPanel = oilAmountText.transform.parent.gameObject;
+			oilJuice.GetComponent<OilJuice>().canvas =  oilAmountText.transform.parent.parent.gameObject.GetComponent<Canvas>();
+		}
         oilAmount += amountChange;
         UpdateDisplays();
     }
