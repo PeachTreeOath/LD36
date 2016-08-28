@@ -37,7 +37,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (objectives.Count > 0)
         {
-            if(currentObjective == -1)
+            if (currentObjective == -1)
             {
                 GoToNextObjective();
             }
@@ -47,15 +47,19 @@ public class ObjectiveManager : MonoBehaviour
             if (CheckIfOnScreen(currObj))
             {
                 float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
-                arrow.transform.position = currObj.transform.position;
-                arrow.transform.up = currObj.transform.position - arrow.transform.position;
-                arrow.transform.localPosition = new Vector2(0, bounceVal + 2f);
+                float offset = 1.5f;
+                arrow.transform.position = currObj.transform.position + new Vector3(0, offset);
+                arrow.transform.up = currObj.transform.position - (arrow.transform.position + arrow.transform.localPosition);
+                arrow.transform.localPosition = new Vector2(0, bounceVal);
             }
             else
             {
-                float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
-                Vector3 newVec = Vector3.Normalize(currObj.transform.position - Player.instance.transform.position);
-                arrow.transform.position = Player.instance.transform.position + (newVec * 5);
+                Vector3 llBounds = Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 0.1f));
+                Vector3 urBounds = Camera.main.ViewportToWorldPoint(new Vector3(0.95f, 0.95f));
+
+                arrow.transform.position = new Vector2(Mathf.Clamp(currObj.transform.position.x, llBounds.x, urBounds.x), Mathf.Clamp(currObj.transform.position.y, llBounds.y, urBounds.y));
+                Quaternion rotation = Quaternion.LookRotation(currObj.transform.position - arrow.transform.position, arrow.transform.TransformDirection(Vector3.back));
+                arrow.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
             }
         }
     }
