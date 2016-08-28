@@ -40,10 +40,20 @@ public class FriendlyAgent : MonoBehaviour {
     //private float[] prevBehaviorWeights = { 0.16f, 0.13f, 0.12f, 0.10f, 0.10f, 0.09f, 0.09f, 0.08f, 0.07f, 0.06f };
     //Reverse this son of a bitch
     private float[] prevBehaviorWeights = { 0.06f, 0.07f, 0.08f, 0.09f, 0.09f, 0.10f, 0.10f, 0.12f, 0.13f, 0.16f };
-
+	SwarmMovementManager swarmManager;
 
     // Use this for initialization
     void Start() {
+
+		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
+		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
+		{
+			if(sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>() != null)
+			{
+				swarmManager = sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>();
+			}
+		}
+
 		stats = (Instantiate(statsFab) as GameObject).GetComponent<AgentStats>();
         curBehavior = Instantiate(normalBehaviorPrefab);
         lastTimeDirChanged = Time.time - dirChangeDelay + 0.1f; //force update
@@ -197,8 +207,9 @@ public class FriendlyAgent : MonoBehaviour {
     }
 
     public void TakeDamage(int dmg) {
-        //stats.currentHp -= dmg; TODO: temp invuln
+        stats.currentHp -= dmg;
         if (stats.currentHp <= 0) {
+			swarmManager.RemoveUnit(gameObject);
             Destroy(gameObject);
         }
     }

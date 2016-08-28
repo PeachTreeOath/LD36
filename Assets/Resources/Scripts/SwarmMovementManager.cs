@@ -122,4 +122,17 @@ public class SwarmMovementManager : MonoBehaviour {
 		tarPositions.Add(tarPos);
 		unit.transform.position = tarPos;
 	}
+
+	public void RemoveUnit(GameObject unit)
+	{
+		for(int i = 0; i < activeSwarm.Count; i++)
+		{
+			if(activeSwarm[i].GetInstanceID() == unit.GetInstanceID())
+			{
+				activeSwarm.RemoveAt(i);
+				tarPositions.RemoveAt(i);
+				radii.RemoveAt(i);
+			}
+		}
+	}
 }
