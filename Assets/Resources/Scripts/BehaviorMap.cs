@@ -29,11 +29,12 @@ public class BehaviorMap : MonoBehaviour {
         Vector2 mp = mapPoint(sp);
         //Debug.Log("UnitPoint " + point + " = Image point " + mp);
         Color sampCol = getSampledColor(mp);
-        Debug.Log("UnitPoint=" + unitPoint
-            + ", Scalepoint=" + sp 
-            + ", ImageMapPoint=" + mp 
-            + ", color=" + sampCol);
-        return fillBehavior(sp, sampCol);
+       // Debug.Log("UnitPoint=" + unitPoint
+       //     + ", Scalepoint=" + sp 
+       //     + ", ImageMapPoint=" + mp 
+       //     + ", color=" + sampCol);
+        //return fillBehavior(sp, sampCol); //sp ties texture size directly to x,y movement which is not good
+        return fillBehavior(unitPoint, sampCol);
     }
 
     private Vector2 scalePoint(Vector2 unitPoint) {

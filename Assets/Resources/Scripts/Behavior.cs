@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 //Corresponds to data at one pixel
 public class Behavior {
-    public float x; //point on the map in agent-local coords. Center is 0,0; scale is 1-to-1 with image. SO 32x32 px image goes -16 to 16 in x and y
+    public float x; //unit coords driving this behavior (-1 to 1, centered). This should be scaled accordingly to determine movement target position
     public float y;
     public float moveSpeedFactor; //Red
     public float travelDistFactor; //Green
@@ -46,14 +46,14 @@ public class Behavior {
     }
 
     //Given a current position and a behavior for the next step, apply the behavior and determine where the target of the next step will be
-    //curHeading is normalized direction of (last) travel
-    //Move scale is general multiplier for position points, which default to image map size (when scale = 1)
+    //MaxStrideDist is a multiplier for position points, which default to unit circle
     //Returns (x,y) as target pos in local coords and z as speed to get there (speed is scaled to local already)
-    public static Vector3 calcNext(Behavior nextStepBehavior, Vector2 curPos, Vector2 nearestGroupPos) {
+    public static Vector3 calcNext(Behavior nextStepBehavior, Vector2 curPos, Vector2 nearestGroupPos, float maxStrideDist) {
         dbgInfo db = new dbgInfo();
         db.curPos = curPos;
 
         Vector3 nextPoint = new Vector3(nextStepBehavior.x, nextStepBehavior.y);
+        nextPoint *= maxStrideDist;
         db.newTarget = nextPoint;
 
         //behaviors are rolled up into a factor applied to the movement
