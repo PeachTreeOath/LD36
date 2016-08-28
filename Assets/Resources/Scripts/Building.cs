@@ -82,6 +82,18 @@ public class Building : MonoBehaviour
         OilBarrel barrel = ((GameObject)Instantiate(barrelObj, transform.position, Quaternion.identity)).GetComponent<OilBarrel>();
         barrel.SetValue(stats.oilValue);
         GetComponent<SpriteRenderer>().sprite = rubbleSpr;
+
+		GameObject barrelOutline = Instantiate(barrelObj);
+		Destroy(barrelOutline.GetComponent<OilBarrel>());
+		barrelOutline.transform.position = barrel.gameObject.transform.position;
+		barrelOutline.transform.rotation = barrel.gameObject.transform.rotation;
+		barrelOutline.transform.localScale = barrel.transform.localScale * 1.5f;
+		barrelOutline.transform.SetParent(barrel.gameObject.transform);
+		barrelOutline.GetComponent<SpriteRenderer>().sortingLayerName = "Outline";
+		OutlinePulser outline = barrelOutline.AddComponent<OutlinePulser>();
+		outline.color1 = Color.black;
+		outline.color2 = Color.yellow;
+
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
 }

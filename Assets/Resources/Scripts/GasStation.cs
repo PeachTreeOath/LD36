@@ -5,20 +5,28 @@ using System.Collections;
 /// Gas station is unique in that the player needs to stomp on it.
 /// So make this a separate script.
 /// </summary>
-public class GasStation : MonoBehaviour {
+public class GasStation : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        GetComponent<Building>().TakeDamage(1);
+        Player player = col.GetComponent<Player>();
+
+        if (player != null)
+        {
+            GetComponent<Building>().TakeDamage(1);
+        }
     }
 }
