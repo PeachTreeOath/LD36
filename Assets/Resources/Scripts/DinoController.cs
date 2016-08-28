@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class DinoController : MonoBehaviour
@@ -10,14 +11,14 @@ public class DinoController : MonoBehaviour
     private SpriteRenderer sprite;
     private Rigidbody2D rigidBody;
 
-   
+
 
     // Use this for initialization
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-		gameObject.AddComponent<CameraFollower>();
+        gameObject.AddComponent<CameraFollower>();
     }
 
     // Update is called once per frame
@@ -43,7 +44,6 @@ public class DinoController : MonoBehaviour
                 sprite.flipX = true;
             }
         }
-
     }
 
     void LateUpdate()
