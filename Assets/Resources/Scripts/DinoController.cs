@@ -28,10 +28,10 @@ public class DinoController : MonoBehaviour
             Vector3 direction = Vector3.Normalize(mousePos - (Vector2)transform.position);
             Vector3 newPos = direction * playerSpeed * Time.deltaTime;
             //using a velocity hack to be able to use collisions with Translate
-            rigidBody.velocity = (newPos - transform.position) / Time.deltaTime;
+            //rigidBody.velocity = (newPos - transform.position) / Time.deltaTime;
             //rigidBody.MovePosition(direction * playerSpeed * Time.deltaTime);
-            rigidBody.transform.Translate(direction * playerSpeed * Time.deltaTime);
-            //transform.Translate(direction * playerSpeed * Time.deltaTime);
+            //rigidBody.transform.Translate(direction * playerSpeed * Time.deltaTime);
+            transform.Translate(direction * playerSpeed * Time.deltaTime);
             if (direction.x > 0)
             {
                 sprite.flipX = false;
