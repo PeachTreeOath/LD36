@@ -63,7 +63,7 @@ public class ObjectiveManager : MonoBehaviour
             }
         }
     }
-
+    
     private void GoToNextObjective()
     {
         currentObjective++;

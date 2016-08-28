@@ -11,16 +11,13 @@ public class OilManager : MonoBehaviour
 
     private int oilAmount;
     private Text oilAmountText;
-    private Transform panel1;
-    private Transform panel2;
-    private Transform panel3;
     private List<Transform> panels;
 
     private GameObject compyPrefab;
     private GameObject sabreToothTigerPrefab;
     private GameObject triceratopsPrefab;
     private Player playerDino;
-    private Dictionary<int,GameObject> dinoIndexToObjectMap;
+    private Dictionary<int, GameObject> dinoIndexToObjectMap;
 
     public static OilManager instance;
 
@@ -39,7 +36,6 @@ public class OilManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         compyPrefab = Resources.Load<GameObject>("Prefabs/Compy");
         sabreToothTigerPrefab = Resources.Load<GameObject>("Prefabs/SabreToothTiger");
         triceratopsPrefab = Resources.Load<GameObject>("Prefabs/Triceratops");
@@ -50,16 +46,18 @@ public class OilManager : MonoBehaviour
         dinoIndexToObjectMap.Add(1, sabreToothTigerPrefab);
         dinoIndexToObjectMap.Add(2, triceratopsPrefab);
 
-
-
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
-        oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
+        oilAmountText = canvas.transform.Find("OilPanelOld").Find("Count").GetComponent<Text>();
         panels.Add(canvas.transform.Find("Panel1"));
         panels.Add(canvas.transform.Find("Panel2"));
         panels.Add(canvas.transform.Find("Panel3"));
+        panels.Add(canvas.transform.Find("Panel4"));
+        panels.Add(canvas.transform.Find("Panel5"));
+        panels.Add(canvas.transform.Find("Panel6"));
 
-        UpdateCostPanels();
+        // Bring back is UI cost elements need to be updated.
+        //UpdateCostPanels();
         UpdateDisplays();
     }
 
@@ -89,7 +87,7 @@ public class OilManager : MonoBehaviour
             SpawnMinion(dinoIndexToObjectMap[type]);
         }
     }
-    
+
     public void ChangeOilAmount(int amountChange)
     {
 		if(Mathf.Sign(amountChange) > 0)
@@ -120,19 +118,27 @@ public class OilManager : MonoBehaviour
         int i = 0;
         foreach (Transform panel in panels)
         {
-            bool displayOutline = false;
+            //bool displayOutline = false;
             if (dinoCosts[i] <= oilAmount)
             {
-                displayOutline = true;
+                panel.transform.Find("UIButtonFilled").GetComponent<Image>().enabled = true;
             }
-            panel.GetComponent<Outline>().enabled = displayOutline;
+            else
+            {
+                panel.transform.Find("UIButtonFilled").GetComponent<Image>().enabled = false;
+                panel.transform.Find("UIButtonFilling").GetComponent<Image>().fillAmount = (float)oilAmount / (float)dinoCosts[i];
+            }
+            //panel.GetComponent<Outline>().enabled = displayOutline;
             i++;
         }
     }
 
+    // Use this if cost
     private void UpdateCostPanels()
     {
         int i = 0;
+
+        // Only applied to old panels
         foreach (Transform panel in panels)
         {
             panel.Find("Cost").GetComponent<Text>().text = dinoCosts[i] + "";
