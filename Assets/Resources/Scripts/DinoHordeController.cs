@@ -53,7 +53,13 @@ public class DinoHordeController : MonoBehaviour {
             ags = new List<FriendlyAgent>();
         }
         ags.Add(agent);
-        agents.Add(hordeGroupName, ags);
+		if(agents.ContainsKey(hordeGroupName))
+		{
+			agents[hordeGroupName] = ags;
+		}else
+		{
+        	agents.Add(hordeGroupName, ags);
+		}
     }
 
     // Update is called once per frame
