@@ -75,6 +75,11 @@ public class Building : MonoBehaviour
                 SpawnBarrel();
             }
             isAlive = false;
+            Objective objective = GetComponent<Objective>();
+            if(objective != null)
+            {
+                objective.NotifyOfDeath();
+            }
         }
     }
 

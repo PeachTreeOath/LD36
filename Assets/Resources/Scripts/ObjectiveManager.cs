@@ -7,10 +7,11 @@ public class ObjectiveManager : MonoBehaviour
 {
     public static ObjectiveManager instance;
 
-    public List<Building> objectives;
+    public List<Objective> objectives;
 
     private int currentObjective = -1;
     private GameObject arrow;
+    private Transform objPanel;
 
     void Awake()
     {
@@ -23,13 +24,22 @@ public class ObjectiveManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        objectives = new List<Building>();
+        objectives = new List<Objective>();
+    }
+
+    public void NotifyOfDeath(int objectiveNum)
+    {
+        if (currentObjective == objectiveNum)
+        {
+            GoToNextObjective();
+        }
     }
 
     // Use this for initialization
     void Start()
     {
         arrow = Instantiate(Resources.Load<GameObject>("Prefabs/Arrow"));
+        objPanel = GameObject.Find("Canvas").transform.Find("ObjectivePanel");
     }
 
     // Update is called once per frame
@@ -51,7 +61,7 @@ public class ObjectiveManager : MonoBehaviour
                 arrow.transform.position = currObj.transform.position;
                 arrow.transform.up = currObj.transform.position - (arrow.transform.position + arrow.transform.localPosition);
                 arrow.transform.localPosition = new Vector2(0, bounceVal + offset);
-                arrow.transform.localScale = new Vector2(1,-1);
+                arrow.transform.localScale = new Vector2(1, -1);
             }
             else
             {
@@ -61,15 +71,29 @@ public class ObjectiveManager : MonoBehaviour
                 arrow.transform.position = new Vector2(Mathf.Clamp(currObj.transform.position.x, llBounds.x, urBounds.x), Mathf.Clamp(currObj.transform.position.y, llBounds.y, urBounds.y));
                 Quaternion rotation = Quaternion.LookRotation(currObj.transform.position - arrow.transform.position, arrow.transform.TransformDirection(Vector3.back));
                 arrow.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-                arrow.transform.localScale = new Vector2(1,1);
+                arrow.transform.localScale = new Vector2(1, 1);
             }
         }
     }
-    
+
+    public Transform GetObjectivePanel()
+    {
+        return objPanel;
+    }
+
     private void GoToNextObjective()
     {
         currentObjective++;
+        while (objectives[currentObjective].complete)
+        {
+            currentObjective++;
+            if (currentObjective == 5)
+            {
+                GoToWinScreen();
+            }
+        }
         arrow.transform.SetParent(objectives[currentObjective].transform);
+        objectives[currentObjective].SetToPending();
     }
 
     private bool CheckIfOnScreen(GameObject obj)
@@ -85,7 +109,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public void RegisterObjective(Objective objective)
     {
-        objectives.Insert(objective.objectiveNum, objective.GetComponent<Building>());
+        objectives.Insert(objective.objectiveNum, objective.GetComponent<Objective>());
     }
 
     private float GetJumpHeight(float time)
@@ -94,5 +118,10 @@ public class ObjectiveManager : MonoBehaviour
         float diff = time - 0.5f;
         float height = (-a * diff * diff) + 0.25f;
         return Mathf.Clamp(height, 0, 100);
+    }
+
+    private void GoToWinScreen()
+    {
+        Debug.Log("YOU'VE WON");
     }
 }
