@@ -49,7 +49,6 @@ public class OutlinePulser : MonoBehaviour {
 			timer = Time.time;
 			idx = idx + 1;
 			idx = idx % cols.Length;
-			Debug.Log(Time.time + " id " + idx);
 		}
 
 		int idx2 = idx + 1;
