@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000012880448114}
   - 114: {fileID: 114000012435700728}
   - 61: {fileID: 61000010375411714}
-  - 50: {fileID: 50000012159584896}
+  - 50: {fileID: 50000011545002392}
   m_Layer: 0
   m_Name: Compy
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &50000012159584896
+--- !u!50 &50000011545002392
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -87,8 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupName: defaultFriendly
   stats: {fileID: 114000012534702630, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
-  dirChangeDelay: 0.5
-  moveScale: 0.5
+  dirChangeDelay: 0.4
+  moveScale: 0.25
   normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
     type: 2}
 --- !u!212 &212000012880448114

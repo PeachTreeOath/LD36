@@ -13,7 +13,7 @@ public class DinoController : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
- 
+		gameObject.AddComponent<CameraFollower>();
     }
 
     // Update is called once per frame
@@ -36,13 +36,4 @@ public class DinoController : MonoBehaviour
         }
 
     }
-
-
-
-    void LateUpdate()
-    {
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-    }
-
-
 }

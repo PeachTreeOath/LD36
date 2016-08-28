@@ -82,5 +82,6 @@ public class Building : MonoBehaviour
         OilBarrel barrel = ((GameObject)Instantiate(barrelObj, transform.position, Quaternion.identity)).GetComponent<OilBarrel>();
         barrel.SetValue(stats.oilValue);
         GetComponent<SpriteRenderer>().sprite = rubbleSpr;
+		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
 }

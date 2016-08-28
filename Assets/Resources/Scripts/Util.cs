@@ -43,5 +43,4 @@ public class Util {
         float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(TWO_PI * u2);
         return mean + stdDev * randStdNormal;
     }
-
 }
