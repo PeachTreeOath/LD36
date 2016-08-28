@@ -80,10 +80,10 @@ public class Building : MonoBehaviour
 		statsObj.curHealth -= dmg;
 		if (statsObj.curHealth <= 0)
         {
-            if (type == BuildingType.GAS)
-            {
+           // if (type == BuildingType.GAS)
+           // {
                 SpawnBarrel();
-            }
+           // }
             isAlive = false;
             Objective objective = GetComponent<Objective>();
             if(objective != null)
@@ -98,8 +98,7 @@ public class Building : MonoBehaviour
         Instantiate(fireObj, transform.position, fireObj.transform.rotation);
         OilBarrel barrel = ((GameObject)Instantiate(barrelObj, transform.position, Quaternion.identity)).GetComponent<OilBarrel>();
 		barrel.SetValue(statsObj.oilValue);
-        GetComponent<SpriteRenderer>().sprite = rubbleSpr;
-
+            
 		GameObject barrelOutline = Instantiate(barrelObjBG);
 		barrelOutline.transform.position = barrel.gameObject.transform.position;
 		barrelOutline.transform.rotation = barrel.gameObject.transform.rotation;
@@ -115,6 +114,15 @@ public class Building : MonoBehaviour
 		barrel.transform.localScale *= 1 + statsObj.oilValue / 20;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
+
+        if (type == BuildingType.GAS)
+        {
+            GetComponent<SpriteRenderer>().sprite = rubbleSpr;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     //void OnColliderEnter2D(Collider2D col)
