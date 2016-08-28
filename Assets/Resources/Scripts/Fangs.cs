@@ -7,14 +7,14 @@ public class Fangs : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        elapsedTime = Time.time;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > 2f)
+        if (elapsedTime > 0.1f)
         {
             Destroy(gameObject);
         }
