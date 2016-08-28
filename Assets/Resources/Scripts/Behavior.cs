@@ -68,14 +68,19 @@ public class Behavior {
         //Debug.Log("towardsGroup vec " + towardsGroup);
         Vector2 nextDir = ((Vector2)nextPoint).normalized;
         db.nextDir = nextDir;
-        //Debug.Log("NextDir pt " + nextPoint + ", vec " + nextDir);
-        //float projectionForward = Mathf.Max(0, Vector2.Dot(towardsGroup, nextDir));
+
+        Debug.Log("towards group: " + towardsGroup + ", nextDir: " + nextDir);
         float projectionForward = Vector2.Dot(towardsGroup, nextDir);
+        Debug.Log("Proj result = " + projectionForward);
         db.groupWeight = projectionForward;
 
         //Debug.Log("grpFactor " + nextStepBehavior.groupingFactor);
         //Debug.Log("Proj amt " + projectionForward + ", projNext dir " + projectionForward * nextDir);
-        nextPoint = Vector2.Lerp(nextPoint, projectionForward * nextDir, nextStepBehavior.groupingFactor);
+        //nextPoint = Vector2.Lerp(nextPoint, projectionForward * nextDir, nextStepBehavior.groupingFactor);
+        //As the agent gets further from the group, give the group factor more influence
+        float expDistFunc = (float)Math.Pow(towardsGroup.magnitude,3) / 100 - 0.5f; //
+        float groupPull = nextStepBehavior.groupingFactor * Mathf.Max(1, expDistFunc);
+        nextPoint = Vector2.Lerp(projectionForward * nextDir, towardsGroup, groupPull);
         db.nextStepPreScale = nextPoint;
 
         factor *= nextStepBehavior.factorsWeight; //global decision scaling

@@ -32,7 +32,9 @@ public class FriendlyAgent : MonoBehaviour {
     //These keep track of last N steps and weight them so we get a smooth transition between behaviors
     //For a tick every 0.1 seconds, this will average the behavior choices for the last 1 second
     private Queue<Vector3> prevBehaviorStepsLC = new Queue<Vector3>(); //local coords with speed
-    private float[] prevBehaviorWeights = { 0.16f, 0.13f, 0.12f, 0.10f, 0.10f, 0.09f, 0.09f, 0.08f, 0.07f, 0.06f };
+    //private float[] prevBehaviorWeights = { 0.16f, 0.13f, 0.12f, 0.10f, 0.10f, 0.09f, 0.09f, 0.08f, 0.07f, 0.06f };
+    //Reverse this son of a bitch
+    private float[] prevBehaviorWeights = { 0.06f, 0.07f, 0.08f, 0.09f, 0.09f, 0.10f, 0.10f, 0.12f, 0.13f, 0.16f };
 
 
     // Use this for initialization
@@ -111,9 +113,9 @@ public class FriendlyAgent : MonoBehaviour {
         updateRollingAvg(new Vector3(nextLocal2.x, nextLocal2.y, speed));
         Vector2 nextWorld = getNextWorldFromAvg();
 
-        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2
-            + ", nearestGroup" + nearestGroup + ", [behavior=" + behaviorParams.ToString() + "]"
-            );// +"\n" + Behavior.lastDbgInfo.ToString());
+        //Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2
+            //+ ", nearestGroup" + nearestGroup + ", [behavior=" + behaviorParams.ToString() + "]"
+            //);// +"\n" + Behavior.lastDbgInfo.ToString());
         return nextWorld;
     }
 
@@ -130,12 +132,14 @@ public class FriendlyAgent : MonoBehaviour {
         int i = prevBehaviorWeights.Length - 1;
         float totalWeight = 0;
         string wcc = "world coord factors: ";
+        string www = "world coord weighted factors: ";
         //this iterates from the back to the front?!
         while (iter.MoveNext()) {
             Vector3 v = iter.Current;
             wcc += v.ToString() + ", ";
             float weight = prevBehaviorWeights[i];
             cum += v * weight;
+            www += cum.ToString() + ", ";
             totalWeight += weight;
             i--;
         }
@@ -144,9 +148,14 @@ public class FriendlyAgent : MonoBehaviour {
             weightedLocal /= totalWeight; //total weight should equal 1 unless there are not enough prev points
         }
         //adjust speed by scaling local magnitude. z of 1 = use agent max speed
-        float speedRatio = stats.maxMoveSpeedPerSec / weightedLocal.z;
+        float speedRatio = stats.maxMoveSpeedPerSec * weightedLocal.z;
+        ////Debug.Log("maxMoveSpeed=" + stats.maxMoveSpeedPerSec + " calc'd speed avg=" + weightedLocal.z);
+        Mathf.Clamp(speedRatio, 0, 1);
+        weightedLocal.z = 0;
         weightedLocal = weightedLocal.normalized * speedRatio;
-        Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + wcc);
+        //weightedLocal = weightedLocal.normalized;
+        ////Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + wcc);
+        ////Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + www);
 
         Vector3 world = localToWorld(weightedLocal);
         //world.z = weightedLocal.z;
