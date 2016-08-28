@@ -225,6 +225,7 @@ public class FriendlyAgent : MonoBehaviour {
             {
                 Bite(col.contacts[0]);
                 lastAttackTime = Time.time;
+                bldg.TakeDamage(stats.dmgPerHit);
             }
         }
     }
@@ -233,6 +234,5 @@ public class FriendlyAgent : MonoBehaviour {
     {
         Fangs bite = ((GameObject)Instantiate(bitePrefab, contact.point, Quaternion.identity)).GetComponent<Fangs>();
         bite.ChangeSize(1 + stats.type/2);
-        //TODO deal dmg
     }
 }

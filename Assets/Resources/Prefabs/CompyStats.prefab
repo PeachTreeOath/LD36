@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  dmgPerHit: 0
+  dmgPerHit: 1
   hitRate: 1
   maxMoveSpeedPerSec: 3
   maxHp: 5
