@@ -221,6 +221,7 @@ public class FriendlyAgent : MonoBehaviour {
         Building bldg = col.gameObject.GetComponent<Building>();
         if(bldg != null)
         {
+           // Debug.Log("TIME: " + Time.time + " lastatk " + lastAttackTime + " nextatk " + lastAttackTime + stats.hitRate);
             if(Time.time > lastAttackTime + stats.hitRate)
             {
                 Bite();
@@ -231,7 +232,8 @@ public class FriendlyAgent : MonoBehaviour {
 
     private void Bite()
     {
-        Fangs bite = Instantiate<GameObject>(bitePrefab).GetComponent<Fangs>();
-        
+        Debug.Log("BITE");
+        Fangs bite = ((GameObject)Instantiate(bitePrefab,transform.position, Quaternion.identity)).GetComponent<Fangs>();
+        bite.ChangeSize(5);
     }
 }

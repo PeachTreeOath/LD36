@@ -14,13 +14,13 @@ public class Fangs : MonoBehaviour {
 	void Update () {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > 0.25f)
+        if (elapsedTime > 2f)
         {
             Destroy(gameObject);
         }
 	}
 
-    void ChangeSize(float size)
+    public void ChangeSize(float size)
     {
         transform.localScale *= size;
     }
