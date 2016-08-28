@@ -21,6 +21,7 @@ public class BackgroundManager : MonoBehaviour
     private void CreateBG()
     {
         GameObject bgPrefab = Resources.Load<GameObject>("Prefabs/BGTile");
+        GameObject parent = GameObject.Find("Background");
         Vector2 size = bgPrefab.GetComponent<SpriteRenderer>().bounds.size;
 
         float startX = size.x * -.5f;
@@ -37,6 +38,7 @@ public class BackgroundManager : MonoBehaviour
                 currY += size.y;
             }
             currX += size.x;
+            currY = startY;
         }
     }
 }
