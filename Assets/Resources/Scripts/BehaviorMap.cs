@@ -28,7 +28,7 @@ public class BehaviorMap : MonoBehaviour {
         Vector2 sp = scalePoint(unitPoint);
         Vector2 mp = mapPoint(sp);
         //Debug.Log("UnitPoint " + point + " = Image point " + mp);
-        return fillBehavior(sp, getRawColor(mp));
+        return fillBehavior(sp, getSampledColor(mp));
     }
 
     private Vector2 scalePoint(Vector2 unitPoint) {
@@ -60,7 +60,7 @@ public class BehaviorMap : MonoBehaviour {
         Color[] xAvg = new Color[3];
         Color[] yAvg = new Color[3];
         //kernel in x direction
-        if (midPoint.x == 0) {
+        if (midPoint.x < 1 || midPoint.x >= width - 1) {
             xAvg[0] = getRawColor(midPoint.x, midPoint.y);
         } else {
             //dirty assumption we are using 1x3 kernel 
@@ -70,12 +70,12 @@ public class BehaviorMap : MonoBehaviour {
         }
 
 
-        if (midPoint.y == 0) {
+        if (midPoint.y < 1 || midPoint.y >= height - 1) {
             yAvg[0] = getRawColor(midPoint.x, midPoint.y);
         } else {
             yAvg[0] = getRawColor(midPoint.x, midPoint.y - 1);
-            yAvg[0] = getRawColor(midPoint.x, midPoint.y);
-            yAvg[0] = getRawColor(midPoint.x, midPoint.y + 1);
+            yAvg[1] = getRawColor(midPoint.x, midPoint.y);
+            yAvg[2] = getRawColor(midPoint.x, midPoint.y + 1);
         }
 
 
@@ -103,10 +103,10 @@ public class BehaviorMap : MonoBehaviour {
             bs += cs[i].b * mask[i];
         }
         Color result = new Color();
-        result.a = ays / mask.Length;
-        result.r = rs / mask.Length;
-        result.g = gs / mask.Length;
-        result.b = bs / mask.Length;
+        result.a = ays;
+        result.r = rs;
+        result.g = gs;
+        result.b = bs;
 
         return result;
     }

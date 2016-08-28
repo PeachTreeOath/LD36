@@ -111,9 +111,9 @@ public class FriendlyAgent : MonoBehaviour {
         updateRollingAvg(new Vector3(nextLocal2.x, nextLocal2.y, speed));
         Vector2 nextWorld = getNextWorldFromAvg();
 
-        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2 
+        Debug.Log("nextMove: randUnitPt=" + randPt + ", nextTarget=" + nextLocal2
             + ", nearestGroup" + nearestGroup + ", [behavior=" + behaviorParams.ToString() + "]"
-            +"\n" + Behavior.lastDbgInfo.ToString());
+            );// +"\n" + Behavior.lastDbgInfo.ToString());
         return nextWorld;
     }
 
@@ -127,22 +127,26 @@ public class FriendlyAgent : MonoBehaviour {
     private Vector2 getNextWorldFromAvg() {
         IEnumerator<Vector3> iter = prevBehaviorStepsLC.GetEnumerator();
         Vector3 cum = Vector2.zero;
-        int i = 0;
+        int i = prevBehaviorWeights.Length - 1;
         float totalWeight = 0;
+        string wcc = "world coord factors: ";
+        //this iterates from the back to the front?!
         while (iter.MoveNext()) {
             Vector3 v = iter.Current;
+            wcc += v.ToString() + ", ";
             float weight = prevBehaviorWeights[i];
             cum += v * weight;
             totalWeight += weight;
-            i++;
+            i--;
         }
         Vector3 weightedLocal = cum;
-        if (i < prevBehaviorWeights.Length) {
+        if (i >= 0) {
             weightedLocal /= totalWeight; //total weight should equal 1 unless there are not enough prev points
         }
         //adjust speed by scaling local magnitude. z of 1 = use agent max speed
-        float speedRatio = stats.maxMoveSpeedPerSec * weightedLocal.z;
+        float speedRatio = stats.maxMoveSpeedPerSec / weightedLocal.z;
         weightedLocal = weightedLocal.normalized * speedRatio;
+        Debug.Log("Resulting average: " + weightedLocal + " from inputs::> " + wcc);
 
         Vector3 world = localToWorld(weightedLocal);
         //world.z = weightedLocal.z;

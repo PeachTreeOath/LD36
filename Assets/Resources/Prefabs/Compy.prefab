@@ -87,9 +87,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupName: defaultFriendly
   stats: {fileID: 114000012534702630, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
-  dirChangeDelay: 0.1
+  dirChangeDelay: 0.325
   moveScale: 1
-  normalBehaviorPrefab: {fileID: 114000013939492426, guid: 209b6b424c2c1bb4b840eb6c65688d2d,
+  normalBehaviorPrefab: {fileID: 114000013939492426, guid: c5b5cfc8718a263419ba1b036cdef37c,
     type: 2}
 --- !u!212 &212000012880448114
 SpriteRenderer:

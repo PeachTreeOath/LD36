@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000013188134836
 Transform:
   m_ObjectHideFlags: 1
@@ -54,7 +54,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupName: defaultFriendly
   stats: {fileID: 114000012146902850, guid: 2df9808d4e2505b49ad9cd5b9495eb5a, type: 2}
-  followingFriendly: {fileID: 0}
   dirChangeDelay: 0.5
   moveScale: 0.5
   normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
