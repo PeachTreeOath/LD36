@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Dirt
+    uniqueID: 2932460441
+    locked: 0
   - name: Background
     uniqueID: 2721810183
     locked: 0

@@ -89,7 +89,7 @@ MonoBehaviour:
   stats: {fileID: 114000012534702630, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
   dirChangeDelay: 0.6
   moveScale: 0.5
-  normalBehaviorPrefab: {fileID: 114000013939492426, guid: e79f14442021f6247bcac72b2a6597ed,
+  normalBehaviorPrefab: {fileID: 114000013939492426, guid: 209b6b424c2c1bb4b840eb6c65688d2d,
     type: 2}
 --- !u!212 &212000012880448114
 SpriteRenderer:

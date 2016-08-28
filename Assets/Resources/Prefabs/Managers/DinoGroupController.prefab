@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allHordeGroupNames:
   - defaultFriendly
-  playerGroupWeight: 12
+  playerGroupWeight: 20

@@ -86,7 +86,7 @@ public class DinoHordeController : MonoBehaviour {
     private Vector2 calcGroupAvgPos(string groupName) {
         List<FriendlyAgent> ags = agents[groupName];
         if (ags == null || ags.Count == 0) {
-            return Vector2.zero;
+            return player.transform.position;
         }
         float x = 0, y = 0;
         List<int> deletedAgents = new List<int>();
@@ -100,10 +100,10 @@ public class DinoHordeController : MonoBehaviour {
             }
         }
         //add in player weight
-        float pWeight = (ags.Count + 1) * (playerGroupWeight * .05f);
+        float pWeight = (int)((ags.Count + 1) * (playerGroupWeight * .05f));
         x += player.transform.position.x * pWeight;
         y += player.transform.position.y * pWeight;
-        return new Vector2(x / ags.Count + 1, y / ags.Count + 1);
+        return new Vector2(x / (ags.Count + pWeight), y / (ags.Count + pWeight));
     }
 
 
