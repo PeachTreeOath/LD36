@@ -5,7 +5,7 @@ using System;
 public class Building : MonoBehaviour
 {
 
-    public BuildingStats stats;
+	public GameObject stats;
     public float ySortingOffset; //How far from zero should the center of this object should the line be adjusted.
 
     private GameObject barrelObj;
@@ -17,6 +17,7 @@ public class Building : MonoBehaviour
     private Sprite rubbleSpr;
     private bool isAlive = true;
     private float lastSpawnElapsedTime;
+	private BuildingStats statsObj;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,11 @@ public class Building : MonoBehaviour
 		barrelObjBG = Resources.Load<GameObject>("Prefabs/OilBarrelBG");
         fireObj = Resources.Load<GameObject>("Prefabs/FireParticle");
         rubbleSpr = Resources.Load<Sprite>("Images/Gas_Station_Destroy");
+		if(stats == null)
+		{
+			Debug.Log(Time.time + " " + gameObject.name + " missing stats");
+		}
+		statsObj = (Instantiate(stats) as GameObject).GetComponent<BuildingStats>();
 
         DoInitialSpawn();
 
@@ -34,7 +40,7 @@ public class Building : MonoBehaviour
 
     private void DoInitialSpawn()
     {
-        for (int i = 0; i < stats.startingSpawnNum; i++)
+		for (int i = 0; i < statsObj.startingSpawnNum; i++)
         {
             DoSpawn();
         }
@@ -42,7 +48,7 @@ public class Building : MonoBehaviour
 
     private void DoSpawn()
     {
-        Vector2 loc = (UnityEngine.Random.insideUnitCircle * stats.spawnRadius) + (Vector2)transform.position;
+		Vector2 loc = (UnityEngine.Random.insideUnitCircle * statsObj.spawnRadius) + (Vector2)transform.position;
         GameObject soldier = SpawnManager.instance.SpawnSoldier();
         soldier.transform.position = loc;
     }
@@ -51,12 +57,12 @@ public class Building : MonoBehaviour
     void Update()
     {
         // Only spawn units when player is close enough
-        if (stats.timeToSpawn > 0)
+		if (statsObj.timeToSpawn > 0)
         {
-            if (Vector2.Distance(Player.instance.transform.position, transform.position) < stats.BEGIN_SPAWN_RADIUS)
+			if (Vector2.Distance(Player.instance.transform.position, transform.position) < statsObj.BEGIN_SPAWN_RADIUS)
             {
                 lastSpawnElapsedTime += Time.deltaTime;
-                if (lastSpawnElapsedTime > stats.timeToSpawn)
+				if (lastSpawnElapsedTime > statsObj.timeToSpawn)
                 {
                     DoSpawn();
                     lastSpawnElapsedTime = 0;
@@ -71,8 +77,8 @@ public class Building : MonoBehaviour
         {
             return;
         }
-        stats.curHealth -= dmg;
-        if (stats.curHealth <= 0)
+		statsObj.curHealth -= dmg;
+		if (statsObj.curHealth <= 0)
         {
             if (type == BuildingType.GAS)
             {
@@ -91,7 +97,7 @@ public class Building : MonoBehaviour
     {
         Instantiate(fireObj, transform.position, fireObj.transform.rotation);
         OilBarrel barrel = ((GameObject)Instantiate(barrelObj, transform.position, Quaternion.identity)).GetComponent<OilBarrel>();
-        barrel.SetValue(stats.oilValue);
+		barrel.SetValue(statsObj.oilValue);
         GetComponent<SpriteRenderer>().sprite = rubbleSpr;
 
 		GameObject barrelOutline = Instantiate(barrelObjBG);
@@ -106,7 +112,7 @@ public class Building : MonoBehaviour
 		outline.cols[1] = Color.yellow;
 		outline.cols[2] = Color.red;
 
-        barrel.transform.localScale *= 1 + stats.oilValue / 20;
+		barrel.transform.localScale *= 1 + statsObj.oilValue / 20;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
