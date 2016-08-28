@@ -8,6 +8,7 @@ public class Building : MonoBehaviour
     public BuildingStats stats;
 
     private GameObject barrelObj;
+	private GameObject barrelObjBG;
     private GameObject fireObj;
 
     public enum BuildingType { PLAIN, ATTACK, SPAWN, GAS };
@@ -20,6 +21,7 @@ public class Building : MonoBehaviour
     void Start()
     {
         barrelObj = Resources.Load<GameObject>("Prefabs/OilBarrel");
+		barrelObjBG = Resources.Load<GameObject>("Prefabs/OilBarrelBG");
         fireObj = Resources.Load<GameObject>("Prefabs/FireParticle");
         rubbleSpr = Resources.Load<Sprite>("Images/Gas_Station_Destroy");
 
@@ -83,16 +85,15 @@ public class Building : MonoBehaviour
         barrel.SetValue(stats.oilValue);
         GetComponent<SpriteRenderer>().sprite = rubbleSpr;
 
-		GameObject barrelOutline = Instantiate(barrelObj);
-		Destroy(barrelOutline.GetComponent<OilBarrel>());
+		GameObject barrelOutline = Instantiate(barrelObjBG);
 		barrelOutline.transform.position = barrel.gameObject.transform.position;
 		barrelOutline.transform.rotation = barrel.gameObject.transform.rotation;
-		barrelOutline.transform.localScale = barrel.transform.localScale * 1.5f;
+		barrelOutline.transform.localScale = barrel.transform.localScale * 1.35f;
 		barrelOutline.transform.SetParent(barrel.gameObject.transform);
 		barrelOutline.GetComponent<SpriteRenderer>().sortingLayerName = "Outline";
 		OutlinePulser outline = barrelOutline.AddComponent<OutlinePulser>();
-		outline.color1 = Color.black;
-		outline.color2 = Color.yellow;
+		outline.color1 = Color.yellow;
+		outline.color2 = Color.red;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
     }
