@@ -16,6 +16,6 @@ public class MainMenuButton : MonoBehaviour {
 
     public void GoToGame()
     {
-        Vect
+        SceneManager.LoadScene("Game");
     }
 }
