@@ -92,6 +92,9 @@ public class Behavior {
         //float rot = Vector2.Angle(nextPoint, curHeading);
         //float rot = Vector2.Angle(nextPoint, curHeading);
         //nextPoint = Quaternion.AngleAxis(rot, Vector3.forward) * nextPoint;
+        if (curHeading.magnitude == 0) {
+            curHeading = Vector2.up;
+        }
         nextPoint = Quaternion.LookRotation(curHeading) * nextPoint;
         db.nextStepAfterScaleLocal = nextPoint;
 

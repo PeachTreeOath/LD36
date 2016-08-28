@@ -100,7 +100,7 @@ public class DinoHordeController : MonoBehaviour {
             }
         }
         //add in player weight
-        float pWeight = ags.Count * (playerGroupWeight * .05f);
+        float pWeight = (ags.Count + 1) * (playerGroupWeight * .05f);
         x += player.transform.position.x * pWeight;
         y += player.transform.position.y * pWeight;
         return new Vector2(x / ags.Count + 1, y / ags.Count + 1);
