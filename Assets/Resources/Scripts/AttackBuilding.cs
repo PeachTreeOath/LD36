@@ -9,7 +9,7 @@ public class AttackBuilding : MonoBehaviour {
     public BuildingStats stats; 
 
     void Start () {
-        statsPrefab = Resources.Load<GameObject>("Prefabs/AttackBuildingStats");
+        statsPrefab = Resources.Load<GameObject>("Prefabs/Level/AttackBuildingStats");
         stats = ((GameObject)Instantiate(statsPrefab)).GetComponent<BuildingStats>();
         
     }
