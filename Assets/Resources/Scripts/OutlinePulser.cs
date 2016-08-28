@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OutlinePulser : MonoBehaviour {
 
-	public float pulseSpeed = 2;
+	public float pulseSpeed = 1;
 	public Color color1;
 	public Color color2;
 
