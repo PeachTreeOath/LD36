@@ -57,6 +57,21 @@ public class SwarmMovementManager : MonoBehaviour {
 			moveDir.Normalize();
 			activeSwarm[i].transform.position += moveDir * Time.deltaTime * activeSwarm[i].GetComponent<FriendlyAgent>().stats.GetComponent<AgentStats>().maxMoveSpeedPerSec;
 
+			if(moveDir.x > 0)
+			{
+				if(activeSwarm[i].transform.localScale.x < 0)
+				{
+					activeSwarm[i].transform.localScale = new Vector3(-activeSwarm[i].transform.localScale.x, activeSwarm[i].transform.localScale.y, activeSwarm[i].transform.localScale.z);
+				}
+			}
+			else
+			{
+				if(activeSwarm[i].transform.localScale.x > 0)
+				{
+					activeSwarm[i].transform.localScale = new Vector3(-activeSwarm[i].transform.localScale.x, activeSwarm[i].transform.localScale.y, activeSwarm[i].transform.localScale.z);
+				}
+			}
+
 			//Validate position and target position
 			for(int j = 0; j < activeSwarm.Count; j++)
 			{
