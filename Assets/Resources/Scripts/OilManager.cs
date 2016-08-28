@@ -53,12 +53,13 @@ public class OilManager : MonoBehaviour
 
         panels = new List<Transform>();
         GameObject canvas = GameObject.Find("Canvas");
-        oilAmountText = canvas.transform.Find("OilPanel").Find("Count").GetComponent<Text>();
+        oilAmountText = canvas.transform.Find("OilPanelOld").Find("Count").GetComponent<Text>();
         panels.Add(canvas.transform.Find("Panel1"));
         panels.Add(canvas.transform.Find("Panel2"));
         panels.Add(canvas.transform.Find("Panel3"));
 
-        UpdateCostPanels();
+        // Bring back is UI cost elements need to be updated.
+        //UpdateCostPanels();
         UpdateDisplays();
     }
 
@@ -123,9 +124,12 @@ public class OilManager : MonoBehaviour
         }
     }
 
+    // Use this if cost
     private void UpdateCostPanels()
     {
         int i = 0;
+        
+         // Only applied to old panels
         foreach (Transform panel in panels)
         {
             panel.Find("Cost").GetComponent<Text>().text = dinoCosts[i] + "";
