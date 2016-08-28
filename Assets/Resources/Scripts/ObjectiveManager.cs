@@ -48,9 +48,10 @@ public class ObjectiveManager : MonoBehaviour
             {
                 float bounceVal = Mathf.Abs(Mathf.Sin(Time.time * 3) / 3);
                 float offset = 1.5f;
-                arrow.transform.position = currObj.transform.position + new Vector3(0, offset);
+                arrow.transform.position = currObj.transform.position;
                 arrow.transform.up = currObj.transform.position - (arrow.transform.position + arrow.transform.localPosition);
-                arrow.transform.localPosition = new Vector2(0, bounceVal);
+                arrow.transform.localPosition = new Vector2(0, bounceVal + offset);
+                arrow.transform.localScale = new Vector2(1,-1);
             }
             else
             {
@@ -60,6 +61,7 @@ public class ObjectiveManager : MonoBehaviour
                 arrow.transform.position = new Vector2(Mathf.Clamp(currObj.transform.position.x, llBounds.x, urBounds.x), Mathf.Clamp(currObj.transform.position.y, llBounds.y, urBounds.y));
                 Quaternion rotation = Quaternion.LookRotation(currObj.transform.position - arrow.transform.position, arrow.transform.TransformDirection(Vector3.back));
                 arrow.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+                arrow.transform.localScale = new Vector2(1,1);
             }
         }
     }
