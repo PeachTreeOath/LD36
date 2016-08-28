@@ -9,7 +9,7 @@ public class OilManager : MonoBehaviour
 	public GameObject oilJuiceFab;
     public int[] dinoCosts;
 
-    private int oilAmount;
+    private int oilAmount = 1000;
     private Text oilAmountText;
     private List<Transform> panels;
 
