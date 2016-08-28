@@ -8,7 +8,9 @@ public class FriendlyAgent : MonoBehaviour {
 
 
     [SerializeField]
-    public AgentStats stats; //Unity Fail inheritance, prefab
+	public GameObject statsFab;
+	[HideInInspector]
+    public AgentStats stats; //Unity Fail inheritance, prefab <-- WHY ARE YOU DOING THIS!!!???
 
     [SerializeField]
     private float dirChangeDelay; //how long agent spends moving toward a point before changing direction (should be sub 1 sec, e.g. 0.2f)
@@ -42,7 +44,7 @@ public class FriendlyAgent : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        stats = Instantiate(stats);
+		stats = (Instantiate(statsFab) as GameObject).GetComponent<AgentStats>();
         curBehavior = Instantiate(normalBehaviorPrefab);
         lastTimeDirChanged = Time.time - dirChangeDelay + 0.1f; //force update
         curTargetPos = lastTargetPos = transform.position;
@@ -195,7 +197,7 @@ public class FriendlyAgent : MonoBehaviour {
     }
 
     public void TakeDamage(int dmg) {
-        stats.currentHp -= dmg;
+        //stats.currentHp -= dmg; TODO: temp invuln
         if (stats.currentHp <= 0) {
             Destroy(gameObject);
         }

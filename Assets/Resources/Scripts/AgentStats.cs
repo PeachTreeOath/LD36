@@ -23,4 +23,8 @@ public class AgentStats : MonoBehaviour{
     //[SerializeField]
     //public float wanderRadiusStdDev;
 
+	public void Awake()
+	{
+		currentHp = maxHp;
+	}
 }

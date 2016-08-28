@@ -80,12 +80,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013852105884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dfbd780ecdf76a4a89cbd23d4e7e081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groupName: defaultFriendly
+  statsFab: {fileID: 1000013380465448, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
   stats: {fileID: 114000012534702630, guid: ba72baba62c7c7b4cb24ee988f33fd25, type: 2}
   dirChangeDelay: 0.3
   moveScale: 1
