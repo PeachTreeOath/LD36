@@ -23,11 +23,13 @@ public class AttackBuilding : MonoBehaviour {
     {
         Debug.Log("Something should be colliding with this building.");
         FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
-        if (minion != null && Time.time > timeOfLastAttack + stats.secondsPerAttack)
+        Debug.Log("Minion = " + minion);
+        if (minion != null && Time.time - timeOfLastAttack >= stats.secondsPerAttack)
         {
 
             Debug.Log("Minion taking damage from building.");
             minion.TakeDamage(stats.attackDamage);
+            timeOfLastAttack = Time.time;
         }
     }
 }
