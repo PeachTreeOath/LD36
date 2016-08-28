@@ -17,11 +17,13 @@ public class SpawnManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        soldierPrefab = Resources.Load<GameObject>("Prefabs/Soldier");
     }
 
     // Use this for initialization
     void Start () {
-        soldierPrefab = Resources.Load<GameObject>("Prefabs/Soldier");
+        
     }
 	
 	// Update is called once per frame
