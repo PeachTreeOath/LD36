@@ -181,7 +181,8 @@ public class FriendlyAgent : MonoBehaviour {
         if (curHeading.magnitude == 0) {
             curHeading = Vector2.up;
         }
-        localPt = Quaternion.LookRotation(curHeading) * localPt;
+        //localPt = Quaternion.LookRotation(curHeading) * localPt;
+        localPt = Quaternion.LookRotation(Vector3.forward, curHeading) * localPt;
         localPt = curPos + (Vector2)localPt;
 
         return localPt;
