@@ -54,6 +54,6 @@ MonoBehaviour:
   type: 0
   dmgPerHit: 0
   hitRate: 0
-  maxMoveSpeedPerSec: 1
+  maxMoveSpeedPerSec: 3
   maxHp: 0
   currentHp: 0

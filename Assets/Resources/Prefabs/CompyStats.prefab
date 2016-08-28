@@ -54,8 +54,6 @@ MonoBehaviour:
   type: 0
   dmgPerHit: 0
   hitRate: 0
-  maxMoveSpeedPerSec: 5
+  maxMoveSpeedPerSec: 3
   maxHp: 5
   currentHp: 5
-  wanderRadiusAvg: 4
-  wanderRadiusStdDev: 1

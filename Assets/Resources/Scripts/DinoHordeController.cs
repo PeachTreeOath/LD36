@@ -11,7 +11,7 @@ public class DinoHordeController : MonoBehaviour {
     private List<string> allHordeGroupNames;
 
     [SerializeField]
-    private float playerGroupWeight; //weight of player as a member of the horde group
+    private float playerGroupWeight; //weight of player as a member of the horde group. A value of 10 = 50% of group count
 
     private Dictionary<string, List<FriendlyAgent>> agents; //mapped group name to list of agents
 
@@ -49,11 +49,13 @@ public class DinoHordeController : MonoBehaviour {
         List<FriendlyAgent> ags;
         if (agents.ContainsKey(hordeGroupName)) {
             ags = agents[hordeGroupName];
+            ags.Add(agent);
+            //don't try to re-add the same key that is already in there ffs
         } else {
             ags = new List<FriendlyAgent>();
+            ags.Add(agent);
+            agents.Add(hordeGroupName, ags);
         }
-        ags.Add(agent);
-        agents.Add(hordeGroupName, ags);
     }
 
     // Update is called once per frame
@@ -72,9 +74,12 @@ public class DinoHordeController : MonoBehaviour {
 
     //Gets last calculated position of the named group
     public Vector2 getGroupAvgPos(string groupName) {
-        Vector2 p = agentsLastPos[groupName];
-        //Debug.Log("Group " + groupName + " average pos: " + p);
-        return p;
+        if (agentsLastPos.ContainsKey(groupName)) {
+            return agentsLastPos[groupName];
+        } else {
+            Debug.Log("No position for group " + groupName);
+            return Vector2.zero;
+        }
     }
 
     //All groups have the player included and weighted
@@ -90,8 +95,9 @@ public class DinoHordeController : MonoBehaviour {
             y += a.gameObject.transform.position.y;
         }
         //add in player weight
-        x += player.transform.position.x * playerGroupWeight;
-        y += player.transform.position.y * playerGroupWeight;
+        float pWeight = ags.Count * (playerGroupWeight * .05f);
+        x += player.transform.position.x * pWeight;
+        y += player.transform.position.y * pWeight;
         return new Vector2(x / ags.Count + 1, y / ags.Count + 1);
     }
 
