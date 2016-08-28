@@ -21,13 +21,13 @@ public class AttackBuilding : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("Something should be colliding with this building.");
+        //Debug.Log("Something should be colliding with this building.");
         FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
-        Debug.Log("Minion = " + minion);
+        //Debug.Log("Minion = " + minion);
         if (minion != null && Time.time - timeOfLastAttack >= stats.secondsPerAttack)
         {
 
-            Debug.Log("Minion taking damage from building.");
+            //Debug.Log("Minion taking damage from building.");
             minion.TakeDamage(stats.attackDamage);
             timeOfLastAttack = Time.time;
         }
