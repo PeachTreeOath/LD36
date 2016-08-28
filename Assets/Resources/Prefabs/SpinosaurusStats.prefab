@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013380465448}
+  m_RootGameObject: {fileID: 1000011728763854}
   m_IsPrefabParent: 1
---- !u!1 &1000013380465448
+--- !u!1 &1000011728763854
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000014286015976}
-  - 114: {fileID: 114000012534702630}
+  - 4: {fileID: 4000013023463202}
+  - 114: {fileID: 114000014117707232}
   m_Layer: 0
-  m_Name: CompyStats
+  m_Name: SpinosaurusStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000014286015976
+--- !u!4 &4000013023463202
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013380465448}
+  m_GameObject: {fileID: 1000011728763854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012534702630
+--- !u!114 &114000014117707232
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013380465448}
+  m_GameObject: {fileID: 1000011728763854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47647752e2b95264ea13ac4f97df1a51, type: 3}
@@ -55,5 +55,5 @@ MonoBehaviour:
   dmgPerHit: 0
   hitRate: 0
   maxMoveSpeedPerSec: 6
-  maxHp: 5
-  currentHp: 5
+  maxHp: 150
+  currentHp: 150
