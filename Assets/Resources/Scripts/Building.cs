@@ -101,8 +101,10 @@ public class Building : MonoBehaviour
 		barrelOutline.transform.SetParent(barrel.gameObject.transform);
 		barrelOutline.GetComponent<SpriteRenderer>().sortingLayerName = "Outline";
 		OutlinePulser outline = barrelOutline.AddComponent<OutlinePulser>();
-		outline.color1 = Color.yellow;
-		outline.color2 = Color.red;
+		outline.cols = new Color[3];
+		outline.cols[0] = Color.black;
+		outline.cols[1] = Color.yellow;
+		outline.cols[2] = Color.red;
 
         barrel.transform.localScale *= 1 + stats.oilValue / 20;
 

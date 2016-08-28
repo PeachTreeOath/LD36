@@ -37,7 +37,9 @@ public class OilBarrel : MonoBehaviour
         if (player != null)
         {
             player.AddOil(value);
-            Destroy(gameObject);
+			Destroy(gameObject.GetComponent<BoxCollider2D>());
+			gameObject.AddComponent<TimedObject>().lifetime = .5f;
+			gameObject.AddComponent<OilCollectEffect>();
         }
     }
 

@@ -4,12 +4,10 @@ using System.Collections;
 public class OutlinePulser : MonoBehaviour {
 
 	public float pulseSpeed = 1;
-	public Color color1;
-	public Color color2;
+	public Color [] cols;
 
 	SpriteRenderer rend;
 	int idx;
-	Color [] cols;
 	struct hsv
 	{
 		public float h;
@@ -23,10 +21,6 @@ public class OutlinePulser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cols = new Color[2];
-		cols[0] = color1;
-		cols[1] = color2;
-
 		hsvs = new hsv[2];
 
 		float h;
@@ -44,7 +38,7 @@ public class OutlinePulser : MonoBehaviour {
 
 		idx = 0;
 		rend = gameObject.GetComponent<SpriteRenderer>();
-		rend.color = color1;
+		rend.color = cols[0];
 
 		timer = Time.time;
 	}
