@@ -85,6 +85,7 @@ GameObject:
   - 212: {fileID: 212000013057244368}
   - 114: {fileID: 114000014122091744}
   - 114: {fileID: 114000012306504272}
+  - 61: {fileID: 61000011377312072}
   m_Layer: 0
   m_Name: Gas_Station_RightFacing
   m_TagString: Untagged
@@ -417,6 +418,7 @@ GameObject:
   - 212: {fileID: 212000010083754634}
   - 114: {fileID: 114000012351435650}
   - 114: {fileID: 114000012366035678}
+  - 61: {fileID: 61000012077978338}
   m_Layer: 0
   m_Name: Gas_Station_LeftFacing
   m_TagString: Untagged
@@ -1188,6 +1190,34 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+--- !u!61 &61000011377312072
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010368852216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.3333334, y: 1.3333334}
+--- !u!61 &61000012077978338
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012921578328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
