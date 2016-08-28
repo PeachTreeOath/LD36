@@ -44,6 +44,9 @@ TagManager:
   - name: Buildings
     uniqueID: 4002545831
     locked: 0
+  - name: Outline
+    uniqueID: 2132221173
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
