@@ -11,7 +11,7 @@ public class Building : MonoBehaviour
 	public int rubbleMinCount;
 	public int rubbleMaxCount;
 	public List<GameObject> rubbleIcons;
-	public GameObject rubbleFab;
+	//public GameObject rubbleFab;
 
 	[Space(5)]
 	public GameObject stats;
@@ -31,7 +31,7 @@ public class Building : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		rubbleFab = Resources.Load<GameObject>("Prefabs/Rubble");
+		//rubbleFab = Resources.Load<GameObject>("Prefabs/Rubble");
         barrelObj = Resources.Load<GameObject>("Prefabs/OilBarrel");
 		barrelObjBG = Resources.Load<GameObject>("Prefabs/OilBarrelBG");
         fireObj = Resources.Load<GameObject>("Prefabs/FireParticle");
