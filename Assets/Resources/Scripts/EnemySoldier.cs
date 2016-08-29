@@ -9,7 +9,8 @@ public class EnemySoldier : MonoBehaviour {
 
 	float attackTimer;
 	float attackTimeout = .55f;
-	float attackDist = 5;
+	float attackDist = 3;
+	float followDist = 7;
 	GameObject muzzleFlashFab;
 	public float health = 10;
 	GameObject fangFab;
@@ -41,16 +42,23 @@ public class EnemySoldier : MonoBehaviour {
 
 		if(closestIdx < friendlySwarmManager.activeSwarm.Count)
 		{
-			if(curEnemySwarm != null &&
-				curEnemySwarm != friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>())
+			if(dist < followDist)
+			{
+				if(curEnemySwarm != null &&
+					curEnemySwarm != friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>())
+				{
+					curEnemySwarm.RemoveUnit(gameObject);
+					curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
+					curEnemySwarm.AddUnit(gameObject);
+				}else if( curEnemySwarm == null)
+				{
+					curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
+					curEnemySwarm.AddUnit(gameObject);
+				}
+			}else if( curEnemySwarm != null)
 			{
 				curEnemySwarm.RemoveUnit(gameObject);
-				curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
-				curEnemySwarm.AddUnit(gameObject);
-			}else if( curEnemySwarm == null)
-			{
-				curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
-				curEnemySwarm.AddUnit(gameObject);
+				curEnemySwarm = null;
 			}
 		}
 
