@@ -67,6 +67,8 @@ public class EnemySoldier : MonoBehaviour {
 
 	void Attack()
 	{
+		float pDist = Mathf.Abs(Vector3.Distance(gameObject.transform.position, Player.instance.transform.position));
+
 		if(Time.time - attackTimer >= attackTimeout)
 		{
 			for(int i = 0; i < friendlySwarmManager.activeSwarm.Count; i++)
@@ -79,6 +81,14 @@ public class EnemySoldier : MonoBehaviour {
 					muzzleFlash.transform.position = gameObject.transform.position;
 					friendlySwarmManager.activeSwarm[i].GetComponent<FriendlyAgent>().TakeDamage(1);
 				}
+			}
+
+			if(pDist < attackDist)
+			{
+				attackTimer = Time.time;
+				GameObject muzzleFlash = Instantiate(muzzleFlashFab) as GameObject;
+				muzzleFlash.transform.position = gameObject.transform.position;
+				Player.instance.GetComponent<Player>().TakeDamage(1);
 			}
 		}
 	}
