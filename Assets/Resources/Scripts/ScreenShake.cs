@@ -10,12 +10,12 @@ public class ScreenShake : MonoBehaviour {
 	float shakeTime = .03f;
 
 	int moveCount;
-	int maxMoveCount = 4;
+	int maxMoveCount = 2;
 	int moveDir;
-	public float shakeIntensity = 3;
+	public float shakeIntensity = 1;
 	float moveDist;
 	int shakeCount;
-	int maxShakeCount = 3;
+	int maxShakeCount = 2;
 	float shakeStartTime;
 
 	float spawnTimer;
