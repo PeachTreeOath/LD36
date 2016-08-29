@@ -354,6 +354,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 744381527}
     m_Modifications:
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.4189997
@@ -391,6 +396,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000013175376426, guid: 716b9071316220b46b317550e39fec4e,
+        type: 2}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubblePower
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
@@ -1691,6 +1734,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013725936944, guid: d0a17cae2b6001b468c124cb3876ad29, type: 2}
       propertyPath: m_LocalPosition.x
       value: -7.574375
@@ -1728,6 +1776,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000011009217944, guid: 3c1273fd9e80b69428d380a5fc9b1365,
+        type: 2}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000012929670320, guid: d0a17cae2b6001b468c124cb3876ad29,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0a17cae2b6001b468c124cb3876ad29, type: 2}
@@ -1999,6 +2085,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014252033536, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.033
@@ -2040,6 +2131,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
@@ -2113,6 +2242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
   stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
@@ -5580,6 +5714,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011363752280, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.8209724
@@ -5617,6 +5756,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
@@ -6666,6 +6843,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 4
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -6844,6 +7029,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 10
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012920729486, guid: fb97a9ff8c53a404ba206b06734b05d1, type: 2}
   ySortingOffset: -0.95
   type: 2
@@ -7162,6 +7355,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 4
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: 0
   type: 3
@@ -7750,6 +7951,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014252033536, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.7020302
@@ -7791,6 +7997,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
@@ -8064,6 +8308,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 744381527}
     m_Modifications:
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011363752280, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.146
@@ -8101,6 +8350,49 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae,
+        type: 2}
+    - target: {fileID: 114000011452138844, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: fireOffset.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
@@ -9087,6 +9379,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014252033536, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.898
@@ -9128,6 +9425,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
@@ -9469,6 +9804,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014252033536, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.234
@@ -9506,6 +9846,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010810448682, guid: c69123ca671000348a64faf6f3abc4e6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c69123ca671000348a64faf6f3abc4e6, type: 2}
@@ -10152,6 +10530,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 4
+  rubbleMaxCount: 5
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -11277,6 +11663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
   stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
@@ -11703,6 +12094,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
@@ -11896,6 +12295,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1176257437}
     m_Modifications:
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011363752280, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.79
@@ -11937,6 +12341,44 @@ Prefab:
       propertyPath: stats
       value: 
       objectReference: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubblePower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleGravity
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMinCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleMaxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
+        type: 2}
+    - target: {fileID: 114000010969701268, guid: 11f48f239b89ef446a5b73f91aa41af6,
+        type: 2}
+      propertyPath: rubbleIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f48f239b89ef446a5b73f91aa41af6, type: 2}
@@ -13089,6 +13531,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 4
+  rubbleMaxCount: 5
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -13218,6 +13668,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 4
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3

@@ -8,7 +8,7 @@ public class AgentStats : MonoBehaviour{
     [SerializeField]
     public int type; //maybe make into enum
     [SerializeField]
-    public float dmgPerHit;
+    public int dmgPerHit;
     [SerializeField]
     public float hitRate;
     [SerializeField]

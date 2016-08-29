@@ -1,10 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class Building : MonoBehaviour
 {
+	[Header("Rubble")]
+	public float rubblePower;
+	public float rubbleGravity;
+	public int rubbleMinCount;
+	public int rubbleMaxCount;
+	public List<GameObject> rubbleIcons;
+	//public GameObject rubbleFab;
 
+	[Space(5)]
 	public GameObject stats;
     public float ySortingOffset; //How far from zero should the center of this object should the line be adjusted.
 
@@ -22,6 +31,7 @@ public class Building : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		//rubbleFab = Resources.Load<GameObject>("Prefabs/Rubble");
         barrelObj = Resources.Load<GameObject>("Prefabs/OilBarrel");
 		barrelObjBG = Resources.Load<GameObject>("Prefabs/OilBarrelBG");
         fireObj = Resources.Load<GameObject>("Prefabs/FireParticle");
@@ -80,16 +90,27 @@ public class Building : MonoBehaviour
 		statsObj.curHealth -= dmg;
 		if (statsObj.curHealth <= 0)
         {
-            if (type == BuildingType.GAS)
-            {
+           // if (type == BuildingType.GAS)
+           // {
                 SpawnBarrel();
-            }
+           // }
             isAlive = false;
             Objective objective = GetComponent<Objective>();
             if(objective != null)
             {
                 objective.NotifyOfDeath();
             }
+
+			GameObject go = new GameObject();
+			go.transform.position = gameObject.transform.position;
+			RubbleSpawner rs = go.AddComponent<RubbleSpawner>();
+			rs.rubbleImages = rubbleIcons;
+			rs.power = rubblePower;
+			rs.gravity = rubbleGravity;
+			rs.minCount = rubbleMinCount;
+			rs.maxCount = rubbleMaxCount;
+
+			//Instantiate(rubbleFab, gameObject.transform.position, Quaternion.identity);
         }
     }
 
@@ -98,8 +119,7 @@ public class Building : MonoBehaviour
         Instantiate(fireObj, transform.position, fireObj.transform.rotation);
         OilBarrel barrel = ((GameObject)Instantiate(barrelObj, transform.position, Quaternion.identity)).GetComponent<OilBarrel>();
 		barrel.SetValue(statsObj.oilValue);
-        GetComponent<SpriteRenderer>().sprite = rubbleSpr;
-
+            
 		GameObject barrelOutline = Instantiate(barrelObjBG);
 		barrelOutline.transform.position = barrel.gameObject.transform.position;
 		barrelOutline.transform.rotation = barrel.gameObject.transform.rotation;
@@ -115,6 +135,15 @@ public class Building : MonoBehaviour
 		barrel.transform.localScale *= 1 + statsObj.oilValue / 20;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
+
+        if (type == BuildingType.GAS)
+        {
+            GetComponent<SpriteRenderer>().sprite = rubbleSpr;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     //void OnColliderEnter2D(Collider2D col)

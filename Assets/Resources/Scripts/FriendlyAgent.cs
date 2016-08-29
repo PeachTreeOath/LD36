@@ -41,10 +41,12 @@ public class FriendlyAgent : MonoBehaviour {
     //Reverse this son of a bitch
     private float[] prevBehaviorWeights = { 0.06f, 0.07f, 0.08f, 0.09f, 0.09f, 0.10f, 0.10f, 0.12f, 0.13f, 0.16f };
 	SwarmMovementManager swarmManager;
+    private GameObject bitePrefab;
+    private float lastAttackTime;
 
     // Use this for initialization
     void Start() {
-
+        bitePrefab = Resources.Load<GameObject>("Prefabs/Fangs");
 		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
 		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
 		{
@@ -212,5 +214,25 @@ public class FriendlyAgent : MonoBehaviour {
 			swarmManager.RemoveUnit(gameObject);
             Destroy(gameObject);
         }
+    }
+    
+    void OnCollisionStay2D(Collision2D col)
+    {
+        Building bldg = col.gameObject.GetComponent<Building>();
+        if(bldg != null)
+        {
+            if(Time.time > lastAttackTime + stats.hitRate)
+            {
+                Bite(col.contacts[0]);
+                lastAttackTime = Time.time;
+                bldg.TakeDamage(stats.dmgPerHit);
+            }
+        }
+    }
+
+    private void Bite(ContactPoint2D contact)
+    {
+        Fangs bite = ((GameObject)Instantiate(bitePrefab, contact.point, Quaternion.identity)).GetComponent<Fangs>();
+        bite.ChangeSize(1 + stats.type/2);
     }
 }

@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 97ebe91f2abd96744979f1ea35d97273
-timeCreated: 1472417377
+guid: 0501151739b0897428aea993996ea18c
+timeCreated: 1472425234
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fangs_0
-    21300002: fangs_1
-    21300004: fangs_2
+    21300000: muzzle_flash_0
+    21300002: muzzle_flash_1
+    21300004: muzzle_flash_2
+    21300006: muzzle_flash_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -56,41 +57,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fangs_0
+      name: muzzle_flash_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 22
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 30
+        width: 10
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fangs_1
+      name: muzzle_flash_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 20
+        width: 10
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: fangs_2
+      name: muzzle_flash_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 10
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: muzzle_flash_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 10
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

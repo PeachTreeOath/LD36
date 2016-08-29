@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47647752e2b95264ea13ac4f97df1a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  dmgPerHit: 0
-  hitRate: 0
+  type: 3
+  dmgPerHit: 7
+  hitRate: 1
   maxMoveSpeedPerSec: 6
   maxHp: 40
   currentHp: 40

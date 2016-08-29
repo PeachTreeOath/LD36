@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  curHealth: -180
+  curHealth: 1
   oilValue: 50
   startingSpawnNum: 0
   spawnRadius: 0
