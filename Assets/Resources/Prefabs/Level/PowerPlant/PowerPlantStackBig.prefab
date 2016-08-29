@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 50
-  rubbleGravity: 50
+  rubblePower: 10
+  rubbleGravity: -20
   rubbleMinCount: 40
   rubbleMaxCount: 60
   rubbleIcons: []
