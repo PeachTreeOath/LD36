@@ -1657,7 +1657,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stadium
+  m_Text: Factory
 --- !u!114 &114000011279064876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1792,7 +1792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Factory
+  m_Text: Stadium
 --- !u!114 &114000011439690490
 MonoBehaviour:
   m_ObjectHideFlags: 1
