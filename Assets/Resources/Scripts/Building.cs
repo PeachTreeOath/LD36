@@ -28,9 +28,23 @@ public class Building : MonoBehaviour
     private float lastSpawnElapsedTime;
 	private BuildingStats statsObj;
 
+	List<GameObject> soldiers;
+
+	SwarmMovementManager friendlySwarmManager;
+
     // Use this for initialization
     void Start()
     {
+
+		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
+		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
+		{
+			if(sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>() != null)
+			{
+				friendlySwarmManager = sceo.spawnedManagerList[i].GetComponent<SwarmMovementManager>();
+			}
+		}
+
 		//rubbleFab = Resources.Load<GameObject>("Prefabs/Rubble");
         barrelObj = Resources.Load<GameObject>("Prefabs/OilBarrel");
 		barrelObjBG = Resources.Load<GameObject>("Prefabs/OilBarrelBG");
@@ -61,6 +75,7 @@ public class Building : MonoBehaviour
 		Vector2 loc = (UnityEngine.Random.insideUnitCircle * statsObj.spawnRadius) + (Vector2)transform.position;
         GameObject soldier = SpawnManager.instance.SpawnSoldier();
         soldier.transform.position = loc;
+		soldier.AddComponent<EnemySoldier>().friendlySwarmManager = friendlySwarmManager;
     }
 
     // Update is called once per frame

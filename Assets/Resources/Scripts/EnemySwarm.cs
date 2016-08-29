@@ -2,38 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SwarmMovementManager : MonoBehaviour {
-
-	public enum SwarmMovementManagerEnum { FRIENDLY, ENEMY };
-
-	List<GameObject> inactiveSwarm;
-	[HideInInspector]
-	public List<GameObject> activeSwarm;
+public class EnemySwarm : MonoBehaviour {
+	List<GameObject> activeSwarm;
 	List<Vector3> tarPositions;
 	List<float> radii;
 
-	public GameObject center;
-	public float minRadius;
-	public float maxRadius;
-	public SwarmMovementManagerEnum swarmType;
-	public float changeTarPosThreshold;
-	public float reachedTarPosThreshold;
+	GameObject center;
+	float minRadius;
+	float maxRadius;
+	float changeTarPosThreshold;
+	float reachedTarPosThreshold;
 
 	Vector3 lastCenter;
+	bool started = false;
 
 	// Use this for initialization
-	void Start () {
-		radii = new List<float>();
-		inactiveSwarm = new List<GameObject>();
-		activeSwarm = new List<GameObject>();
-		tarPositions = new List<Vector3>();
-
-		if(swarmType == SwarmMovementManagerEnum.FRIENDLY)
+	public void Start () {
+		if(!started)
 		{
-			center = Player.instance.gameObject;
+			started = true;
+			changeTarPosThreshold = 2;
+			minRadius = .5f;
+			maxRadius = 2;
+			reachedTarPosThreshold = .1f;
+			radii = new List<float>();
+			activeSwarm = new List<GameObject>();
+			tarPositions = new List<Vector3>();
+			center = gameObject;
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		for(int i = 0; i < activeSwarm.Count; i++)
@@ -51,12 +49,12 @@ public class SwarmMovementManager : MonoBehaviour {
 
 				tarPositions[i] = tarPos;
 				radii[i] = radius;
-				//Debug.Log(Time.time + " new tarPos " + tarPositions[i]);
+				Debug.Log(Time.time + " new tarPos " + tarPositions[i]);
 			}
 
 			Vector3 moveDir = tarPos - activeSwarm[i].transform.position;
 			moveDir.Normalize();
-			activeSwarm[i].transform.position += moveDir * Time.deltaTime * activeSwarm[i].GetComponent<FriendlyAgent>().stats.GetComponent<AgentStats>().maxMoveSpeedPerSec;
+			activeSwarm[i].transform.position += moveDir * Time.deltaTime * 2;
 
 			if(moveDir.x > 0)
 			{
@@ -125,7 +123,7 @@ public class SwarmMovementManager : MonoBehaviour {
 
 		lastCenter = center.transform.position;
 	}
-	
+
 	public void AddUnit(GameObject unit)
 	{
 		activeSwarm.Add(unit);
@@ -136,7 +134,6 @@ public class SwarmMovementManager : MonoBehaviour {
 		radii.Add(radius);
 		Vector3 tarPos = new Vector3(center.transform.position.x + x, center.transform.position.y, center.transform.position.z);
 		tarPositions.Add(tarPos);
-		unit.transform.position = tarPos;
 	}
 
 	public void RemoveUnit(GameObject unit)

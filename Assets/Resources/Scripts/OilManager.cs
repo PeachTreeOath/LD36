@@ -138,7 +138,9 @@ public class OilManager : MonoBehaviour
         Vector3 spawnPos = playerDino.transform.position;
         Debug.Log("Play pos at spawn time=" + playerDino.transform.position);
 
-		friendlySwarmManager.AddUnit(Instantiate(dinoPrefab, spawnPos, Quaternion.identity) as GameObject);
+		GameObject dino = Instantiate(dinoPrefab, spawnPos, Quaternion.identity) as GameObject;
+		friendlySwarmManager.AddUnit(dino);
+		dino.AddComponent<EnemySwarm>().Start();;
         //FriendlyAgent newDino = ((GameObject)Instantiate(dinoPrefab, spawnPos, Quaternion.identity)).GetComponent<FriendlyAgent>();
         //newDino.followingFriendly = playerDino.gameObject;
     }

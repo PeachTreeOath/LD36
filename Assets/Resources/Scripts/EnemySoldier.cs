@@ -1,0 +1,70 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class EnemySoldier : MonoBehaviour {
+
+	public SwarmMovementManager friendlySwarmManager;
+
+	EnemySwarm curEnemySwarm;
+
+	float attackTimer;
+	float attackTimeout = .55f;
+	float attackDist = 5;
+	GameObject muzzleFlashFab;
+
+	// Use this for initialization
+	void Start () {
+		curEnemySwarm = null;
+		muzzleFlashFab = Resources.Load("Prefabs/MuzzleFlash") as GameObject;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		float dist = float.MaxValue;
+		int closestIdx = 0;
+		for(int i = 0; i < friendlySwarmManager.activeSwarm.Count; i++)
+		{
+			float d = Mathf.Abs(Vector3.Distance(gameObject.transform.position, friendlySwarmManager.activeSwarm[i].transform.position));
+			if(d < dist)
+			{
+				dist = d;
+				closestIdx = i;
+			}
+		}
+
+		if(closestIdx < friendlySwarmManager.activeSwarm.Count)
+		{
+			if(curEnemySwarm != null &&
+				curEnemySwarm != friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>())
+			{
+				curEnemySwarm.RemoveUnit(gameObject);
+				curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
+				curEnemySwarm.AddUnit(gameObject);
+			}else if( curEnemySwarm == null)
+			{
+				curEnemySwarm = friendlySwarmManager.activeSwarm[closestIdx].GetComponent<EnemySwarm>();
+				curEnemySwarm.AddUnit(gameObject);
+			}
+		}
+
+		Attack();
+	}
+
+	void Attack()
+	{
+		if(Time.time - attackTimer >= attackTimeout)
+		{
+			for(int i = 0; i < friendlySwarmManager.activeSwarm.Count; i++)
+			{
+				float d = Mathf.Abs(Vector3.Distance(gameObject.transform.position, friendlySwarmManager.activeSwarm[i].transform.position));
+				if(d < attackDist)
+				{
+					attackTimer = Time.time;
+					GameObject muzzleFlash = Instantiate(muzzleFlashFab) as GameObject;
+					muzzleFlash.transform.position = gameObject.transform.position;
+					friendlySwarmManager.activeSwarm[i].GetComponent<FriendlyAgent>().TakeDamage(1);
+				}
+			}
+		}
+	}
+}

@@ -400,7 +400,7 @@ Prefab:
     - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
         type: 2}
       propertyPath: rubblePower
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
         type: 2}
@@ -410,12 +410,12 @@ Prefab:
     - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
         type: 2}
       propertyPath: rubbleMinCount
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
         type: 2}
       propertyPath: rubbleMaxCount
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
         type: 2}
@@ -2242,11 +2242,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
+  rubblePower: 10
+  rubbleGravity: -20
+  rubbleMinCount: 6
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
@@ -11663,11 +11666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
+  rubblePower: 12
+  rubbleGravity: -20
+  rubbleMinCount: 6
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
   stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
