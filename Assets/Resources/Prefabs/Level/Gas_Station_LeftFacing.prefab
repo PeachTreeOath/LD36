@@ -72,10 +72,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
+  rubblePower: 20
+  rubbleGravity: -10
+  rubbleMinCount: 15
+  rubbleMaxCount: 25
   rubbleIcons: []
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2

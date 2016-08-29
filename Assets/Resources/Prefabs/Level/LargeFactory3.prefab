@@ -71,7 +71,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 114000012632464840, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
+  rubblePower: 20
+  rubbleGravity: -20
+  rubbleMinCount: 25
+  rubbleMaxCount: 35
+  rubbleIcons: []
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!212 &212000012184911702

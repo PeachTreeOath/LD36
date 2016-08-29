@@ -89,7 +89,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 114000012538397044, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!114 &114000011452138844
@@ -103,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086be4f4b5be9724b8fb5f147a19fae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireOffset: {x: 0, y: 0}
   stats: {fileID: 114000012538397044, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
 --- !u!212 &212000011919411050
 SpriteRenderer:
