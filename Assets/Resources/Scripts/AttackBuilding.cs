@@ -17,7 +17,6 @@ public class AttackBuilding : MonoBehaviour {
         muzzleFlashPrefab = Resources.Load<GameObject>("Prefabs/MuzzleFlash");
         spriteRenderer = GetComponent<SpriteRenderer>();
         stats = ((GameObject)Instantiate(statsPrefab)).GetComponent<BuildingStats>();
-        
     }
 	
 	// Update is called once per frame
