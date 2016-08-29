@@ -13,12 +13,14 @@ public class EnemySoldier : MonoBehaviour {
 	GameObject muzzleFlashFab;
 	public float health = 10;
 	GameObject fangFab;
+	GameObject deadFab;
 
 	// Use this for initialization
 	void Start () {
 		curEnemySwarm = null;
 		muzzleFlashFab = Resources.Load("Prefabs/MuzzleFlash") as GameObject;
 		fangFab = Resources.Load("Prefabs/Fangs") as GameObject;
+		deadFab = Resources.Load("Prefabs/SoldierDead") as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -84,6 +86,8 @@ public class EnemySoldier : MonoBehaviour {
 				{
 					curEnemySwarm.RemoveUnit(gameObject);
 				}
+				GameObject deadObj = Instantiate(deadFab);
+				deadObj.transform.position = gameObject.transform.position;
 				Destroy(gameObject);
 			}
 		}
