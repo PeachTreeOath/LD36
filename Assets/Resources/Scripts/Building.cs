@@ -33,9 +33,9 @@ public class Building : MonoBehaviour
 	SwarmMovementManager friendlySwarmManager;
 
 
-	static AudioClip explodeSound = null;
-	static GameObject explodeSoundSource;
-	static AudioSource ss;
+	 AudioClip explodeSound = null;
+	 GameObject explodeSoundSource;
+	 AudioSource ss;
 
     // Use this for initialization
     void Start()
