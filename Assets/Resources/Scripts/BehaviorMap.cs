@@ -14,7 +14,7 @@ public class BehaviorMap : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
-        Debug.Log("Behavior Map " + gameObject.name + " loading");
+        //Debug.Log("Behavior Map " + gameObject.name + " loading");
         width = bMap.width;
         hWidth = (int)width / 2;
         height = bMap.height;

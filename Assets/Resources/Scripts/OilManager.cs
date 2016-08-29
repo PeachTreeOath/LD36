@@ -146,7 +146,7 @@ public class OilManager : MonoBehaviour
         if (dinoCosts[type] <= oilAmount)
         {
 			ss.Play();
-            Debug.Log("DINO " + type + " SPAWNED");
+            //Debug.Log("DINO " + type + " SPAWNED");
             ChangeOilAmount(-dinoCosts[type]);
             SpawnMinion(dinoIndexToObjectMap[type]);
         }
@@ -169,7 +169,7 @@ public class OilManager : MonoBehaviour
         //TODO wtf is wrong with mouse position
         //Vector3 spawnPos = Input.mousePosition;
         Vector3 spawnPos = playerDino.transform.position;
-        Debug.Log("Play pos at spawn time=" + playerDino.transform.position);
+        //Debug.Log("Play pos at spawn time=" + playerDino.transform.position);
 
 		GameObject dino = Instantiate(dinoPrefab, spawnPos, Quaternion.identity) as GameObject;
 		friendlySwarmManager.AddUnit(dino);

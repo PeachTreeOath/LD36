@@ -77,8 +77,8 @@ public class FriendlyAgent : MonoBehaviour {
         curBehavior = Instantiate(normalBehaviorPrefab);
         lastTimeDirChanged = Time.time - dirChangeDelay + 0.1f; //force update
         curTargetPos = lastTargetPos = transform.position;
-        Debug.Log(gameObject.name + " start pos " + transform.position + ", curTargetPos=" + curTargetPos + ", lastTargetPos=" + lastTargetPos + ", bMap=" + curBehavior.name);
-        Debug.Log(gameObject.name + " maxMovePerSec=" + stats.maxMoveSpeedPerSec + ", strideDist=" + stride + ", timeBetweenSteps=" + dirChangeDelay);
+        //Debug.Log(gameObject.name + " start pos " + transform.position + ", curTargetPos=" + curTargetPos + ", lastTargetPos=" + lastTargetPos + ", bMap=" + curBehavior.name);
+        //Debug.Log(gameObject.name + " maxMovePerSec=" + stats.maxMoveSpeedPerSec + ", strideDist=" + stride + ", timeBetweenSteps=" + dirChangeDelay);
         firstUpdate = true;
         retardCheck();
     }
@@ -98,7 +98,7 @@ public class FriendlyAgent : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (firstUpdate) {
-            Debug.Log(firstUpdate);
+            //Debug.Log(firstUpdate);
             DinoHordeController.instance.registerHordeMember(this);
             //curTargetPos = DinoHordeController.instance.getGroupAvgPos(groupName);
             firstUpdate = false;
