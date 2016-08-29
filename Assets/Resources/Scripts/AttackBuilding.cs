@@ -12,23 +12,11 @@ public class AttackBuilding : MonoBehaviour {
     
     public BuildingStats stats; 
 
-	 AudioClip gunSound = null;
-	 GameObject gunSoundSource;
-	 AudioSource ss;
+	
 
     void Start () {
 
-		if(gunSound == null)
-		{
-			gunSoundSource = new GameObject();
-			gunSoundSource.name = "gunSoundSource2";
-			ss = gunSoundSource.AddComponent<AudioSource>();
-			gunSound = Resources.Load("Sounds/Gunshot1") as AudioClip;
-			ss.clip = gunSound;
-			ss.loop = false;
-			ss.rolloffMode = AudioRolloffMode.Linear;
-			ss.volume = Util.SFXVolume;
-		}
+
 
         statsPrefab = Resources.Load<GameObject>("Prefabs/Level/AttackBuildingStats");
         muzzleFlashPrefab = Resources.Load<GameObject>("Prefabs/MuzzleFlash");
@@ -60,10 +48,7 @@ public class AttackBuilding : MonoBehaviour {
     {
         Vector2 firePosition = new Vector2(transform.position.x + fireOffset.x, transform.position.y + fireOffset.y);
         MuzzleFlash flash = ((GameObject)Instantiate(muzzleFlashPrefab, firePosition, Quaternion.identity)).GetComponent<MuzzleFlash>();
-        
-		if(!ss.isPlaying)
-		{
-			ss.Play();
-		}
+
+        BackgroundManager.instance.PlaySound(10);
     }
 }

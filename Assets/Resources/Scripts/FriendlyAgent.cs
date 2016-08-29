@@ -44,24 +44,10 @@ public class FriendlyAgent : MonoBehaviour {
     private GameObject bitePrefab;
     private float lastAttackTime;
 
-	 AudioClip hurtSound = null;
-	 GameObject hurtSoundSource;
-	 AudioSource ss;
-
     // Use this for initialization
     void Start() {
 
-		if(hurtSound == null)
-		{
-			hurtSoundSource = new GameObject();
-			hurtSoundSource.name = "hurtSoundSource";
-			ss = hurtSoundSource.AddComponent<AudioSource>();
-			hurtSound = Resources.Load("Sounds/DinoHurt") as AudioClip;
-			ss.clip = hurtSound;
-			ss.loop = false;
-			ss.rolloffMode = AudioRolloffMode.Linear;
-			ss.volume = Util.SFXVolume;
-		}
+
 
         bitePrefab = Resources.Load<GameObject>("Prefabs/Fangs");
 		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
@@ -228,10 +214,7 @@ public class FriendlyAgent : MonoBehaviour {
     public void TakeDamage(int dmg) {
 		if(swarmManager != null)
 		{
-			if(!ss.isPlaying)
-			{
-				ss.Play();
-			}
+            BackgroundManager.instance.PlaySound(2);
 	        stats.currentHp -= dmg;
 	        if (stats.currentHp <= 0) {
 				swarmManager.RemoveUnit(gameObject);

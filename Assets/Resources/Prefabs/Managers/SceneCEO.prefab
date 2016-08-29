@@ -58,5 +58,4 @@ MonoBehaviour:
   - {fileID: 1000010565670708, guid: 9126cbe6321e03a41aff693674b3efa3, type: 2}
   - {fileID: 1000013679159492, guid: aad5d8ee2bff60a4e903a470180f0daf, type: 2}
   - {fileID: 1000012491810620, guid: 1c5f6899954810d4aa167808004ee896, type: 2}
-  - {fileID: 1000013733674156, guid: 41ad935faacefb14d99fff422f9a7daa, type: 2}
   spawnedManagerList: []

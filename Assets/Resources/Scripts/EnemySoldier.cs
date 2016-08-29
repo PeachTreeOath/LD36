@@ -16,41 +16,8 @@ public class EnemySoldier : MonoBehaviour {
 	GameObject fangFab;
 	GameObject [] deadFabs;
 
-	 AudioClip gunSound = null;
-	 GameObject gunSoundSource;
-	 AudioSource ss;
-
-	 AudioClip hurtSound = null;
-	 GameObject hurtSoundSource;
-	 AudioSource ss2;
-
 	// Use this for initialization
 	void Start () {
-
-		if(hurtSound == null)
-		{
-			hurtSoundSource = new GameObject();
-			hurtSoundSource.name = "hurtSoundSource3";
-			ss2 = hurtSoundSource.AddComponent<AudioSource>();
-			hurtSound = Resources.Load("Sounds/DinoAttack") as AudioClip;
-			ss2.clip = hurtSound;
-			ss2.loop = false;
-			ss2.rolloffMode = AudioRolloffMode.Linear;
-			ss2.volume = Util.SFXVolume;
-		}
-
-		if(gunSound == null)
-		{
-			gunSoundSource = new GameObject();
-			gunSoundSource.name = "gunSoundSource";
-			ss = gunSoundSource.AddComponent<AudioSource>();
-			gunSound = Resources.Load("Sounds/MachineGun1") as AudioClip;
-			ss.clip = gunSound;
-			ss.loop = false;
-			ss.rolloffMode = AudioRolloffMode.Linear;
-			ss.volume = Util.SFXVolume;
-		}
-
 		curEnemySwarm = null;
 		muzzleFlashFab = Resources.Load("Prefabs/MuzzleFlash") as GameObject;
 		fangFab = Resources.Load("Prefabs/Fangs") as GameObject;
@@ -113,11 +80,8 @@ public class EnemySoldier : MonoBehaviour {
 					GameObject muzzleFlash = Instantiate(muzzleFlashFab) as GameObject;
 					muzzleFlash.transform.position = gameObject.transform.position;
 					friendlySwarmManager.activeSwarm[i].GetComponent<FriendlyAgent>().TakeDamage(1);
-					if(!ss.isPlaying)
-					{
-						ss.Play();
-					}
-				}
+                    BackgroundManager.instance.PlaySound(0);
+                }
 			}
 
 			if(pDist < attackDist)
@@ -126,10 +90,7 @@ public class EnemySoldier : MonoBehaviour {
 				GameObject muzzleFlash = Instantiate(muzzleFlashFab) as GameObject;
 				muzzleFlash.transform.position = gameObject.transform.position;
 				Player.instance.GetComponent<Player>().TakeDamage(1);
-				if(!ss.isPlaying)
-				{
-					ss.Play();
-				}
+                BackgroundManager.instance.PlaySound(0);
 			}
 		}
 	}
@@ -148,11 +109,8 @@ public class EnemySoldier : MonoBehaviour {
 
 		if(damage > 0)
 		{
-			if(!ss2.isPlaying)
-			{
-				ss2.Play();
-			}
-			GameObject fangs = Instantiate(fangFab);
+            BackgroundManager.instance.PlaySound(1);
+            GameObject fangs = Instantiate(fangFab);
 			fangs.transform.position = gameObject.transform.position;
 			health -= damage;
 			if(health <= 0)
