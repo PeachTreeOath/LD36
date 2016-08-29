@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Util {
-	public static float SFXVolume = .07f;
+	public static float SFXVolume = .2f;
 	public static float MusicVolume = 1;
     private const float TWO_PI = 2.0f * Mathf.PI;
     private const float MIN_FLOAT = float.MinValue;
