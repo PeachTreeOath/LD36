@@ -24,6 +24,7 @@ public class DinoHordeController : MonoBehaviour {
             instance = this;
         } else if (instance != this) {
             Destroy(this.gameObject);
+            Destroy(this);
         }
     }
 
@@ -82,6 +83,10 @@ public class DinoHordeController : MonoBehaviour {
         }
     }
 
+    public int getGroupCount(string groupName) {
+        return agents[groupName].Count;
+    }
+
     //All groups have the player included and weighted
     private Vector2 calcGroupAvgPos(string groupName) {
         List<FriendlyAgent> ags = agents[groupName];
@@ -98,6 +103,9 @@ public class DinoHordeController : MonoBehaviour {
                 x += a.gameObject.transform.position.x;
                 y += a.gameObject.transform.position.y;
             }
+        }
+        for (int i = 0; i < deletedAgents.Count; i++) {
+            ags.RemoveAt(deletedAgents[i]);
         }
         //add in player weight
         float pWeight = (int)((ags.Count + 1) * (playerGroupWeight * .05f));
