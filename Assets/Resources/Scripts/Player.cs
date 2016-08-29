@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 	float curHealth;
 	float healTimer;
 	float healTime = 2f;
+	public float healRate;
 
     void Awake()
     {
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
 		if(Time.time - healTimer > healTime)
 		{
 			healTimer = Time.time;
-			curHealth += 5;
+			curHealth += healRate;
 			if(curHealth > maxHealth)
 			{
 				curHealth = maxHealth;
