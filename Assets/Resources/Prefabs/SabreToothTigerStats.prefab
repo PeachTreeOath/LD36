@@ -55,5 +55,5 @@ MonoBehaviour:
   dmgPerHit: 4
   hitRate: 1
   maxMoveSpeedPerSec: 3
-  maxHp: 25
-  currentHp: 25
+  maxHp: 250
+  currentHp: 250
