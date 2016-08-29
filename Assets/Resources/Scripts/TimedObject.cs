@@ -15,7 +15,7 @@ public class TimedObject : MonoBehaviour {
 	void Update () {
 		if(Time.time - lifetimer >= lifetime)
 		{
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		}
 	}
 
