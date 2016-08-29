@@ -18,6 +18,14 @@ public class RubbleSpawner : MonoBehaviour {
 	void Start () {
 		vis = new List<Vector3>();
 		rubble = new List<GameObject>();
+
+        if(rubbleImages.Count == 0)
+        {
+            rubbleImages = new List<GameObject>();
+            rubbleImages.Add(Resources.Load<GameObject>("Prefabs/Rubbe1"));
+            rubbleImages.Add(Resources.Load<GameObject>("Prefabs/Rubbe2"));
+            rubbleImages.Add(Resources.Load<GameObject>("Prefabs/Rubbe3"));
+        }
 		int count = Random.Range(minCount, maxCount+1);
 		for(int i = 0; i < count; i++)
 		{
