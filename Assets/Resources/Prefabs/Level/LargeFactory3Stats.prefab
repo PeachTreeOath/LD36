@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 65
   curHealth: 65
-  oilValue: 5
-  startingSpawnNum: 0
+  oilValue: 100
+  startingSpawnNum: 10
   spawnRadius: 0
   timeToSpawn: 0
   attackDamage: 0
