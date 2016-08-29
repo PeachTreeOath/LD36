@@ -12,9 +12,9 @@ public class AttackBuilding : MonoBehaviour {
     
     public BuildingStats stats; 
 
-	static AudioClip gunSound = null;
-	static GameObject gunSoundSource;
-	static AudioSource ss;
+	 AudioClip gunSound = null;
+	 GameObject gunSoundSource;
+	 AudioSource ss;
 
     void Start () {
 

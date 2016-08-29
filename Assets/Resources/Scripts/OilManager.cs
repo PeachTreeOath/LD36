@@ -25,14 +25,14 @@ public class OilManager : MonoBehaviour
     public static OilManager instance;
 	SwarmMovementManager friendlySwarmManager;
 
-	static AudioClip spawnSound1 = null;
-	static AudioClip spawnSound2 = null;
-	static AudioClip spawnSound3 = null;
-	static AudioClip spawnSound4 = null;
-	static AudioClip spawnSound5 = null;
-	static AudioClip spawnSound6 = null;
-	static GameObject spawnSoundSource;
-	static AudioSource ss;
+	 AudioClip spawnSound1 = null;
+	 AudioClip spawnSound2 = null;
+	 AudioClip spawnSound3 = null;
+	 AudioClip spawnSound4 = null;
+	 AudioClip spawnSound5 = null;
+	 AudioClip spawnSound6 = null;
+	 GameObject spawnSoundSource;
+	 AudioSource ss;
 
     void Awake()
     {

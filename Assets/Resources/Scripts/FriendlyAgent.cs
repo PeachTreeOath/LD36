@@ -44,9 +44,9 @@ public class FriendlyAgent : MonoBehaviour {
     private GameObject bitePrefab;
     private float lastAttackTime;
 
-	static AudioClip hurtSound = null;
-	static GameObject hurtSoundSource;
-	static AudioSource ss;
+	 AudioClip hurtSound = null;
+	 GameObject hurtSoundSource;
+	 AudioSource ss;
 
     // Use this for initialization
     void Start() {

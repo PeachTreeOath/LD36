@@ -16,9 +16,9 @@ public class Player : MonoBehaviour
 	float healTime = 2f;
 	public float healRate;
 
-	static AudioClip hurtSound = null;
-	static GameObject hurtSoundSource;
-	static AudioSource ss;
+	 AudioClip hurtSound = null;
+	 GameObject hurtSoundSource;
+	 AudioSource ss;
 
     void Awake()
     {
