@@ -56,7 +56,7 @@ MonoBehaviour:
   oilValue: 50
   startingSpawnNum: 7
   spawnRadius: 2
-  timeToSpawn: 0
+  timeToSpawn: 1
   attackDamage: 2
-  secondsPerAttack: 10
+  secondsPerAttack: 0.25
   BEGIN_SPAWN_RADIUS: 5
