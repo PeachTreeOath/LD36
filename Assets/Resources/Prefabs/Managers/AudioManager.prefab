@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000010101690082}
+  m_RootGameObject: {fileID: 1000013733674156}
   m_IsPrefabParent: 1
---- !u!1 &1000010101690082
+--- !u!1 &1000013733674156
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013941751068}
-  - 114: {fileID: 114000013321690386}
+  - 4: {fileID: 4000013215429148}
+  - 114: {fileID: 114000011863525388}
   m_Layer: 0
-  m_Name: SceneCEO
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000013941751068
+--- !u!4 &4000013215429148
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010101690082}
+  m_GameObject: {fileID: 1000013733674156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,23 +40,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000013321690386
+--- !u!114 &114000011863525388
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010101690082}
+  m_GameObject: {fileID: 1000013733674156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a30acdbba890d9242a8b248cbf73ea24, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a55a8d522389e47be3536f5eef4e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  managerList:
-  - {fileID: 1000013124090596, guid: 013612c71a05edf48b62ecf104a925d4, type: 2}
-  - {fileID: 1000014013578944, guid: 785237a16b5dc214ea204fa59643638f, type: 2}
-  - {fileID: 1000012389507520, guid: a18bdeb1549b91a4d84a4892d860e5b1, type: 2}
-  - {fileID: 1000010565670708, guid: 9126cbe6321e03a41aff693674b3efa3, type: 2}
-  - {fileID: 1000013679159492, guid: aad5d8ee2bff60a4e903a470180f0daf, type: 2}
-  - {fileID: 1000012491810620, guid: 1c5f6899954810d4aa167808004ee896, type: 2}
-  - {fileID: 1000013733674156, guid: 41ad935faacefb14d99fff422f9a7daa, type: 2}
-  spawnedManagerList: []
