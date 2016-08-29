@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000012435700728}
   - 61: {fileID: 61000010375411714}
   - 50: {fileID: 50000011545002392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Compy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

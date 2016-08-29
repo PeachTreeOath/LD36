@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000011865546374}
   - 50: {fileID: 50000013665445620}
   - 61: {fileID: 61000010021643190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dilophosaurus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
