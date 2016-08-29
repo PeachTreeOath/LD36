@@ -135,12 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &2059629
@@ -946,12 +949,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &25624698
@@ -1920,97 +1926,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
---- !u!1001 &55595359
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 744381527}
-    m_Modifications:
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleIcons.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.4189997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.8365135
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 1000013175376426, guid: 716b9071316220b46b317550e39fec4e,
-        type: 2}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubblePower
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleGravity
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleMinCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleMaxCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleIcons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096,
-        type: 2}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleIcons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a,
-        type: 2}
-    - target: {fileID: 114000012177063144, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-        type: 2}
-      propertyPath: rubbleIcons.Array.data[2]
-      value: 
-      objectReference: {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5,
-        type: 2}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6bc3fe3e62b95ae449364b5d4a79f26b, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &71244480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,7 +2592,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 47
+  m_RootOrder: 44
 --- !u!212 &92988251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3204,12 +3119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &108461235
@@ -3305,7 +3223,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 41
+  m_RootOrder: 38
 --- !u!212 &109952830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4217,12 +4135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &126971137
@@ -4490,71 +4411,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &131534478
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000012344688298, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 131534479}
-  - 212: {fileID: 131534480}
-  m_Layer: 0
-  m_Name: MillBarracks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &131534479
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000013473138252, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 131534478}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.561491, y: -6.1464148, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1486665153}
-  m_RootOrder: 0
---- !u!212 &131534480
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212000012999585620, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 131534478}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3693dafc2479ae64fb64618c3bc8a8c8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1 &140272677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,12 +4640,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &141175201
@@ -4875,7 +4734,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 38
+  m_RootOrder: 35
 --- !u!212 &142084488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5084,12 +4943,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &150653150
@@ -5185,7 +5047,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 29
+  m_RootOrder: 28
 --- !u!212 &156180856
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6516,7 +6378,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 44
+  m_RootOrder: 41
 --- !u!212 &182920940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6581,7 +6443,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 34
+  m_RootOrder: 31
 --- !u!212 &192244162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6992,7 +6854,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1486665153}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!212 &202635681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8221,7 +8083,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 48
+  m_RootOrder: 45
 --- !u!212 &260183124
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8712,115 +8574,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &276364852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000014110822428, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 276364853}
-  - 212: {fileID: 276364856}
-  - 114: {fileID: 276364855}
-  - 68: {fileID: 276364854}
-  m_Layer: 0
-  m_Name: LargeFactory2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &276364853
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000012710250954, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 276364852}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.24, y: 1.921, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 744381527}
-  m_RootOrder: 27
---- !u!68 &276364854
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 68000012703468406, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 276364852}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -1.228256, y: -0.53775346}
-  - {x: -0.47463083, y: 0.20485878}
-  - {x: 0.6648946, y: -0.92186284}
-  - {x: -0.077717304, y: -1.6900826}
-  - {x: -1.228256, y: -0.5377535}
---- !u!114 &276364855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000010947871180, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 276364852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rubblePower: 10
-  rubbleGravity: -20
-  rubbleMinCount: 6
-  rubbleMaxCount: 7
-  rubbleIcons:
-  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
-  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
-  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
-  stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
-  ySortingOffset: -0.95
-  type: 0
---- !u!212 &276364856
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212000013021776278, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 276364852}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b982212dc69e1754f8cb812100a3a52d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1 &284126668
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,7 +8996,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
 --- !u!212 &309661887
@@ -9643,12 +9396,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &317222877
@@ -9837,12 +9593,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &318823816
@@ -9938,7 +9697,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 46
+  m_RootOrder: 43
 --- !u!212 &319164198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10511,71 +10270,6 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 6b602c8d7ebf8a446ac43bec3f362267, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
-  m_FlipY: 0
---- !u!1 &345756291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000011234773586, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 345756292}
-  - 212: {fileID: 345756293}
-  m_Layer: 0
-  m_Name: MillBarracks (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &345756292
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000010412437664, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345756291}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.414165, y: -9.704076, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1486665153}
-  m_RootOrder: 1
---- !u!212 &345756293
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212000011038054358, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345756291}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3693dafc2479ae64fb64618c3bc8a8c8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
   m_FlipY: 0
 --- !u!1 &346992338
 GameObject:
@@ -12004,7 +11698,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000013175376426, guid: 716b9071316220b46b317550e39fec4e, type: 2}
   ySortingOffset: -0.2851052
   type: 0
 --- !u!212 &404241940
@@ -12709,12 +12403,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &443466937
@@ -12769,71 +12466,6 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 26920a1c9b1e9c741a775f4c2efd8bfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
-  m_FlipY: 0
---- !u!1 &444855431
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000013494853260, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 444855432}
-  - 212: {fileID: 444855433}
-  m_Layer: 0
-  m_Name: MillBarracks (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &444855432
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000012756196740, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 444855431}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.489859, y: -11.256076, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1486665153}
-  m_RootOrder: 2
---- !u!212 &444855433
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212000012635290550, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 444855431}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3693dafc2479ae64fb64618c3bc8a8c8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
   m_FlipY: 0
 --- !u!1 &451077279
 GameObject:
@@ -13655,48 +13287,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
---- !u!1001 &490093624
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1328227899}
-    m_Modifications:
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -7.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7c930bfa9cb4fa14cb19bf09226c8fad, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &491900096
 GameObject:
   m_ObjectHideFlags: 0
@@ -14277,7 +13867,7 @@ Transform:
   - {fileID: 472558947}
   - {fileID: 867776001}
   m_Father: {fileID: 1328227899}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &506605088
 GameObject:
   m_ObjectHideFlags: 0
@@ -15203,7 +14793,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 68
+  m_RootOrder: 65
 --- !u!1 &556700680
 GameObject:
   m_ObjectHideFlags: 0
@@ -17514,7 +17104,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 36
+  m_RootOrder: 33
 --- !u!212 &646388584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18428,12 +18018,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &709244145
@@ -19391,11 +18984,8 @@ Transform:
   - {fileID: 1417671558}
   - {fileID: 1812491774}
   - {fileID: 1623992797}
-  - {fileID: 276364853}
   - {fileID: 1783351682}
   - {fileID: 156180855}
-  - {fileID: 1743763576}
-  - {fileID: 1335205441}
   - {fileID: 1364714280}
   - {fileID: 1207231009}
   - {fileID: 192244161}
@@ -19485,7 +19075,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &744659273
@@ -21463,12 +21053,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &816957751
@@ -22211,7 +21804,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000013175376426, guid: 716b9071316220b46b317550e39fec4e, type: 2}
   ySortingOffset: -0.2851052
   type: 0
 --- !u!212 &856228826
@@ -22384,7 +21977,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 52
+  m_RootOrder: 49
 --- !u!212 &864625096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22829,12 +22422,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &882943972
@@ -23248,7 +22844,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 39
+  m_RootOrder: 36
 --- !u!212 &891951154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23737,7 +23333,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 40
+  m_RootOrder: 37
 --- !u!212 &896407923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24646,7 +24242,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1486665153}
-  m_RootOrder: 5
+  m_RootOrder: 2
 --- !u!212 &935353216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25008,7 +24604,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &960759540
@@ -25907,7 +25503,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 56
+  m_RootOrder: 53
 --- !u!114 &994403020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26078,12 +25674,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &996545498
@@ -26582,7 +26181,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &1025777323
@@ -27436,12 +27035,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &1046074311
@@ -29064,7 +28666,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 35
+  m_RootOrder: 32
 --- !u!212 &1124695072
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29578,12 +29180,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1152385048
@@ -29901,7 +29506,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &1174472920
@@ -29987,7 +29592,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1486665153}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!212 &1179196409
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30877,7 +30482,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 33
+  m_RootOrder: 30
 --- !u!212 &1207231010
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31274,7 +30879,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 43
+  m_RootOrder: 40
 --- !u!212 &1234779057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31483,12 +31088,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &1237860947
@@ -33211,15 +32819,9 @@ Transform:
   - {fileID: 1673466867}
   - {fileID: 284126669}
   - {fileID: 383561709}
-  - {fileID: 1461517378}
   - {fileID: 504632157}
   m_Father: {fileID: 744381527}
-  m_RootOrder: 50
---- !u!4 &1335205441 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000012131878336, guid: 6bc3fe3e62b95ae449364b5d4a79f26b,
-    type: 2}
-  m_PrefabInternal: {fileID: 55595359}
+  m_RootOrder: 47
 --- !u!1 &1337802130
 GameObject:
   m_ObjectHideFlags: 0
@@ -33394,12 +32996,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &1344143237
@@ -36457,12 +36062,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1443400788
@@ -36730,11 +36338,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!4 &1461517378 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000010053966152, guid: 7c930bfa9cb4fa14cb19bf09226c8fad,
-    type: 2}
-  m_PrefabInternal: {fileID: 490093624}
 --- !u!1 &1472232915
 GameObject:
   m_ObjectHideFlags: 0
@@ -36951,12 +36554,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1475425160
@@ -37211,15 +36817,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 131534479}
-  - {fileID: 345756292}
-  - {fileID: 444855432}
   - {fileID: 202635680}
   - {fileID: 1179196408}
   - {fileID: 935353215}
   - {fileID: 1295893519}
   m_Father: {fileID: 744381527}
-  m_RootOrder: 51
+  m_RootOrder: 48
 --- !u!1 &1489902641
 GameObject:
   m_ObjectHideFlags: 0
@@ -37781,12 +37384,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &1514258191
@@ -39841,7 +39447,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 54
+  m_RootOrder: 51
 --- !u!114 &1576058011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40228,12 +39834,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &1579260759
@@ -40939,12 +40548,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1607215212
@@ -41151,12 +40763,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1611693985
@@ -42359,12 +41974,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1652283513
@@ -42887,7 +42505,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 37
+  m_RootOrder: 34
 --- !u!212 &1667707884
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42991,7 +42609,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
 --- !u!212 &1670865992
@@ -44005,7 +43623,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000013175376426, guid: 716b9071316220b46b317550e39fec4e, type: 2}
   ySortingOffset: -0.2851052
   type: 0
 --- !u!212 &1734617522
@@ -44039,115 +43657,6 @@ SpriteRenderer:
   m_SortingLayerID: -292421465
   m_SortingOrder: 25
   m_Sprite: {fileID: 21300000, guid: 6fd4e7414808bc94a81eee6cccd9e812, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
---- !u!1 &1743763575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000013495110058, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1743763576}
-  - 212: {fileID: 1743763579}
-  - 68: {fileID: 1743763578}
-  - 114: {fileID: 1743763577}
-  m_Layer: 0
-  m_Name: LargeFactory3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1743763576
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000012710285292, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743763575}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.698, y: 2.953, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 744381527}
-  m_RootOrder: 30
---- !u!114 &1743763577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000010090868322, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743763575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rubblePower: 12
-  rubbleGravity: -20
-  rubbleMinCount: 6
-  rubbleMaxCount: 7
-  rubbleIcons:
-  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
-  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
-  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
-  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
-  ySortingOffset: -1.4
-  type: 0
---- !u!68 &1743763578
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 68000011300217502, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743763575}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -1.0818384, y: -0.5002775}
-  - {x: -0.2907157, y: 0.28220677}
-  - {x: 1.4538388, y: -1.4238647}
-  - {x: 0.60721684, y: -2.2191765}
-  - {x: -1.081838, y: -0.5002775}
---- !u!212 &1743763579
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 212000012613864504, guid: 5b09b39fac1e3844b994b827fae5162f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743763575}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a0962ebe763875a45a8e01065e7d6adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -45006,7 +44515,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 28
+  m_RootOrder: 27
 --- !u!212 &1783351683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -45703,7 +45212,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &1806663430
@@ -46559,7 +46068,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 53
+  m_RootOrder: 50
 --- !u!212 &1844145347
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -47354,12 +46863,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 3
+  rubbleMaxCount: 6
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
 --- !u!68 &1896617702
@@ -47877,7 +47389,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 49
+  m_RootOrder: 46
 --- !u!212 &1916638209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49951,7 +49463,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 45
+  m_RootOrder: 42
 --- !u!212 &1979781971
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50649,12 +50161,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubblePower: 0
-  rubbleGravity: 0
-  rubbleMinCount: 0
-  rubbleMaxCount: 0
-  rubbleIcons: []
-  stats: {fileID: 0}
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 5
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  stats: {fileID: 1000013126089796, guid: a2595f53c13c3bb4f967d02ce60e99ae, type: 2}
   ySortingOffset: 0.1529984
   type: 1
 --- !u!58 &2007177026
@@ -51239,7 +50754,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 744381527}
-  m_RootOrder: 42
+  m_RootOrder: 39
 --- !u!212 &2028511469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51809,7 +51324,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
 --- !u!68 &2055591838
@@ -53063,7 +52578,7 @@ MonoBehaviour:
   rubbleMinCount: 0
   rubbleMaxCount: 0
   rubbleIcons: []
-  stats: {fileID: 0}
+  stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
 --- !u!212 &2097214150
