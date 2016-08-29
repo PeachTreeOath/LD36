@@ -7,6 +7,8 @@ public class AttackBuilding : MonoBehaviour {
     private GameObject statsPrefab;
     private GameObject muzzleFlashPrefab;
     private SpriteRenderer spriteRenderer;
+
+    public Vector2 fireOffset;
     
     public BuildingStats stats; 
 
@@ -40,10 +42,10 @@ public class AttackBuilding : MonoBehaviour {
 
     private void Shoot()
     {
-        MuzzleFlash flash = ((GameObject)Instantiate(muzzleFlashPrefab, transform.position, Quaternion.identity)).GetComponent<MuzzleFlash>();
+        Vector2 firePosition = new Vector2(transform.position.x + fireOffset.x, transform.position.y + fireOffset.y);
+        MuzzleFlash flash = ((GameObject)Instantiate(muzzleFlashPrefab, firePosition, Quaternion.identity)).GetComponent<MuzzleFlash>();
         SpriteRenderer sprite = flash.GetComponent<SpriteRenderer>();
         sprite.sortingOrder = spriteRenderer.sortingOrder + 1;
-        //bite.ChangeSize(1 + stats.type / 2);
-        //TODO deal dmg
+
     }
 }
