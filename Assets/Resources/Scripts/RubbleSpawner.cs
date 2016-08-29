@@ -19,7 +19,7 @@ public class RubbleSpawner : MonoBehaviour {
 		vis = new List<Vector3>();
 		rubble = new List<GameObject>();
 
-        if(rubbleImages.Count == 0)
+        if(rubbleImages == null || rubbleImages.Count == 0)
         {
             rubbleImages = new List<GameObject>();
             rubbleImages.Add(Resources.Load<GameObject>("Prefabs/Rubbe1"));

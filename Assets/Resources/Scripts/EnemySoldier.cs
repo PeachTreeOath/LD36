@@ -15,16 +15,22 @@ public class EnemySoldier : MonoBehaviour {
 	public float health = 10;
 	GameObject fangFab;
 	GameObject [] deadFabs;
+    private SpriteRenderer sprite;
 
-	// Use this for initialization
-	void Start () {
+    public float ySortingOffset;
+
+
+    // Use this for initialization
+    void Start () {
 		curEnemySwarm = null;
 		muzzleFlashFab = Resources.Load("Prefabs/MuzzleFlash") as GameObject;
 		fangFab = Resources.Load("Prefabs/Fangs") as GameObject;
 		deadFabs = new GameObject[2];
 		deadFabs[0] = Resources.Load("Prefabs/SoldierDead") as GameObject;
 		deadFabs[1] = Resources.Load("Prefabs/SoldierDead2") as GameObject;
-	}
+
+        sprite = GetComponent<SpriteRenderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -65,7 +71,13 @@ public class EnemySoldier : MonoBehaviour {
 		Attack();
 	}
 
-	void Attack()
+    void LateUpdate()
+    {
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)((transform.position.y + ySortingOffset) * 100);
+    }
+
+
+    void Attack()
 	{
 		float pDist = Mathf.Abs(Vector3.Distance(gameObject.transform.position, Player.instance.transform.position));
 
