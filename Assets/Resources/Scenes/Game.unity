@@ -2113,6 +2113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000014293985346, guid: 1c795983bd0c1bf4baec457db563390b, type: 2}
   ySortingOffset: -0.95
   type: 0
@@ -6666,6 +6672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -6844,6 +6856,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012920729486, guid: fb97a9ff8c53a404ba206b06734b05d1, type: 2}
   ySortingOffset: -0.95
   type: 2
@@ -7162,6 +7180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: 0
   type: 3
@@ -10152,6 +10176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -11277,6 +11307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000014290199280, guid: 35d7a750aaa01ee41879ad8f794df530, type: 2}
   ySortingOffset: -1.4
   type: 0
@@ -11703,6 +11739,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000011887663316, guid: d1b52d21f1cb9e842bb846e54396c95c, type: 2}
   ySortingOffset: -0.45
   type: 0
@@ -13089,6 +13131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 0
+  rubbleGravity: 0
+  rubbleMinCount: 0
+  rubbleMaxCount: 0
+  rubbleIcons: []
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
@@ -13218,6 +13266,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f036f19b9247014086d8e38cb2a3dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rubblePower: 8
+  rubbleGravity: -20
+  rubbleMinCount: 4
+  rubbleMaxCount: 7
+  rubbleIcons:
+  - {fileID: 1000010690710960, guid: 29302aa61c2c7d8478a9b6564f55c096, type: 2}
+  - {fileID: 1000011296609224, guid: 8c25708130e7f6d4cbcc7948bcc05b5a, type: 2}
+  - {fileID: 1000013300049566, guid: f06e19664aacad349ad42e68128df3b5, type: 2}
+  rubbleFab: {fileID: 0}
   stats: {fileID: 1000012490014916, guid: 33898cf4da3128c4999422d9ee1a98c3, type: 2}
   ySortingOffset: -0.2
   type: 3
