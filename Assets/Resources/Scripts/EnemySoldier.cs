@@ -85,11 +85,21 @@ public class EnemySoldier : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		int damage = 0;
+
 		if(col.gameObject.GetComponent<FriendlyAgent>() != null)
+		{
+			damage = 3 + col.gameObject.GetComponent<FriendlyAgent>().stats.type;
+		}else if(col.gameObject.GetComponent<Player>() != null)
+		{
+			damage = 2;
+		}
+
+		if(damage > 0)
 		{
 			GameObject fangs = Instantiate(fangFab);
 			fangs.transform.position = gameObject.transform.position;
-			health -= 3;
+			health -= damage;
 			if(health <= 0)
 			{
 				if(curEnemySwarm != null)
