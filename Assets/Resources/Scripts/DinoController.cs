@@ -53,7 +53,7 @@ public class DinoController : MonoBehaviour
 
     void OnColliderEnter2D(Collider2D col)
     {
-        Debug.Log("Something should be colliding with player.");
+        //Debug.Log("Something should be colliding with player.");
         //FriendlyAgent minion = col.gameObject.GetComponent<FriendlyAgent>();
         ////Debug.Log("Minion = " + minion);
         //if (minion != null && Time.time - timeOfLastAttack >= stats.secondsPerAttack)

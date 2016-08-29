@@ -49,7 +49,7 @@ public class AttackBuilding : MonoBehaviour {
         if (minion != null && Time.time - timeOfLastAttack >= stats.secondsPerAttack)
         {
 
-            Debug.Log("Minion taking damage from building.");
+            //Debug.Log("Minion taking damage from building.");
             Shoot();
             minion.TakeDamage(stats.attackDamage);
             timeOfLastAttack = Time.time;
