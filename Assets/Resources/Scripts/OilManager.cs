@@ -25,6 +25,15 @@ public class OilManager : MonoBehaviour
     public static OilManager instance;
 	SwarmMovementManager friendlySwarmManager;
 
+	static AudioClip spawnSound1 = null;
+	static AudioClip spawnSound2 = null;
+	static AudioClip spawnSound3 = null;
+	static AudioClip spawnSound4 = null;
+	static AudioClip spawnSound5 = null;
+	static AudioClip spawnSound6 = null;
+	static GameObject spawnSoundSource;
+	static AudioSource ss;
+
     void Awake()
     {
         if (instance == null)
@@ -40,6 +49,23 @@ public class OilManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		if(spawnSound1 == null)
+		{
+			spawnSoundSource = new GameObject();
+			spawnSoundSource.name = "spawnSoundSource";
+			ss = spawnSoundSource.AddComponent<AudioSource>();
+			spawnSound1 = Resources.Load("Sounds/DinoScream1") as AudioClip;
+			spawnSound2 = Resources.Load("Sounds/DinoScream2") as AudioClip;
+			spawnSound3 = Resources.Load("Sounds/DinoScream3") as AudioClip;
+			spawnSound4 = Resources.Load("Sounds/DinoScream4") as AudioClip;
+			spawnSound5 = Resources.Load("Sounds/DinoScream5") as AudioClip;
+			spawnSound6 = Resources.Load("Sounds/DinoScream6") as AudioClip;
+
+			ss.loop = false;
+			ss.rolloffMode = AudioRolloffMode.Linear;
+			ss.volume = Util.SFXVolume;
+		}
+
 		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
 		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
 		{
@@ -85,26 +111,32 @@ public class OilManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+			ss.clip = spawnSound1;
             BuyDino(0);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
+			ss.clip = spawnSound2;
             BuyDino(1);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+			ss.clip = spawnSound3;
             BuyDino(2);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
+			ss.clip = spawnSound4;
             BuyDino(3);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
+			ss.clip = spawnSound5;
             BuyDino(4);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+			ss.clip = spawnSound6;
             BuyDino(5);
         }
     }
@@ -113,6 +145,7 @@ public class OilManager : MonoBehaviour
     {
         if (dinoCosts[type] <= oilAmount)
         {
+			ss.Play();
             Debug.Log("DINO " + type + " SPAWNED");
             ChangeOilAmount(-dinoCosts[type]);
             SpawnMinion(dinoIndexToObjectMap[type]);

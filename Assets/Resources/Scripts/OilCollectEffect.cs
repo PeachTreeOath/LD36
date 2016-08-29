@@ -11,9 +11,25 @@ public class OilCollectEffect : MonoBehaviour {
 	TimedObject to;
 	SpriteRenderer srend1;
 	SpriteRenderer srend2;
+	static AudioClip oilSound = null;
+	static GameObject oilSoundSource;
+	static AudioSource ss;
 
 	// Use this for initialization
 	void Start () {
+		if(oilSound == null)
+		{
+			oilSoundSource = new GameObject();
+			oilSoundSource.name = "oilSoundSource";
+			ss = oilSoundSource.AddComponent<AudioSource>();
+			oilSound = Resources.Load("Sounds/PickupOil") as AudioClip;
+			ss.clip = oilSound;
+			ss.loop = false;
+			ss.rolloffMode = AudioRolloffMode.Linear;
+			ss.volume = Util.SFXVolume;
+		}
+
+		ss.Play();
 		startTime = Time.time;
 		tarScale = gameObject.transform.localScale * scaleFactor;
 		startScale = gameObject.transform.localScale;

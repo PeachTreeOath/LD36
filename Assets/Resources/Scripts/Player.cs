@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
 	float healTime = 2f;
 	public float healRate;
 
+	static AudioClip hurtSound = null;
+	static GameObject hurtSoundSource;
+	static AudioSource ss;
+
     void Awake()
     {
         if (instance == null)
@@ -31,6 +35,19 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+		if(hurtSound == null)
+		{
+			hurtSoundSource = new GameObject();
+			hurtSoundSource.name = "hurtSoundSource2";
+			ss = hurtSoundSource.AddComponent<AudioSource>();
+			hurtSound = Resources.Load("Sounds/DinoHurt") as AudioClip;
+			ss.clip = hurtSound;
+			ss.loop = false;
+			ss.rolloffMode = AudioRolloffMode.Linear;
+			ss.volume = Util.SFXVolume;
+		}
+
 		curHealth = maxHealth;
 		healthUI = GameObject.Find("HealthPanel") as GameObject;
 		healthRect = healthUI.GetComponent<RectTransform>();
@@ -60,6 +77,10 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(int damage)
 	{
+		if(!ss.isPlaying)
+		{
+			ss.Play();
+		}
 		curHealth -= damage;
 		if(curHealth <= 0)
 		{

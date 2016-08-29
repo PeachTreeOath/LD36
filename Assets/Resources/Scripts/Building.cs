@@ -32,9 +32,26 @@ public class Building : MonoBehaviour
 
 	SwarmMovementManager friendlySwarmManager;
 
+
+	static AudioClip explodeSound = null;
+	static GameObject explodeSoundSource;
+	static AudioSource ss;
+
     // Use this for initialization
     void Start()
     {
+
+		if(explodeSound == null)
+		{
+			explodeSoundSource = new GameObject();
+			explodeSoundSource.name = "explodeSoundSource";
+			ss = explodeSoundSource.AddComponent<AudioSource>();
+			explodeSound = Resources.Load("Sounds/Explosion5") as AudioClip;
+			ss.clip = explodeSound;
+			ss.loop = false;
+			ss.rolloffMode = AudioRolloffMode.Linear;
+			ss.volume = Util.SFXVolume;
+		}
 
 		SceneCEO sceo = GameObject.Find("SceneCEO").GetComponent<SceneCEO>();
 		for(int i = 0; i < sceo.spawnedManagerList.Count; i++)
@@ -150,6 +167,7 @@ public class Building : MonoBehaviour
 		barrel.transform.localScale *= 1 + statsObj.oilValue / 20;
 
 		Camera.main.gameObject.GetComponent<ScreenShake>().DoScreenShake();
+		ss.Play();
 
         if (type == BuildingType.GAS)
         {
