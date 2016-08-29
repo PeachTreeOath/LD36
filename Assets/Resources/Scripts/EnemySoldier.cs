@@ -11,11 +11,14 @@ public class EnemySoldier : MonoBehaviour {
 	float attackTimeout = .55f;
 	float attackDist = 5;
 	GameObject muzzleFlashFab;
+	public float health = 10;
+	GameObject fangFab;
 
 	// Use this for initialization
 	void Start () {
 		curEnemySwarm = null;
 		muzzleFlashFab = Resources.Load("Prefabs/MuzzleFlash") as GameObject;
+		fangFab = Resources.Load("Prefabs/Fangs") as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -64,6 +67,24 @@ public class EnemySoldier : MonoBehaviour {
 					muzzleFlash.transform.position = gameObject.transform.position;
 					friendlySwarmManager.activeSwarm[i].GetComponent<FriendlyAgent>().TakeDamage(1);
 				}
+			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.gameObject.GetComponent<FriendlyAgent>() != null)
+		{
+			GameObject fangs = Instantiate(fangFab);
+			fangs.transform.position = gameObject.transform.position;
+			health -= 3;
+			if(health <= 0)
+			{
+				if(curEnemySwarm != null)
+				{
+					curEnemySwarm.RemoveUnit(gameObject);
+				}
+				Destroy(gameObject);
 			}
 		}
 	}

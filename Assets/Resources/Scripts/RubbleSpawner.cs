@@ -37,7 +37,6 @@ public class RubbleSpawner : MonoBehaviour {
 		{
 			if(rubble[i].transform.position.y > gameObject.transform.position.y)
 			{
-				Debug.Log(Time.time + " vi " + vis[i]);
 				done = false;
 				float dx = gameObject.transform.position.x + vis[i].x * dt;
 				float dy = gameObject.transform.position.y + vis[i].y * dt + dt2gh;

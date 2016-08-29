@@ -209,11 +209,14 @@ public class FriendlyAgent : MonoBehaviour {
     }
 
     public void TakeDamage(int dmg) {
-        stats.currentHp -= dmg;
-        if (stats.currentHp <= 0) {
-			swarmManager.RemoveUnit(gameObject);
-            Destroy(gameObject);
-        }
+		if(swarmManager != null)
+		{
+	        stats.currentHp -= dmg;
+	        if (stats.currentHp <= 0) {
+				swarmManager.RemoveUnit(gameObject);
+	            Destroy(gameObject);
+	        }
+		}
     }
     
     void OnCollisionStay2D(Collision2D col)

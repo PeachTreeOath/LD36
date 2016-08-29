@@ -49,7 +49,7 @@ public class EnemySwarm : MonoBehaviour {
 
 				tarPositions[i] = tarPos;
 				radii[i] = radius;
-				Debug.Log(Time.time + " new tarPos " + tarPositions[i]);
+				//Debug.Log(Time.time + " new tarPos " + tarPositions[i]);
 			}
 
 			Vector3 moveDir = tarPos - activeSwarm[i].transform.position;
