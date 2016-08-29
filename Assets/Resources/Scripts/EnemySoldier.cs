@@ -16,13 +16,13 @@ public class EnemySoldier : MonoBehaviour {
 	GameObject fangFab;
 	GameObject [] deadFabs;
 
-	static AudioClip gunSound = null;
-	static GameObject gunSoundSource;
-	static AudioSource ss;
+	 AudioClip gunSound = null;
+	 GameObject gunSoundSource;
+	 AudioSource ss;
 
-	static AudioClip hurtSound = null;
-	static GameObject hurtSoundSource;
-	static AudioSource ss2;
+	 AudioClip hurtSound = null;
+	 GameObject hurtSoundSource;
+	 AudioSource ss2;
 
 	// Use this for initialization
 	void Start () {
