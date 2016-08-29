@@ -51,12 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322b5e0f1c9245c4a9bb51b871b2da16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 75
-  curHealth: 75
+  maxHealth: 50
+  curHealth: 50
   oilValue: 50
   startingSpawnNum: 7
   spawnRadius: 3
-  timeToSpawn: 0.25
+  timeToSpawn: 0.5
   attackDamage: 4
-  secondsPerAttack: 0.25
+  secondsPerAttack: 0.5
   BEGIN_SPAWN_RADIUS: 5
