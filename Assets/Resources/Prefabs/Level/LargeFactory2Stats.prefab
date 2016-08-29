@@ -54,7 +54,7 @@ MonoBehaviour:
   maxHealth: 45
   curHealth: 45
   oilValue: 15
-  startingSpawnNum: 4
+  startingSpawnNum: 2
   spawnRadius: 0
   timeToSpawn: 0
   attackDamage: 0
